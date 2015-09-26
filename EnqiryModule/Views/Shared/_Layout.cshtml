@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Enqiry</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div id="wrapper">
+        <div class="header">
+            <div class="container">
+                <div class="logo"><img src="../images/logo_solar.png" /></div>
+                <div class="navigation">
+                    <ul>
+                        <li><a href="#">Join Installer Network</a></li>
+                        <a class="app_btn left"></a>
+                        <button class="btn_normal_2 btn_signin left signin_popup_open">Sign in</button>
+                        <li>@*@Html.ActionLink("Sign in", "Login", "Account", new { @class = "btn_normal_2 btn_signin left signin_popup_open" })*@</li>
+                    </ul>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+        <div class="content_area">
+            <div class="container body-content">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="footer_new fixed_footer">
+            <div class="container">
+                <div class="links">
+                    <a href="#">Partners</a>
+                    <a href="#">Installers</a>
+                    <a href="form_slider.html">Our Process</a>
+                </div>
+                <div class="social right">
+                    <ul>
+                        <li><a href="#" class="linkedin"></a></li>
+                        <li><a href="#" class="facebook"></a></li>
+                        <li><a href="#" class="twitter"></a></li>
+                        <li><a href="#" class="youtube"></a></li>
+                        <li><a href="#" class="google_plus"></a></li>
+                    </ul>
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false);
+</body>
+</html>

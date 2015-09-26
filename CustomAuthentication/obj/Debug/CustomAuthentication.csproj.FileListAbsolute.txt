@@ -1,0 +1,149 @@
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\CustomAuthentication.dll.config
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\CustomAuthentication.dll
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\CustomAuthentication.pdb
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\EntityFramework.dll
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.dll
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\Newtonsoft.Json.dll
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Helpers.dll
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Mvc.dll
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Razor.dll
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.dll
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\EntityFramework.xml
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.xml
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\Newtonsoft.Json.xml
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Helpers.xml
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Mvc.xml
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Razor.xml
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.xml
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\obj\Debug\CustomAuthentication.Migrations.CustomAuthentication_Init.resources
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\obj\Debug\CustomAuthentication.Migrations.CustomAuthentication_User_Delete_Column.resources
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\obj\Debug\CustomAuthentication.csproj.GenerateResource.Cache
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\obj\Debug\CustomAuthentication.dll
+D:\Test Project\VS2015\SimplePlatform\CustomAuthentication\obj\Debug\CustomAuthentication.pdb
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\CustomAuthentication.dll.config
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\CustomAuthentication.dll
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\CustomAuthentication.pdb
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\EntityFramework.dll
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\Newtonsoft.Json.dll
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Helpers.dll
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Mvc.dll
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Razor.dll
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.dll
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\EntityFramework.xml
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\Newtonsoft.Json.xml
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Helpers.xml
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Mvc.xml
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Razor.xml
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.xml
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Project\Git SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Project\Git SimplePlatform\CustomAuthentication\obj\Debug\CustomAuthentication.csprojResolveAssemblyReference.cache
+D:\Project\Git SimplePlatform\CustomAuthentication\obj\Debug\CustomAuthentication.dll
+D:\Project\Git SimplePlatform\CustomAuthentication\obj\Debug\CustomAuthentication.pdb
+D:\Project\New folder\CustomAuthentication\bin\Debug\CustomAuthentication.dll.config
+D:\Project\New folder\CustomAuthentication\bin\Debug\CustomAuthentication.dll
+D:\Project\New folder\CustomAuthentication\bin\Debug\CustomAuthentication.pdb
+D:\Project\New folder\CustomAuthentication\bin\Debug\EntityFramework.dll
+D:\Project\New folder\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\New folder\CustomAuthentication\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Project\New folder\CustomAuthentication\bin\Debug\Newtonsoft.Json.dll
+D:\Project\New folder\CustomAuthentication\bin\Debug\System.Web.Helpers.dll
+D:\Project\New folder\CustomAuthentication\bin\Debug\System.Web.Mvc.dll
+D:\Project\New folder\CustomAuthentication\bin\Debug\System.Web.Razor.dll
+D:\Project\New folder\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Project\New folder\CustomAuthentication\bin\Debug\System.Web.WebPages.dll
+D:\Project\New folder\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Project\New folder\CustomAuthentication\bin\Debug\EntityFramework.xml
+D:\Project\New folder\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\New folder\CustomAuthentication\bin\Debug\Newtonsoft.Json.xml
+D:\Project\New folder\CustomAuthentication\bin\Debug\System.Web.Helpers.xml
+D:\Project\New folder\CustomAuthentication\bin\Debug\System.Web.Mvc.xml
+D:\Project\New folder\CustomAuthentication\bin\Debug\System.Web.Razor.xml
+D:\Project\New folder\CustomAuthentication\bin\Debug\System.Web.WebPages.xml
+D:\Project\New folder\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Project\New folder\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Project\New folder\CustomAuthentication\obj\Debug\CustomAuthentication.dll
+D:\Project\New folder\CustomAuthentication\obj\Debug\CustomAuthentication.pdb
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\CustomAuthentication.dll.config
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\CustomAuthentication.dll
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\CustomAuthentication.pdb
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\EntityFramework.dll
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\Newtonsoft.Json.dll
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Helpers.dll
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Mvc.dll
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Razor.dll
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.dll
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\EntityFramework.xml
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\Newtonsoft.Json.xml
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Helpers.xml
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Mvc.xml
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.Razor.xml
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.xml
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Project\SimplePlatform\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Project\SimplePlatform\CustomAuthentication\obj\Debug\CustomAuthentication.dll
+D:\Project\SimplePlatform\CustomAuthentication\obj\Debug\CustomAuthentication.pdb
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\CustomAuthentication.dll.config
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\CustomAuthentication.dll
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\CustomAuthentication.pdb
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\EntityFramework.dll
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\Newtonsoft.Json.dll
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\System.Web.Helpers.dll
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\System.Web.Mvc.dll
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\System.Web.Razor.dll
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\System.Web.WebPages.dll
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\EntityFramework.xml
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\Newtonsoft.Json.xml
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\System.Web.Helpers.xml
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\System.Web.Mvc.xml
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\System.Web.Razor.xml
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\System.Web.WebPages.xml
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Project\SimplePlatform1\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Project\SimplePlatform1\CustomAuthentication\obj\Debug\CustomAuthentication.dll
+D:\Project\SimplePlatform1\CustomAuthentication\obj\Debug\CustomAuthentication.pdb
+D:\Project\SimplePlatform1\CustomAuthentication\obj\Debug\CustomAuthentication.csprojResolveAssemblyReference.cache
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\CustomAuthentication.dll.config
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\CustomAuthentication.dll
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\CustomAuthentication.pdb
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\EntityFramework.dll
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\System.Web.Helpers.dll
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\System.Web.Mvc.dll
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\System.Web.Razor.dll
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\System.Web.WebPages.dll
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\EntityFramework.xml
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\System.Web.Helpers.xml
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\System.Web.Mvc.xml
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\System.Web.Razor.xml
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\System.Web.WebPages.xml
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\obj\Debug\CustomAuthentication.dll
+C:\Users\Sumit Bisht\Documents\Visual Studio 2015\Projects\EnqiryModule\CustomAuthentication\obj\Debug\CustomAuthentication.pdb
