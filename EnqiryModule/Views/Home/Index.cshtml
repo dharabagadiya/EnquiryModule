@@ -51,17 +51,18 @@
         </ul>
         <div class="tab_content_group">
             <div id="new_user" class="tab_content active">
-                <input class="input top_10" type="text" placeholder="Email" />
-                <input class="input top_10" type="password" placeholder="Password" />
-                <input class="input top_10" type="text" placeholder="Phone Number" />
-                <button class="btn block top_10">Create an Account</button>
+                <label hidden="hidden" id="lblEmailExist" style="color:red">Email Already Exist</label>
+                <input class="input top_10" type="email" placeholder="Email" id="txtCreateAccountEmail" required />
+                <input class="input top_10" type="password" placeholder="Password" id="txtCreateAccountPassword" />
+                @*<input class="input top_10" type="text" placeholder="Phone Number" id="txtCreateAccountPhoneNumber"/>*@
+                <button class="btn block top_10" id="btnCreateAccount" type="submit">Create an Account</button>
             </div>
             <div id="existing_user" class="tab_content">
-                <input class="input top_10" type="text" placeholder="Email" id="txtEmail"/>
-                <input class="input top_10" type="password" placeholder="Password" id="txtPassword"/>
+                <input class="input top_10" type="text" placeholder="Email" id="txtEmail" />
+                <input class="input top_10" type="password" placeholder="Password" id="txtPassword" />
                 <a class="forgot_pwd" href="#">Forgot Password ?</a>
                 <button class="btn block" id="btnSignIn">Sign In</button>
             </div>
-        </div> 
+        </div>
     </div>
 </div>

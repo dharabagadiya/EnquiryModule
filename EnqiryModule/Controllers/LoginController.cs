@@ -14,5 +14,11 @@ namespace EnqiryModule.Controllers
             var status = customMembershipProvider.Authenticate(username, password);
             return Json(status);
         }
+        public JsonResult CreateAccount(string username, string password,int userRoleID)
+        {
+            var customMembershipProvider = new CustomAuthentication.CustomMembershipProvider();
+            var status = customMembershipProvider.CreateUser(username, password, userRoleID);
+            return Json(status);
+        }
     }
 }

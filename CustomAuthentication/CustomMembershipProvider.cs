@@ -33,28 +33,28 @@ namespace CustomAuthentication
         }
         #endregion
 
-        public bool CreateUser(string username, string password, string email)
+        public bool CreateUser(string username, string password, int userRoleID)
         {
             try
             {
                 if (Context.Users.Any(model => model.UserName.Equals(username, StringComparison.InvariantCultureIgnoreCase))) { return false; }
+                var roles = Context.Roles.Where(model => model.RoleId == userRoleID).ToList();
                 Context.Users.Add(new User
                 {
+                    Email = username,
                     UserName = username,
                     Password = password,
-                    Email = email,
+                    Roles = roles,
                     CreateDate = DateTime.UtcNow,
                 });
                 Context.SaveChanges();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
                 return false;
             }
-
         }
-
         public bool CreateUser(string firstName, string lastName, string emildID, int userRoleID)
         {
             try
@@ -78,9 +78,7 @@ namespace CustomAuthentication
             {
                 return false;
             }
-
         }
-
         public bool Authenticate(string username, string password)
         {
             var user = Context.Users.Where(model => (model.UserName.Equals(username) || model.Email.Equals(username)) && model.Password.Equals(password)).FirstOrDefault();

@@ -1,11 +1,9 @@
 // JavaScript Document$(document).ready(function(){
 $(document).ready(function () {
-
     $('.no_label').each(function () {
         var value = $(this).attr('title');
         $(this).val(value);
     });
-
     $('.no_label').focus(function () {
         var value = $(this).val();
         var title = $(this).attr('title');
@@ -26,6 +24,7 @@ $(document).ready(function () {
         transition: 'all 0.3s'
     });
     $('#btnSignIn').off("click").on("click", function () { Login(); });
+    $('#btnCreateAccount').off("click").on("click", function () { CreateAccount(); });
 })
 function Login() {
     var username = $("#txtEmail").val();
@@ -41,10 +40,26 @@ function Login() {
             var status = data;
             if (status) {
                 window.location.reload();
-                //obj.modal('hide');
-            } else {
-                //obj.find("#divCommonMessage").removeClass("hidden");
-            }
+            } else { }
+        }
+    });
+}
+function CreateAccount() {
+    var username = $("#txtCreateAccountEmail").val();
+    var password = $("#txtCreateAccountPassword").val();
+    var userRoleID = "2";
+    $.ajax({
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        type: "POST",
+        url: "/Login/CreateAccount",
+        async: false,
+        data: JSON.stringify({ "username": username, "password": password, "userRoleID": userRoleID }),
+        success: function (data) {
+            var status = data;
+            if (status) {
+                window.location.reload();
+            } else { $("#lblEmailExist").show() }
         }
     });
 }
