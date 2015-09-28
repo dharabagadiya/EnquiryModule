@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@{ var userDetail = (CustomAuthentication.User)ViewData["UserDetail"]; }
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -15,8 +16,14 @@
                     <ul>
                         <li><a href="#">Join Installer Network</a></li>
                         <a class="app_btn left"></a>
-                        <button class="btn_normal_2 btn_signin left signin_popup_open">Sign in</button>
-                        <li>@*@Html.ActionLink("Sign in", "Login", "Account", new { @class = "btn_normal_2 btn_signin left signin_popup_open" })*@</li>
+                        @if (userDetail == null)
+                        {
+                            <button class="btn_normal_2 btn_signin left signin_popup_open" id="btn_signin">Sign in</button>
+                        }
+                        else
+                        {
+                            <button class="btn_normal_2 btn_signin btn_signin" id="btn_signout">Logout</button>
+                        }
                     </ul>
                 </div>
                 <div class="clr"></div>

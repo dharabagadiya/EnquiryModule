@@ -50,7 +50,7 @@ namespace CustomAuthentication
                 Context.SaveChanges();
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }

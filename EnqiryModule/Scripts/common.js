@@ -25,6 +25,7 @@ $(document).ready(function () {
     });
     $('#btnSignIn').off("click").on("click", function () { Login(); });
     $('#btnCreateAccount').off("click").on("click", function () { CreateAccount(); });
+    $('#btn_signout').off("click").on("click", function () { Logout(); });
 })
 function Login() {
     var username = $("#txtEmail").val();
@@ -60,6 +61,18 @@ function CreateAccount() {
             if (status) {
                 window.location.reload();
             } else { $("#lblEmailExist").show() }
+        }
+    });
+}
+function Logout() {
+    $.ajax({
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        type: "POST",
+        url: "/Login/LogOut",
+        async: false,
+        success: function (data) {
+            window.location.reload();
         }
     });
 }
