@@ -26,6 +26,7 @@ $(document).ready(function () {
     $('#btnSignIn').off("click").on("click", function () { Login(); });
     $('#btnCreateAccount').off("click").on("click", function () { CreateAccount(); });
     $('#btn_signout').off("click").on("click", function () { Logout(); });
+    $('#btnEnquiry').off("click").on("click", function () { AddEnquiry(); });
 })
 function Login() {
     var username = $("#txtEmail").val();
@@ -73,6 +74,31 @@ function Logout() {
         async: false,
         success: function (data) {
             window.location.reload();
+        }
+    });
+}
+function AddEnquiry()
+{
+    var pincode = $("#txtPincode").val();
+    var address = $("#txtAddress").val();
+    var optionOne = 'Option1';
+    var optionMulti = 'optionMulti';
+    var name = $("#txtName").val();
+    var mobileNumber = $("#txtMobileNumber").val();
+    var email = $("#txtEmail").val();
+    $.ajax({
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        type: "POST",
+        url: "/Enquiry/AddEnquiry",
+        async: false,
+        data: JSON.stringify({ "pincode": pincode, "address": address, "optionOne": optionOne, "optionMulti": optionMulti, "name": name, "mobileNumber": mobileNumber, "email": email }),
+        success: function (data) {
+            var status = data;
+            if (status) {
+                //window.location.reload();
+                alert("Success");
+            } else {  }
         }
     });
 }
