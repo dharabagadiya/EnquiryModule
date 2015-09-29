@@ -77,12 +77,13 @@ function Logout() {
         }
     });
 }
-function AddEnquiry()
-{
+function AddEnquiry() {
+    var multiOptionSelected = [];
+    $('.check_options').find('.selected').each(function () { multiOptionSelected.push($(this).find('.label').text()); });
     var pincode = $("#txtPincode").val();
     var address = $("#txtAddress").val();
-    var optionOne = 'Option1';
-    var optionMulti = 'optionMulti';
+    var optionOne = $('.radio_options').find('.selected').find('.label').text();
+    var optionMulti = multiOptionSelected.join(',');
     var name = $("#txtName").val();
     var mobileNumber = $("#txtMobileNumber").val();
     var email = $("#txtEmail").val();
@@ -98,7 +99,7 @@ function AddEnquiry()
             if (status) {
                 //window.location.reload();
                 alert("Success");
-            } else {  }
+            } else { }
         }
     });
 }
