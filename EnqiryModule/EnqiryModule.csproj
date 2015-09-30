@@ -220,6 +220,8 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\EnquiryList\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\EnqueryModule - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\EnqueryModule - Web Deploy.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomAuthentication\CustomAuthentication.csproj">
