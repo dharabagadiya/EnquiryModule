@@ -9,12 +9,11 @@ namespace EnqiryModule.Controllers
 {
     public class EnquiryListController : Controller
     {
-        // GET: EnquiryList
         public ActionResult Index()
         {
             var enquiryManager = new EnquiryManager();
             var getEnquiries = enquiryManager.GetEnquiries();
-            return View();
+            return View(getEnquiries);
         }
     }
 }
