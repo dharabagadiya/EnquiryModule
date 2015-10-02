@@ -28,6 +28,8 @@ namespace EnqiryModule
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       //"~/Content/bootstrap.css",
                       /*"~/Content/site.css",*/ "~/Content/solar_main.css", "~/Content/popup.css"));
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

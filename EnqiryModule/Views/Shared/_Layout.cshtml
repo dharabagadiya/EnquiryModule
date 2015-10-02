@@ -54,6 +54,40 @@
             </div>
         </div>
     </div>
+    <div id="signin_popup" class="popup">
+        <div class="popup_close_btn signin_popup_close"></div>
+        <h2 class="align_center">Sign In</h2>
+        <div class="social_login_btn top_20 facebook">
+            <span class="icon"></span>
+            <span class="label">Sign in with Facebook</span>
+        </div>
+        <div class="social_login_btn top_20 google">
+            <span class="icon"></span>
+            <span class="label">Sign in with Google</span>
+        </div>
+        <h3 class="top_20 align_center">OR</h3>
+        <div class="login_sec">
+            <ul class="tabs">
+                <li class="active" rel="new_user">New User</li>
+                <li rel="existing_user">Existing User</li>
+            </ul>
+            <div class="tab_content_group">
+                <div id="new_user" class="tab_content active">
+                    <label hidden="hidden" id="lblEmailExist" style="color:red">Email Already Exist</label>
+                    <input class="input top_10" type="email" placeholder="Email" id="txtCreateAccountEmail" required />
+                    <input class="input top_10" type="password" placeholder="Password" id="txtCreateAccountPassword" />
+                    @*<input class="input top_10" type="text" placeholder="Phone Number" id="txtCreateAccountPhoneNumber"/>*@
+                    <button class="btn block top_10" id="btnCreateAccount" type="submit">Create an Account</button>
+                </div>
+                <div id="existing_user" class="tab_content">
+                    <input class="input top_10" type="text" placeholder="Email" id="txtEmail" />
+                    <input class="input top_10" type="password" placeholder="Password" id="txtPassword" />
+                    <a class="forgot_pwd" href="#">Forgot Password ?</a>
+                    <button class="btn block" id="btnSignIn">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false);

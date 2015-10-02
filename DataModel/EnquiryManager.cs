@@ -37,5 +37,7 @@ namespace DataModel
         }
         public List<Enquiry> GetEnquiries()
         { return Context.Enquires.ToList(); }
+        public Enquiry GetEnquiryDetail(int id)
+        { return Context.Enquires.Where(model => model.EnquiryID == id).FirstOrDefault(); }
     }
 }

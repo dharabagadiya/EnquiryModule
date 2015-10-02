@@ -9,7 +9,6 @@ namespace EnqiryModule.Controllers
 {
     public class EnquiryController : BaseController
     {
-        // GET: Enquiry
         public ActionResult Index()
         {
             return View();
@@ -19,6 +18,12 @@ namespace EnqiryModule.Controllers
             var enquiryManager = new EnquiryManager();
             var status = enquiryManager.Add(pincode, address, optionOne, optionMulti, name, mobileNumber, email);
             return Json(status);
+        }
+        public PartialViewResult Detail(int id)
+        {
+            var enquiryManager = new DataModel.EnquiryManager();
+            var enquiryDetail = enquiryManager.GetEnquiryDetail(id);
+            return PartialView(enquiryDetail);
         }
     }
 }

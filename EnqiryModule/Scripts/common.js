@@ -27,7 +27,31 @@ $(document).ready(function () {
     $('#btnCreateAccount').off("click").on("click", function () { CreateAccount(); });
     $('#btn_signout').off("click").on("click", function () { Logout(); });
     $('#btnEnquiry').off("click").on("click", function () { AddEnquiry(); });
-})
+    BindEnquiryDetialLinkEvents();
+});
+function GetEnquiryDetail(id) {
+    $.ajax({
+        dataType: "html",
+        contentType: "application/json; charset=utf-8",
+        type: "POST",
+        url: "/Enquiry/Detail",
+        async: false,
+        data: JSON.stringify({ "id": id}),
+        success: function (data) {
+            $("#divEqueryDetailPopup").empty().append(data).popup({
+                opacity: 0.6,
+                transition: 'all 0.3s',
+                autoopen: true
+            });
+        }
+    });
+
+};
+function BindEnquiryDetialLinkEvents() {
+    $(".single_grid_wrapper").find(".lnkEnquiryDetailLink").off("click").on("click", function () {
+        GetEnquiryDetail(parseInt($(this).attr("data-enquiry-id")));
+    });
+}
 function Login() {
     var username = $("#txtEmail").val();
     var password = $("#txtPassword").val();

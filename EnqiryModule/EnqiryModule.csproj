@@ -222,6 +222,7 @@
     <Content Include="Views\EnquiryList\Index.cshtml" />
     <None Include="Properties\PublishProfiles\EnqueryModule - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\EnqueryModule - Web Deploy.pubxml" />
+    <Content Include="Views\Enquiry\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomAuthentication\CustomAuthentication.csproj">
