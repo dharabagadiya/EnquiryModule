@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace EnqiryModule
+namespace GreenPhyll
 {
     public class BundleConfig
     {

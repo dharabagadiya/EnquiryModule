@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using DataModel;
 
-namespace EnqiryModule.Controllers
+namespace GreenPhyll.Controllers
 {
     public class EnquiryController : BaseController
     {

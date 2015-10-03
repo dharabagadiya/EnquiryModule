@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace EnqiryModule.Controllers
+namespace GreenPhyll.Controllers
 {
     public class LoginController : Controller
     {

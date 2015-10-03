@@ -2,7 +2,7 @@
 using CustomAuthentication.Security;
 using System.Web.Mvc;
 
-namespace EnqiryModule.Controllers
+namespace GreenPhyll.Controllers
 {
     public class HomeController : BaseController
     {
