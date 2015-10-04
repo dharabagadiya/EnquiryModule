@@ -23,10 +23,23 @@ $(document).ready(function () {
         opacity: 0.6,
         transition: 'all 0.3s'
     });
+    $("#divEqueryDetailPopup").popup({
+        opacity: 0.6,
+        transition: 'all 0.3s',
+    });
+    $('#forgot_pwd_link').click(function () {
+        $('#login_sec').hide();
+        $('#forgot_password').show();
+    });
+    $('#back_to_login').click(function () {
+        $('#forgot_password').hide();
+        $('#login_sec').show();
+    });
     $('#btnSignIn').off("click").on("click", function () { Login(); });
     $('#btnCreateAccount').off("click").on("click", function () { CreateAccount(); });
     $('#btn_signout').off("click").on("click", function () { Logout(); });
     $('#btnEnquiry').off("click").on("click", function () { AddEnquiry(); });
+    $('#btnSendRequest').off("click").on("click", function () { AddjoinInstallerNetwork(); });
     BindEnquiryDetialLinkEvents();
 });
 function GetEnquiryDetail(id) {
@@ -36,7 +49,7 @@ function GetEnquiryDetail(id) {
         type: "POST",
         url: "/Enquiry/Detail",
         async: false,
-        data: JSON.stringify({ "id": id}),
+        data: JSON.stringify({ "id": id }),
         success: function (data) {
             $("#divEqueryDetailPopup").empty().append(data).popup({
                 opacity: 0.6,
@@ -110,20 +123,49 @@ function AddEnquiry() {
     var optionMulti = multiOptionSelected.join(',');
     var name = $("#txtName").val();
     var mobileNumber = $("#txtMobileNumber").val();
-    var email = $("#txtEmail").val();
+    var email = $("#txtEmailSlide").val();
+    var Field1 = $("#txtField1").val();
+    var Field2 = $("#txtField2").val();
+    var Field3 = $("#txtField3").val();
     $.ajax({
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         type: "POST",
         url: "/Enquiry/AddEnquiry",
         async: false,
-        data: JSON.stringify({ "pincode": pincode, "address": address, "optionOne": optionOne, "optionMulti": optionMulti, "name": name, "mobileNumber": mobileNumber, "email": email }),
+        data: JSON.stringify({ "pincode": pincode, "address": address, "optionOne": optionOne, "optionMulti": optionMulti, "name": name, "mobileNumber": mobileNumber, "email": email, "Field1": Field1, "Field2": Field2, "Field3": Field3 }),
         success: function (data) {
             var status = data;
             if (status) {
-                //window.location.reload();
-                alert("Success");
+                window.location.href = "Enquiry/ThankYou";
+                //alert("Success");
             } else { }
+        }
+    });
+}
+function AddjoinInstallerNetwork() {
+    var checkBoxField = [];
+    $("input[type='checkbox']:checked").each(function () { checkBoxField.push($(this).val()) });
+    var name = $("#txtName").val();
+    var email = $("#txtEmailJIN").val();
+    var designation = $("#txtDesignation").val();
+    var deskNumber = $("#txtDeskNumber").val();
+    var companyName = $("#txtCompanyName").val();
+    var mobileNumber = $("#txtMobileNumber").val();
+    var additionalNotes = $("#txtAdditionalNotes").val();
+    var radioField = $("input[type='radio']:checked").val();
+    var checkboxField = checkBoxField.join(',');
+    $.ajax({
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        type: "POST",
+        url: "/JoinInstallerNetwork/Add",
+        async: false,
+        data: JSON.stringify({ "name": name, "email": email, "mobileNumber": mobileNumber, "designation": designation, "deskNumber": deskNumber, "companyName": companyName, "additionalNotes": additionalNotes, "radioField": radioField, "checkboxField": checkboxField }),
+        success: function (data) {
+            var status = data;
+            if (status) { alert("success") }
+            else { }
         }
     });
 }

@@ -105,10 +105,11 @@ p{
 }
 
 .header{
+	box-shadow:0 2px 4px #ddd;
 }
 
 .header .logo{
-	margin-top:10px;
+	margin-top:14px;
 	float:left;
 	cursor:pointer;
 }
@@ -124,7 +125,7 @@ p{
 
 .navigation ul li a{
 	display:inline-block;
-	padding:16px 15px;
+	padding:19px 15px;
 	color:#000;
 }
 
@@ -203,7 +204,7 @@ p{
 
 .content_area{
 	padding:30px 0 50px 0;
-	background:url(../images/home_bg_grey.png) repeat-x top;
+	/* background:url(../images/home_bg_grey.png) repeat-x top; */
 	min-height:500px;
 }
 
@@ -444,8 +445,9 @@ p{
 }
 
 .footer_new{
-	padding:10px 0;
+	padding:6px 0;
 	background:#e9e9e9;
+	border-top:solid 1px #ccc;
 }
 
 .footer_new .links{
@@ -471,14 +473,14 @@ p{
 
 .form_slider_head{
 	color:#fff;
-	background:#00416f;
+	background:#05ba01;
 	padding:9px 0;
 	text-align:center;
 }
 
 .form_slider_wrapper{
-	color:#00416f;
-	padding:50px 0 20px 0;
+	color:#049a01;
+	padding:80px 0 20px 0;
 	min-height:400px;
 }
 
@@ -542,7 +544,7 @@ p{
 	display:inline-block;
 	margin:0 auto;
 	padding:30px;
-	background:rgba(0, 0, 0, .1);
+	background:#dff2df;
 }
 
 .form_slider .slides .input_element_holder.multiple_fields .icon_input{
@@ -571,7 +573,7 @@ p{
 	padding:0 10px;
 	border-bottom-left-radius:7px;
 	border-top-left-radius:7px;
-	background:#00416f;
+	background:#049a01;
 	width:21px;
 }
 
@@ -613,7 +615,7 @@ p{
 	padding:8px 30px;
 	cursor:pointer;
 	color:#fff;
-	background:#1abc9c;
+	background:#e98c2e;
 	text-align:center;
 	border:none;
 	font-size:1.2em;
@@ -623,7 +625,7 @@ p{
 	padding:4px 12px;
 	cursor:pointer;
 	color:#fff;
-	background:#f2bc01;
+	background:#e98c2e;
 	text-align:center;
 	border:none;
 	font-size:1em;
@@ -633,8 +635,9 @@ p{
 	padding:5px 20px !important;
 	line-height:14px;
 	font-size:1em !important;
-	margin-top:10px;
+	margin-top:14px;
 	margin-left:10px;
+	background:#55abf5;
 }
 
 .option_holder{
@@ -696,7 +699,7 @@ p{
 
 .home_image{
 	text-align:center;
-	margin:90px 0;
+	margin:70px 0 20px 0;
 }
 
 .app_btn{
@@ -706,7 +709,7 @@ p{
 	cursor:pointer;
 	display:inline-block;
 	margin-top:15px;
-	margin:15px 10px 0 10px;
+	margin:18px 10px 0 20px;
 }
 
 .home_icons{
@@ -748,7 +751,7 @@ p{
 }
 
 .single_grid_wrapper{
-	margin-top:20px;
+	padding-top:20px;
 }
 
 
@@ -800,4 +803,145 @@ p{
 
 .single_grid .value{
 	font-size:1.8em;
+}
+
+.user_grid_wrapper{
+	padding-top:70px;
+}
+
+
+.sub_title{
+	font-size:1em;
+	font-weight:bold;
+	padding-bottom:10px;
+}
+
+#app_tooltip ul{
+	width:276px;
+}
+
+#app_tooltip ul li{
+	width:80px;
+	float:left;
+	border:solid 1px #fff;
+	padding:10px 5px;
+}
+
+#app_tooltip ul li:hover{
+	border:solid 1px #eee;
+}
+
+#app_tooltip ul li a{
+	display:block;
+	text-align:center;
+}
+
+#app_tooltip ul li .icon{
+	display:block;
+	height:55px;
+	padding-bottom:10px;
+	text-align:center;
+}
+
+#app_tooltip ul li .icon img{
+	height:100%;
+	max-width:100%;
+}
+
+#app_tooltip ul li .label{
+	display:block;
+	padding-bottom:10px;
+	font-size:.9em;
+}
+
+.title_big{
+	padding:50px 0;
+	font-size:2.3em;
+	color:#049a01;
+	text-align:center;
+}
+
+.body_text_area{
+	margin-top:20px;
+}
+.body_text_big{
+	font-size:1.5em;
+	text-align:center;
+	line-height:1.8;
+	color:#666;
+}
+
+.body_text_big span{
+	font-weight:bold;
+	color:#049a01;
+}
+
+.sub_head{
+	padding:10px 0;
+	font-size:1.4em;
+	color:#049a01;
+}
+
+.form_area{
+	margin-top:20px;
+}
+
+.form_area ul li{
+	float:left;
+	width:47%;
+	margin-right:3%;
+	margin-bottom:20px;
+}
+
+.form_area ul li .label{
+	display:block;
+	padding-bottom:5px;
+	color:#666;
+	text-transform:uppercase;
+}
+
+.form_area ul li .input_area{
+	border:solid 1px #ddd;
+	padding:7px;
+	display:block;
+	border-radius:4px;
+}
+
+.form_area ul li .input_area input[type=text], .form_area ul li .input_area select, .form_area ul li .input_area textarea{
+	width:100%;
+	border:none;
+	background:none;
+}
+
+.home_text{
+	font-size:1.2em;
+	text-align:center;
+	line-height:1.8;
+	color:#666;
+	margin-bottom:70px;
+}
+
+.home_text span{
+	font-size:1em;
+	color:#999;
+}
+
+.full_width{
+	width:100% !important;
+}
+
+.no_border{
+	border:none !important;
+}
+
+.form_area .input_area span{
+	float:left;
+	margin-right:50px;
+}
+
+.page_title{
+	color:#049a01;
+	border-bottom:solid 1px #ddd;
+	padding-bottom:3px;
+	font-size:1.9em;
 }

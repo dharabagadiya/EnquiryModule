@@ -8,6 +8,14 @@
 	width:auto !important;
 }
 
+.tooltip{
+	background:#fff !important;
+	box-shadow:0px 0px 5px #999;
+}
+
+.tooltip_pointer{
+	margin:-18px auto 0 auto;
+}
 
 .popup .btn{
 	background:#1abc9c!important;

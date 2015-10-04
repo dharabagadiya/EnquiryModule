@@ -10,7 +10,7 @@ namespace DataModel
     public class EnquiryManager
     {
         private DataContext Context = new DataContext();
-        public bool Add(string pincode, string address, string optionOne, string optionMulti, string name, string mobileNumber, string email)
+        public bool Add(string pincode, string address, string optionOne, string optionMulti, string name, string mobileNumber, string email, float field1, float field2, float field3, int userId)
         {
             try
             {
@@ -23,6 +23,10 @@ namespace DataModel
                     Name = name,
                     MobileNo = mobileNumber,
                     Email = email,
+                    Field1 = field1,
+                    Field2 = field2,
+                    Field3 = field3,
+                    UserId = userId,
                     IsDeleted = false,
                     CreateDate = DateTime.Now,
                     UpdateDate = DateTime.Now

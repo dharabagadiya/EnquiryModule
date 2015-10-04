@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace GreenPhyll.Controllers
 {
-    public class EnquiryListController : Controller
+    public class EnquiryListController : BaseController
     {
         public ActionResult Index()
         {

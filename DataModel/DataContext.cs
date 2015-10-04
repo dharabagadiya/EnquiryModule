@@ -25,6 +25,6 @@ namespace DataModel
             //UserManager.OnModelCreating(modelBuilder);
         }
         public DbSet<Enquiry> Enquires { get; set; }
-        
+        public DbSet<JoinInstallerNetwork> JoinInstallerNetworks { get; set; }
     }
 }

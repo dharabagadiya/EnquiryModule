@@ -53,8 +53,10 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="DataContextInitilizer.cs" />
     <Compile Include="EnquiryManager.cs" />
+    <Compile Include="JoinInstallerNetworkManager.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modal\Enquiry.cs" />
+    <Compile Include="Modal\JoinInstallerNetwork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -20,6 +20,10 @@ namespace DataModel.Modal
         public String PropertyAddress { get; set; }
         public String OptionOne { get; set; }
         public String OptionMultiple { get; set; }
+        public float Field1 { get; set; }
+        public float Field2 { get; set; }
+        public float Field3 { get; set; }
+        public int UserId { get; set; }
         [DefaultValue(false)]
         public bool IsDeleted { get; set; }
         public DateTime CreateDate { get; set; }
