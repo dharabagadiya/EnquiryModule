@@ -236,6 +236,10 @@
       <Project>{f409e6ef-e952-4a7e-b962-8e42a18922c4}</Project>
       <Name>DataModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{0fe427ed-ebbe-4892-996f-1b48c3127a10}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
