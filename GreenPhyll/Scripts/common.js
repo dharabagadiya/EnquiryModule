@@ -35,6 +35,10 @@ $(document).ready(function () {
         $('#forgot_password').hide();
         $('#login_sec').show();
     });
+    $('#app_tooltip').popup({
+        type: 'tooltip',
+        vertical: 'bottom'
+    });
     $('#btnSignIn').off("click").on("click", function () { Login(); });
     $('#btnCreateAccount').off("click").on("click", function () { CreateAccount(); });
     $('#btn_signout').off("click").on("click", function () { Logout(); });

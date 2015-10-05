@@ -23,7 +23,7 @@
                         {
                             <button class="btn_normal_2 left btn_signin btn_signin" id="btn_signout">Logout</button>
                         }
-                        <a class="app_btn left"></a>
+                        <a class="app_btn left app_tooltip_open"></a>
                     </ul>
                 </div>
                 <div class="clr"></div>
@@ -54,48 +54,6 @@
             </div>
         </div>
     </div>
-    @*<div id="signin_popup" class="popup">
-            <div class="popup_close_btn signin_popup_close"></div>
-            <h2 class="align_center">Sign In</h2>
-            <div class="social_login_btn top_20 facebook">
-                <span class="icon"></span>
-                <span class="label">Sign in with Facebook</span>
-            </div>
-            <div class="social_login_btn top_20 google">
-                <span class="icon"></span>
-                <span class="label">Sign in with Google</span>
-            </div>
-            <h3 class="top_20 align_center">OR</h3>
-            <div class="login_sec">
-                <ul class="tabs">
-                    <li class="active" rel="new_user">New User</li>
-                    <li rel="existing_user">Existing User</li>
-                </ul>
-                <div class="tab_content_group">
-                    <div id="new_user" class="tab_content active">
-                        <label hidden="hidden" id="lblEmailExist" style="color:red">Email Already Exist</label>
-                        <input class="input top_10" type="email" placeholder="Email" id="txtCreateAccountEmail" required />
-                        <input class="input top_10" type="password" placeholder="Password" id="txtCreateAccountPassword" />
-                        <button class="btn block top_10" id="btnCreateAccount" type="submit">Create an Account</button>
-                    </div>
-                    <div id="existing_user" class="tab_content">
-                        <input class="input top_10" type="text" placeholder="Email" id="txtEmail" />
-                        <input class="input top_10" type="password" placeholder="Password" id="txtPassword" />
-                        <a id="forgot_pwd_link" class="forgot_pwd" href="#">Forgot Password ?</a>
-                        <button class="btn block" id="btnSignIn">Sign In</button>
-                    </div>
-                </div>
-            </div>
-            <div id="forgot_password" class="tab_content">
-                <h3 class="sub_title">Reset Password</h3>
-                <p>
-                    Enter the email address associated with your account and we’ll email you a link to reset your password.
-                </p>
-                <input class="input top_10 no_label grey_text" type="text" title="Enter Your Email" />
-                <a id="back_to_login" class="forgot_pwd" href="#">< Back to Login</a>
-                <button class="btn block">Send Rest Link</button>
-            </div>
-        </div>*@
     <div id="signin_popup" class="popup">
         <div class="popup_close_btn signin_popup_close"></div>
         <h2 class="align_center">Sign In</h2>
@@ -117,6 +75,7 @@
             </ul>
             <div class="tab_content_group">
                 <div id="new_user" class="tab_content active">
+                    <label hidden="hidden" id="lblEmailExist" style="color:red">Email Already Exist</label>
                     <input class="input top_10" type="email" placeholder="Email" id="txtCreateAccountEmail" />
                     <input class="input top_10" type="password" placeholder="Password" id="txtCreateAccountPassword" />
                     <button class="btn block top_10" id="btnCreateAccount" type="submit">Create an Account</button>
@@ -140,6 +99,66 @@
             <button class="btn block">Send Rest Link</button>
         </div>
 
+    </div>
+    <div id="app_tooltip" class="popup tooltip">
+        <img class="tooltip_pointer" src="images/up_pointer_tooltip.png" />
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon"><img src="images/option_4_icon.png" /></span>
+                    <span class="label">App 1</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><img src="images/service_3.png" /></span>
+                    <span class="label">App 2</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><img src="images/option_2_icon.png" /></span>
+                    <span class="label">App 3</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><img src="images/option_1_icon.png" /></span>
+                    <span class="label">App 4</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><img src="images/trust_icon.png" /></span>
+                    <span class="label">App 5</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><img src="images/option_3_icon.png" /></span>
+                    <span class="label">App 6</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><img src="images/service_1.png" /></span>
+                    <span class="label">App 7</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><img src="images/option_5_icon.png" /></span>
+                    <span class="label">App 8</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><img src="images/service_2.png" /></span>
+                    <span class="label">App 9</span>
+                </a>
+            </li>
+            <div class="clr"></div>
+        </ul>
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
