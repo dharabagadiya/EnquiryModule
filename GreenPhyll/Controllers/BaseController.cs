@@ -46,6 +46,7 @@ namespace GreenPhyll.Controllers
             StartupScript = string.Empty;
 
             base.OnActionExecuting(filterContext);
+
         }
         #endregion
     }

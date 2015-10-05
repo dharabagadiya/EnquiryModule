@@ -10,15 +10,14 @@ namespace Utilities
         {
             using (var mail = new MailMessage())
             {
-                mail.From = new MailAddress("mehul.chandroliya@gmail.com");
+                mail.From = new MailAddress("mkaccountant@outlook.com");
                 mail.To.Add(toEmailID);
                 mail.Subject = "Test mail";
                 mail.Body = content;
                 mail.IsBodyHtml = true;
-                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                using (SmtpClient smtp = new SmtpClient("smtp.live.com", 587))
                 {
-                    smtp.Credentials = new NetworkCredential("mehul.chandroliya@gmail.com", "dhara@9979959417");
-                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new NetworkCredential("mkaccountant@outlook.com", "mM@9410827811");
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                     smtp.EnableSsl = true;
                     smtp.Send(mail);

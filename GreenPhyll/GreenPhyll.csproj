@@ -226,6 +226,7 @@
     <Content Include="Views\Enquiry\Detail.cshtml" />
     <Content Include="Views\Enquiry\ThankYou.cshtml" />
     <Content Include="Views\JoinInstallerNetwork\Index.cshtml" />
+    <Content Include="Views\Enquiry\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomAuthentication\CustomAuthentication.csproj">

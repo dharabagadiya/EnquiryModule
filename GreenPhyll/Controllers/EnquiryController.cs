@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DataModel;
+using System.IO;
 
 namespace GreenPhyll.Controllers
 {
@@ -28,6 +29,13 @@ namespace GreenPhyll.Controllers
         }
         public ActionResult ThankYou()
         {
+            using (var sw = new StringWriter())
+            {
+                ViewEngineResult viewResult = ViewEngines.Engines.FindPartialView(ControllerContext, "Success");
+                ViewContext viewContext = new ViewContext(ControllerContext, viewResult.View, ViewData, TempData, sw);
+                viewResult.View.Render(viewContext, sw);
+                Utilities.Email.SendMail("mehul.patel20010@gmail.com", sw.GetStringBuilder().ToString());
+            }
             return View();
         }
     }

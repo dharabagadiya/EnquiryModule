@@ -16,9 +16,6 @@ namespace GreenPhyll
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            //Utilities.Email.SendMail("mehul.patel20010@gmail.com", "This is Goood");
-
         }
     }
 }
