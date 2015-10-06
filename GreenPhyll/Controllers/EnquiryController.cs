@@ -19,7 +19,8 @@ namespace GreenPhyll.Controllers
             var userId = UserDetail == null ? 0 : UserDetail.UserId;
             var enquiryManager = new EnquiryManager();
             var status = enquiryManager.Add(pincode, address, optionOne, optionMulti, name, mobileNumber, email, Field1, Field2, Field3, userId);
-            return Json(status);
+            Session["Enquery_ID"] = status;
+            return Json(status != 0);
         }
         public PartialViewResult Detail(int id)
         {
@@ -29,12 +30,25 @@ namespace GreenPhyll.Controllers
         }
         public ActionResult ThankYou()
         {
-            using (var sw = new StringWriter())
+            if (Session["Enquery_ID"] != null)
             {
-                ViewEngineResult viewResult = ViewEngines.Engines.FindPartialView(ControllerContext, "Success");
-                ViewContext viewContext = new ViewContext(ControllerContext, viewResult.View, ViewData, TempData, sw);
-                viewResult.View.Render(viewContext, sw);
-                Utilities.Email.SendMail("mehul.patel20010@gmail.com", sw.GetStringBuilder().ToString());
+                var enquiryID = (int)Session["Enquery_ID"];
+                var enquiryManager = new EnquiryManager();
+                var enquiryDetail = enquiryManager.GetEnquiryDetail(enquiryID);
+                using (var sw = new StringWriter())
+                {
+                    ViewData.Model = enquiryDetail;
+                    ViewEngineResult viewResult = ViewEngines.Engines.FindPartialView(ControllerContext, "Success");
+                    ViewContext viewContext = new ViewContext(ControllerContext, viewResult.View, ViewData, TempData, sw);
+                    viewResult.View.Render(viewContext, sw);
+                    try
+                    {
+                        Utilities.Email.SendMail(enquiryDetail.Email, sw.GetStringBuilder().ToString());
+                    }
+                    catch
+                    {
+                    }
+                }
             }
             return View();
         }

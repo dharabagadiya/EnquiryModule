@@ -10,11 +10,11 @@ namespace DataModel
     public class EnquiryManager
     {
         private DataContext Context = new DataContext();
-        public bool Add(string pincode, string address, string optionOne, string optionMulti, string name, string mobileNumber, string email, float field1, float field2, float field3, int userId)
+        public int Add(string pincode, string address, string optionOne, string optionMulti, string name, string mobileNumber, string email, float field1, float field2, float field3, int userId)
         {
             try
             {
-                Context.Enquires.Add(new Modal.Enquiry
+                var enquiry = new Modal.Enquiry
                 {
                     Pincode = pincode,
                     PropertyAddress = address,
@@ -30,13 +30,15 @@ namespace DataModel
                     IsDeleted = false,
                     CreateDate = DateTime.Now,
                     UpdateDate = DateTime.Now
-                });
-                var status = Context.SaveChanges();
-                return true;
+                };
+
+                Context.Enquires.Add(enquiry);
+                Context.SaveChanges();
+                return enquiry.EnquiryID;
             }
             catch (Exception ex)
             {
-                return false;
+                return 0;
             }
         }
         public List<Enquiry> GetEnquiries()
