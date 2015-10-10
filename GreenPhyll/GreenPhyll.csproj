@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EnqiryModule</RootNamespace>
-    <AssemblyName>EnqiryModule</AssemblyName>
+    <RootNamespace>GreenPhyll</RootNamespace>
+    <AssemblyName>GreenPhyll</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -127,6 +127,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Enquiry1Controller.cs" />
+    <Compile Include="Controllers\Enquiry2Controller.cs" />
+    <Compile Include="Controllers\Enquiry3Controller.cs" />
+    <Compile Include="Controllers\Enquiry4Controller.cs" />
     <Compile Include="Controllers\EnquiryController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EnquiryListController.cs" />
@@ -227,6 +231,10 @@
     <Content Include="Views\Enquiry\ThankYou.cshtml" />
     <Content Include="Views\JoinInstallerNetwork\Index.cshtml" />
     <Content Include="Views\Enquiry\Success.cshtml" />
+    <Content Include="Views\Enquiry1\Index.cshtml" />
+    <Content Include="Views\Enquiry2\Index.cshtml" />
+    <Content Include="Views\Enquiry3\Index.cshtml" />
+    <Content Include="Views\Enquiry4\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomAuthentication\CustomAuthentication.csproj">
