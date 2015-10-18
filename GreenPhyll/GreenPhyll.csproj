@@ -127,24 +127,28 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\Enquiry1Controller.cs" />
-    <Compile Include="Controllers\Enquiry2Controller.cs" />
+    <Compile Include="Controllers\BioController.cs" />
     <Compile Include="Controllers\Enquiry3Controller.cs" />
     <Compile Include="Controllers\Enquiry4Controller.cs" />
     <Compile Include="Controllers\EnquiryController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EnquiryListController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HydroController.cs" />
     <Compile Include="Controllers\JoinInstallerNetworkController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SolarController.cs" />
+    <Compile Include="Controllers\WindController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\popup.css" />
-    <Content Include="Content\solar_main.css" />
+    <Content Include="Content\fonts\helvetica_condenced\helvetica-condensed.svg" />
+    <Content Include="Content\fonts\helvetica_light\helvetica-light.svg" />
+    <Content Include="Content\Plugins\popup.css" />
+    <Content Include="Content\Plugins\solar_main.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="images\agricultural_icon.png" />
@@ -198,11 +202,13 @@
     <Content Include="images\up_pointer_tooltip.png" />
     <Content Include="images\watsapp_icon.png" />
     <Content Include="images\youtube_icon.png" />
-    <Content Include="Scripts\common.js" />
-    <Content Include="Scripts\form_slider.js" />
-    <Content Include="Scripts\jquery.js" />
-    <Content Include="Scripts\jquery.popupoverlay.js" />
-    <Content Include="Scripts\tabs.js" />
+    <Content Include="Scripts\Common\common.js" />
+    <Content Include="Scripts\Plugins\form_slider.js" />
+    <Content Include="Scripts\Plugins\jquery.js" />
+    <Content Include="Scripts\Plugins\jquery.popupoverlay.js" />
+    <Content Include="Scripts\Plugins\tabs.js" />
+    <Content Include="Scripts\Solar\solar.js" />
+    <Content Include="Scripts\Wind\wind.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -225,7 +231,17 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Views\EnquiryList\Index.cshtml" />
+    <Content Include="Content\fonts\helvetica_condenced\helvetica-condensed.eot" />
+    <Content Include="Content\fonts\helvetica_condenced\helvetica-condensed.otf" />
+    <Content Include="Content\fonts\helvetica_condenced\helvetica-condensed.ttf" />
+    <Content Include="Content\fonts\helvetica_condenced\helvetica-condensed.woff" />
+    <Content Include="Content\fonts\helvetica_light\helvetica-light.eot" />
+    <Content Include="Content\fonts\helvetica_light\helvetica-light.otf" />
+    <Content Include="Content\fonts\helvetica_light\helvetica-light.ttf" />
+    <Content Include="Content\fonts\helvetica_light\helvetica-light.woff" />
+    <None Include="Properties\PublishProfiles\EnqueryModule - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\EnqueryModule - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\EnqueryModule - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\EnqueryModule - Web Deploy.pubxml" />
     <Content Include="Views\Enquiry\Detail.cshtml" />
     <Content Include="Views\Enquiry\ThankYou.cshtml" />
@@ -235,6 +251,10 @@
     <Content Include="Views\Enquiry2\Index.cshtml" />
     <Content Include="Views\Enquiry3\Index.cshtml" />
     <Content Include="Views\Enquiry4\Index.cshtml" />
+    <Content Include="Views\Solar\Index.cshtml" />
+    <Content Include="Views\Wind\Index.cshtml" />
+    <Content Include="Views\Hydro\Index.cshtml" />
+    <Content Include="Views\Bio\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomAuthentication\CustomAuthentication.csproj">

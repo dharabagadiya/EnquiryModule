@@ -42,8 +42,12 @@ namespace GreenPhyll.Controllers
             ViewData["Controller_Name"] = ControllerName;
             ViewData["UserDetail"] = UserDetail;
 
+            //BundleConfig.AddScript("~/Scripts/Users", "common.js", ControllerName);
+
             Script = string.Empty;
             StartupScript = string.Empty;
+
+            Script = string.Format("var pageName = \"{0}\";", filterContext.RouteData.Values["controller"].ToString());
 
             base.OnActionExecuting(filterContext);
 

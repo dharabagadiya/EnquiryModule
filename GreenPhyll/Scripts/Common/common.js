@@ -1,4 +1,3 @@
-// JavaScript Document$(document).ready(function(){
 $(document).ready(function () {
     $('.no_label').each(function () {
         var value = $(this).attr('title');
@@ -43,8 +42,8 @@ $(document).ready(function () {
     $('#btnCreateAccount').off("click").on("click", function () { CreateAccount(); });
     $('#btn_signout').off("click").on("click", function () { Logout(); });
     $('#btnEnquiry').off("click").on("click", function () { AddEnquiry(); });
-    $('#btnEnquiry1').off("click").on("click", function () { AddEnquiry1(); });
-    $('#btnEnquiry2').off("click").on("click", function () { AddEnquiry2(); });
+    //$('#btnEnquiry1').off("click").on("click", function () { AddEnquiry1(); });
+    //$('#btnEnquiry2').off("click").on("click", function () { AddEnquiry2(); });
     $('#btnEnquiry3').off("click").on("click", function () { AddEnquiry3(); });
     $('#btnEnquiry4').off("click").on("click", function () { AddEnquiry4(); });
     $('#btnSendRequest').off("click").on("click", function () { AddjoinInstallerNetwork(); });

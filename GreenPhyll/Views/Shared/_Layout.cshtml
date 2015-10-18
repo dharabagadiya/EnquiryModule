@@ -5,7 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Enqiry</title>
-    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/css")*@
+    @Styles.Render(BundleConfig.GetStylesBundlePath(ViewData["Controller_Name"].ToString()).ToArray())
 </head>
 <body>
     <div id="wrapper">
@@ -160,8 +161,15 @@
             <div class="clr"></div>
         </ul>
     </div>
-    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false)*@
+    @Scripts.Render(BundleConfig.GetScriptsBundlePath(ViewData["Controller_Name"].ToString()).ToArray())
+    <script type="text/javascript">
+        @Html.Raw(ViewData["View_Script"].ToString())
+        $(document).ready(function () {
+            @ViewData["View_StartupScript"].ToString()
+        });
+    </script>
 </body>
 </html>

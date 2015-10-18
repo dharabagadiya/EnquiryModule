@@ -25,10 +25,10 @@ namespace DataModel
             //UserManager.OnModelCreating(modelBuilder);
         }
         public DbSet<Enquiry> Enquires { get; set; }
-        public DbSet<Enquiry1> Enquires1 { get; set; }
-        public DbSet<Enquiry2> Enquires2 { get; set; }
         public DbSet<Enquiry3> Enquires3 { get; set; }
         public DbSet<Enquiry4> Enquires4 { get; set; }
+        public DbSet<Solar> Solars { get; set; }
+        public DbSet<Wind> Winds { get; set; }
         public DbSet<JoinInstallerNetwork> JoinInstallerNetworks { get; set; }
     }
 }

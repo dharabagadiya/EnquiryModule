@@ -6,35 +6,33 @@ using System.Threading.Tasks;
 
 namespace DataModel
 {
-    public class Enquiry1Manager
+    public class SolarManager
     {
         private DataContext Context = new DataContext();
-        public int Add(string pincode, string address, string firstOption, string secondOption, string name, string mobileNumber, string email, string lorem, string ipsum, string morbi, string dapibus,int userId)
+        public int Add(string SolarServiceType, string ApplicantType, string pincode, string address, float GPSLatitude, float GPSLongitude, float MonthlyElectricityBill, float ProposedCapacityKW, float ShadowFreeArea, float IntallationReqForm, string name, string mobileNumber, string email,int userId)
         {
             try
             {
-                var enquiry1 = new Modal.Enquiry1
+                var Solar = new Modal.Solar
                 {
+                    SolarServiceType = SolarServiceType,
+                    ApplicantType = ApplicantType,
                     Pincode = pincode,
                     Address = address,
-                    FirstOption = firstOption,
-                    SecondOption = secondOption,
+                    GPSLatitude = GPSLatitude,
+                    GPSLongitude= GPSLongitude,
                     Name = name,
                     MobileNo = mobileNumber,
                     Email = email,
-                    Lorem = lorem,
-                    Ipsum = ipsum,
-                    Morbi = morbi,
-                    Dapibus=dapibus,
                     UserId = userId,
                     IsDeleted = false,
                     CreateDate = DateTime.Now,
                     UpdateDate = DateTime.Now
                 };
 
-                Context.Enquires1.Add(enquiry1);
+                Context.Solars.Add(Solar);
                 Context.SaveChanges();
-                return enquiry1.Enquiry1ID;
+                return Solar.SolarID;
             }
             catch (Exception ex)
             {
