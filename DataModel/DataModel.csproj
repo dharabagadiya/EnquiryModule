@@ -50,19 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BioManager.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="DataContextInitilizer.cs" />
     <Compile Include="Modal\Wind.cs" />
     <Compile Include="SolarManager.cs" />
     <Compile Include="WindManager.cs" />
-    <Compile Include="Enquiry3Manager.cs" />
-    <Compile Include="Enquiry4Manager.cs" />
+    <Compile Include="HydroManager.cs" />
     <Compile Include="EnquiryManager.cs" />
     <Compile Include="JoinInstallerNetworkManager.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modal\Enquiry.cs" />
-    <Compile Include="Modal\Enquiry3.cs" />
-    <Compile Include="Modal\Enquiry4.cs" />
+    <Compile Include="Modal\Hydro.cs" />
+    <Compile Include="Modal\Bio.cs" />
     <Compile Include="Modal\JoinInstallerNetwork.cs" />
     <Compile Include="Modal\Solar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

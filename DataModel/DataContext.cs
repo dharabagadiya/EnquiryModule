@@ -25,8 +25,8 @@ namespace DataModel
             //UserManager.OnModelCreating(modelBuilder);
         }
         public DbSet<Enquiry> Enquires { get; set; }
-        public DbSet<Enquiry3> Enquires3 { get; set; }
-        public DbSet<Enquiry4> Enquires4 { get; set; }
+        public DbSet<Hydro> Hydros { get; set; }
+        public DbSet<Bio> Bios { get; set; }
         public DbSet<Solar> Solars { get; set; }
         public DbSet<Wind> Winds { get; set; }
         public DbSet<JoinInstallerNetwork> JoinInstallerNetworks { get; set; }

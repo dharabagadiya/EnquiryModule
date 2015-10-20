@@ -9,7 +9,9 @@ namespace DataModel
     public class SolarManager
     {
         private DataContext Context = new DataContext();
-        public int Add(string SolarServiceType, string ApplicantType, string pincode, string address, float GPSLatitude, float GPSLongitude, float MonthlyElectricityBill, float ProposedCapacityKW, float ShadowFreeArea, float IntallationReqForm, string name, string mobileNumber, string email,int userId)
+        public int Add(string SolarServiceType, string ApplicantType, string pincode, string address, float GPSLatitude,
+            float GPSLongitude, float MonthlyElectricityBill, float ProposedCapacityKW, float ShadowFreeArea,
+            string IntallationReqForm, string name, string mobileNumber, string email, int userId)
         {
             try
             {
@@ -20,7 +22,11 @@ namespace DataModel
                     Pincode = pincode,
                     Address = address,
                     GPSLatitude = GPSLatitude,
-                    GPSLongitude= GPSLongitude,
+                    GPSLongitude = GPSLongitude,
+                    MonthlyElectricityBill = MonthlyElectricityBill,
+                    ProposedCapacityKW = ProposedCapacityKW,
+                    ShadowFreeArea = ShadowFreeArea,
+                    IntallationReqForm = IntallationReqForm,
                     Name = name,
                     MobileNo = mobileNumber,
                     Email = email,

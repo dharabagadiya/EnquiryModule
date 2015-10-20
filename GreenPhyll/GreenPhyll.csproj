@@ -128,8 +128,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BioController.cs" />
-    <Compile Include="Controllers\Enquiry3Controller.cs" />
-    <Compile Include="Controllers\Enquiry4Controller.cs" />
     <Compile Include="Controllers\EnquiryController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EnquiryListController.cs" />
@@ -202,7 +200,9 @@
     <Content Include="images\up_pointer_tooltip.png" />
     <Content Include="images\watsapp_icon.png" />
     <Content Include="images\youtube_icon.png" />
+    <Content Include="Scripts\Bio\bio.js" />
     <Content Include="Scripts\Common\common.js" />
+    <Content Include="Scripts\Hydro\hydro.js" />
     <Content Include="Scripts\Plugins\form_slider.js" />
     <Content Include="Scripts\Plugins\jquery.js" />
     <Content Include="Scripts\Plugins\jquery.popupoverlay.js" />
@@ -247,10 +247,6 @@
     <Content Include="Views\Enquiry\ThankYou.cshtml" />
     <Content Include="Views\JoinInstallerNetwork\Index.cshtml" />
     <Content Include="Views\Enquiry\Success.cshtml" />
-    <Content Include="Views\Enquiry1\Index.cshtml" />
-    <Content Include="Views\Enquiry2\Index.cshtml" />
-    <Content Include="Views\Enquiry3\Index.cshtml" />
-    <Content Include="Views\Enquiry4\Index.cshtml" />
     <Content Include="Views\Solar\Index.cshtml" />
     <Content Include="Views\Wind\Index.cshtml" />
     <Content Include="Views\Hydro\Index.cshtml" />

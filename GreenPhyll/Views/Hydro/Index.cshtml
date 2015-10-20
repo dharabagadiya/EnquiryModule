@@ -9,31 +9,31 @@
         <span class="next_slide"></span>
         <div id="slides_group" class="slides_group">
             <div id="form_slide_1" class="slides">
-                <h1 class="slide_title">Screen One</h1>
-                <div class="option_holder radio_options FirstOption">
+                <h1 class="slide_title">State whether you are</h1>
+                <div class="option_holder radio_options ApplicantType">
                     <div class="option_box">
                         <img class="icon" src="images/option_2_icon.png" />
-                        <h3 class="label">Option 1</h3>
+                        <h3 class="label">Individual</h3>
                         <span class="selectable"></span>
                     </div>
                     <div class="option_box">
                         <img class="icon" src="images/option_3_icon.png" />
-                        <h3 class="label">Option 2</h3>
+                        <h3 class="label">Corporates</h3>
                         <span class="selectable"></span>
                     </div>
                     <div class="option_box">
                         <img class="icon" src="images/option_4_icon.png" />
-                        <h3 class="label">Option 3</h3>
+                        <h3 class="label">Industries</h3>
                         <span class="selectable"></span>
                     </div>
                     <div class="option_box">
                         <img class="icon" src="images/option_3_icon.png" />
-                        <h3 class="label">Option 4</h3>
+                        <h3 class="label">Trust\Co-Ops\NGOs</h3>
                         <span class="selectable"></span>
                     </div>
                     <div class="option_box">
                         <img class="icon" src="images/option_4_icon.png" />
-                        <h3 class="label">Option 5</h3>
+                        <h3 class="label">Govt Organizations</h3>
                         <span class="selectable"></span>
                     </div>
                 </div>
@@ -43,15 +43,19 @@
                 </div>
             </div>
             <div id="form_slide_2" class="slides">
-                <h1 class="slide_title">What is the Property Address</h1>
-                <div class="input_element_holder">
-                    <div class="icon_input textarea" style="margin-bottom:15px;">
-                        <span class="icon"><img src="images/location_icon_white.png" /></span>
-                        <textarea class="no_label grey_text" title="Enter Address" id="txtAddress"></textarea>
+                <h1 class="slide_title">Applicant \ Organization Details</h1>
+                <div class="input_element_holder multiple_fields">
+                    <div class="icon_input">
+                        <span class="icon"><img src="images/name_icon.png" /></span>
+                        <input class="no_label grey_text" type="text" title="Name of Applicant \ Organization" id="txtApplicantName" />
                     </div>
                     <div class="icon_input">
-                        <span class="icon"><img src="images/pin_code_icon.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Pincode" id="txtPincode" />
+                        <span class="icon"><img src="images/mobile_icon_white.png" /></span>
+                        <input class="no_label grey_text" type="text" title="Parmanent Account Number (PAN)" id="txtPAN" />
+                    </div>
+                    <div class="icon_input">
+                        <span class="icon"><img src="images/email_icon_white.png" /></span>
+                        <input class="no_label grey_text" type="text" title="Company Identification Number (CIN)" id="txtCIN" />
                     </div>
                 </div>
                 <div class="clr"></div>
@@ -60,19 +64,23 @@
                 </div>
             </div>
             <div id="form_slide_3" class="slides">
-                <h1 class="slide_title">Screen Three</h1>
+                <h1 class="slide_title">Location of the proposed Hydro farm</h1>
                 <div class="input_element_holder multiple_fields">
-                    <div class="icon_input">
-                        <span class="icon"><img src="images/name_icon.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Amet" id="txtCompanyName" />
+                    <div class="icon_input textarea" style="margin-bottom:15px;">
+                        <span class="icon"><img src="images/location_icon_white.png" /></span>
+                        <textarea class="no_label grey_text" title="Address" id="txtAddress"></textarea>
                     </div>
                     <div class="icon_input">
-                        <span class="icon"><img src="images/mobile_icon_white.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Consectetur" id="txtPAN" />
+                        <span class="icon"><img src="images/pin_code_icon.png" /></span>
+                        <input class="no_label grey_text" type="text" title="Pincode" id="txtPincode" />
                     </div>
                     <div class="icon_input">
-                        <span class="icon"><img src="images/email_icon_white.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Adipiscing" id="txtCIN" />
+                        <span class="icon"><img src="../images/pin_code_icon.png" /></span>
+                        <input class="no_label grey_text" type="text" title="Latitude" id="txtGPSLatitude" />
+                    </div>
+                    <div class="icon_input">
+                        <span class="icon"><img src="../images/pin_code_icon.png" /></span>
+                        <input class="no_label grey_text" type="text" title="Longitude" id="txtGPSLongitude" />
                     </div>
                 </div>
                 <div class="clr"></div>
@@ -81,23 +89,23 @@
                 </div>
             </div>
             <div id="form_slide_4" class="slides">
-                <h1 class="slide_title">Screen Four</h1>
+                <h1 class="slide_title">Hydro Project Details</h1>
                 <div class="input_element_holder multiple_fields">
                     <div class="icon_input">
                         <span class="icon"><img src="images/radio_on.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Elit" id="txtElit" />
+                        <input class="no_label grey_text" type="text" title="No. of turbines planned" id="txtTotalTurbinesPlanned" />
                     </div>
                     <div class="icon_input">
                         <span class="icon"><img src="images/radio_on.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Quisque" id="txtDonec" />
+                        <input class="no_label grey_text" type="text" title="Capacity of the proposed hydro project" id="txtProposedCapacity" />
                     </div>
                     <div class="icon_input">
                         <span class="icon"><img src="images/facebook_icon_white.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Ultrices" id="txtUltrices" />
+                        <input class="no_label grey_text" type="text" title="Estimated cost of the proposed project" id="txtEstimatedProjectCost" />
                     </div>
                     <div class="icon_input">
                         <span class="icon"><img src="images/google_plus_icon_white.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Lectus" id="txtLectus" />
+                        <input class="no_label grey_text" type="text" title="Average turnover of the organisation in the last 3 years" id="txtAvgLast3yrTurnOver" />
                     </div>
                 </div>
                 <div class="clr"></div>
@@ -106,11 +114,11 @@
                 </div>
             </div>
             <div id="form_slide_5" class="slides">
-                <h1 class="slide_title">Screen Five</h1>
+                <h1 class="slide_title">Contact Details</h1>
                 <div class="input_element_holder multiple_fields">
                     <div class="icon_input">
                         <span class="icon"><img src="images/name_icon.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Name" id="txtName" />
+                        <input class="no_label grey_text" type="text" title="Contact Person Name" id="txtName" />
                     </div>
                     <div class="icon_input">
                         <span class="icon"><img src="images/mobile_icon_white.png" /></span>
@@ -118,7 +126,7 @@
                     </div>
                     <div class="icon_input">
                         <span class="icon"><img src="images/email_icon_white.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Email" id="txtEmailEnquiry3" />
+                        <input class="no_label grey_text" type="text" title="Email" id="txtEmailHydro" />
                     </div>
                 </div>
                 <div class="clr"></div>
@@ -127,7 +135,7 @@
                     <input type="checkbox" /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus sem pretium nunc semper consectetur. Integer posuere arcu eget mi molestie
                 </P>
                 <div class="btn_area">
-                    <button class="btn_normal_2" id="btnEnquiry3">Submit</button>
+                    <button class="btn_normal_2" id="btnHydroSubmit">Submit</button>
                 </div>
             </div>
         </div>
