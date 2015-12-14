@@ -9,9 +9,7 @@ namespace DataModel
     public class BioManager
     {
         private DataContext Context = new DataContext();
-        public int Add(string bioServiceType, string applicantType, string applicantName, string pan, string cin, string pincode,
-            string address, float gPSLatitude, float gPSLongitude, float proposedCapacity, float estimatedProjectCost,
-            float avgLast3yrTurnOver, string companyName, string name, string mobileNumber, string email, int userId)
+        public int Add(string bioServiceType, string applicantType, string applicantName, string pan, string cin, string pincode, string address, float proposedCapacity, float estimatedProjectCost, float avgLast3yrTurnOver, string companyName, string name, string mobileNumber, string email, int userId, string location)
         {
             try
             {
@@ -24,8 +22,6 @@ namespace DataModel
                     CIN = cin,
                     Pincode = pincode,
                     Address = address,
-                    GPSLatitude = gPSLatitude,
-                    GPSLongitude = gPSLongitude,
                     ProposedCapacity = proposedCapacity,
                     EstimatedProjectCost = estimatedProjectCost,
                     AvgLast3yrTurnOver = avgLast3yrTurnOver,
@@ -33,6 +29,7 @@ namespace DataModel
                     Name = name,
                     MobileNo = mobileNumber,
                     Email = email,
+                    Location = location,
                     UserId = userId,
                     IsDeleted = false,
                     CreateDate = DateTime.Now,
@@ -42,6 +39,37 @@ namespace DataModel
                 Context.Bios.Add(bio);
                 Context.SaveChanges();
                 return bio.BioID;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        public int AddServices(string address, string pincode, string servicelookingtype, string servicerequesttype, string servicerequestmsg, string companyname, string contactpersonname, string email, string mobileno, int userId, string location)
+        {
+            try
+            {
+                var bioService = new Modal.BioService
+                {
+                    Pincode = pincode,
+                    Address = address,
+                    ServiceLookingType = servicelookingtype,
+                    ServiceRequestType = servicerequesttype,
+                    ServiceRequestMsg = servicerequestmsg,
+                    CompanyName = companyname,
+                    ContactPersonName = contactpersonname,
+                    MobileNo = mobileno,
+                    Email = email,
+                    Location = location,
+                    UserId = userId,
+                    IsDeleted = false,
+                    CreateDate = DateTime.Now,
+                    UpdateDate = DateTime.Now
+                };
+
+                Context.BioServices.Add(bioService);
+                Context.SaveChanges();
+                return bioService.BioServiceID;
             }
             catch (Exception ex)
             {

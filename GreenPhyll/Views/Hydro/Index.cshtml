@@ -1,141 +1,149 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Hydro";
 }
+<div class="form_slider_wrapper">
+    <span class="prev_slide"></span>
+    <span class="next_slide"></span>
+    <div class="container">
+        <div id="hydro_form_slider" class="form_slider">
+            <div id="hydro_slides_group" class="slides_group">
+                <div id="hydro_form_slide_1" class="slides">
+                    <h1 class="slide_title">State whether you are</h1>
+                    <div class="input_frame">
+                        <div class="option_holder radio_options ApplicantType">
+                            <div id="Individuals" class="option_box">
+                                <div class="icon margin_icon indivi_img"><div class="bio_indivi_img bioimg_size indivi_bg"></div></div>
+                                <span class="selectable"></span>
+                                <h3 class="label">Individuals</h3>
+                            </div>
+                            <div id="Corporates" class="option_box">
+                                <div class="icon margin_icon business_bg"><div class="bio_indivi_img bioimg_size corpor_bg"></div></div>
+                                <span class="selectable"></span>
+                                <h3 class="label">Corporates</h3>
+                            </div>
+                            <div id="Industries" class="option_box">
+                                <div class="icon margin_icon pumps_bg"><div class="bio_indivi_img bioimg_size indus_bg"></div></div>
+                                <span class="selectable"></span>
+                                <h3 class="label">Industries</h3>
+                            </div>
+                            <div id="Trusts/Co-Ops" class="option_box">
+                                <div class="icon margin_icon others_bg"><div class="bio_indivi_img bioimg_size trusts_bg"></div></div>
+                                <span class="selectable"></span>
+                                <h3 class="label">Trusts/Co-Ops</h3>
+                            </div>
+                            <div id="Govt Organizations" class="option_box">
+                                <div class="icon margin_icon park_bg"><div class="bio_indivi_img bioimg_size govt_bg"></div></div>
+                                <span class="selectable"></span>
+                                <h3 class="label">Govt Organizations</h3>
+                            </div>
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="btn_area">
+                        <button class="btn_normal_2 continue_btn">Continue</button>
+                    </div>
+                </div>
 
-<div class="container">
-    <div id="form_slider" class="form_slider">
-        <span class="prev_slide"></span>
-        <span class="next_slide"></span>
-        <div id="slides_group" class="slides_group">
-            <div id="form_slide_1" class="slides">
-                <h1 class="slide_title">State whether you are</h1>
-                <div class="option_holder radio_options ApplicantType">
-                    <div class="option_box">
-                        <img class="icon" src="images/option_2_icon.png" />
-                        <h3 class="label">Individual</h3>
-                        <span class="selectable"></span>
+                <div id="hydro_form_slide_2" class="slides">
+                    <h1 class="slide_title">Applicant \ organization details</h1>
+                    <div class="input_frame">
+                        <div class="input_element_holder multiple_fields">
+                            <div class="icon_input">
+                                <span class="icon"><span class="sprite_img icon_size contact_img"></span></span>
+                                <input id="txtApplicantName" class="no_label grey_text" type="text" title="Name of Applicant \ Organization" />
+                            </div>
+                            <div class="icon_input">
+                                <span class="icon"><span class="sprite_img icon_size pan_img"></span></span>
+                                <input id="txtPAN" class="no_label grey_text" type="text" title="Parmanent Account Number (PAN)" />
+                            </div>
+                            <div class="icon_input">
+                                <span class="icon"><span class="sprite_img icon_size cin_img"></span></span>
+                                <input id="txtCIN" class="no_label grey_text" type="text" title="Company Identification Number (CIN)" />
+                            </div>
+                        </div>
                     </div>
-                    <div class="option_box">
-                        <img class="icon" src="images/option_3_icon.png" />
-                        <h3 class="label">Corporates</h3>
-                        <span class="selectable"></span>
-                    </div>
-                    <div class="option_box">
-                        <img class="icon" src="images/option_4_icon.png" />
-                        <h3 class="label">Industries</h3>
-                        <span class="selectable"></span>
-                    </div>
-                    <div class="option_box">
-                        <img class="icon" src="images/option_3_icon.png" />
-                        <h3 class="label">Trust\Co-Ops\NGOs</h3>
-                        <span class="selectable"></span>
-                    </div>
-                    <div class="option_box">
-                        <img class="icon" src="images/option_4_icon.png" />
-                        <h3 class="label">Govt Organizations</h3>
-                        <span class="selectable"></span>
+                    <div class="clr"></div>
+                    <div class="btn_area">
+                        <button class="btn_normal_2 continue_btn">Continue</button>
                     </div>
                 </div>
-                <div class="clr"></div>
-                <div class="btn_area">
-                    <button class="btn_normal_2 continue_btn">Continue</button>
-                </div>
-            </div>
-            <div id="form_slide_2" class="slides">
-                <h1 class="slide_title">Applicant \ Organization Details</h1>
-                <div class="input_element_holder multiple_fields">
-                    <div class="icon_input">
-                        <span class="icon"><img src="images/name_icon.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Name of Applicant \ Organization" id="txtApplicantName" />
+
+                <div id="hydro_form_slide_3" class="slides">
+                    <h1 class="slide_title">Location of the proposed hydro farm</h1>
+                    <div class="input_frame">
+                        <div class="input_element_holder multiple_fields">
+                            <div class="icon_input textarea">
+                                <span class="icon"><span class="sprite_img icon_size add_img"></span></span>
+                                <textarea id="txtAddress" class="no_label grey_text" title="Address"></textarea>
+                            </div>
+                            <div class="icon_input">
+                                <span class="icon"><span class="sprite_img icon_size add_img"></span></span>
+                                <input id="txtLocation" class="no_label grey_text" type="text" title="Location" />
+                            </div>
+                            <div class="icon_input">
+                                <span class="icon"><span class="sprite_img icon_size pin_img"></span></span>
+                                <input id="txtPincode" class="no_label grey_text" type="text" title="Pincode" />
+                            </div>
+                        </div>
                     </div>
-                    <div class="icon_input">
-                        <span class="icon"><img src="images/mobile_icon_white.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Parmanent Account Number (PAN)" id="txtPAN" />
-                    </div>
-                    <div class="icon_input">
-                        <span class="icon"><img src="images/email_icon_white.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Company Identification Number (CIN)" id="txtCIN" />
-                    </div>
-                </div>
-                <div class="clr"></div>
-                <div class="btn_area">
-                    <button class="btn_normal_2 continue_btn">Continue</button>
-                </div>
-            </div>
-            <div id="form_slide_3" class="slides">
-                <h1 class="slide_title">Location of the proposed Hydro farm</h1>
-                <div class="input_element_holder multiple_fields">
-                    <div class="icon_input textarea" style="margin-bottom:15px;">
-                        <span class="icon"><img src="images/location_icon_white.png" /></span>
-                        <textarea class="no_label grey_text" title="Address" id="txtAddress"></textarea>
-                    </div>
-                    <div class="icon_input">
-                        <span class="icon"><img src="images/pin_code_icon.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Pincode" id="txtPincode" />
-                    </div>
-                    <div class="icon_input">
-                        <span class="icon"><img src="../images/pin_code_icon.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Latitude" id="txtGPSLatitude" />
-                    </div>
-                    <div class="icon_input">
-                        <span class="icon"><img src="../images/pin_code_icon.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Longitude" id="txtGPSLongitude" />
+                    <div class="clr"></div>
+                    <div class="btn_area">
+                        <button class="btn_normal_2 continue_btn">Continue</button>
                     </div>
                 </div>
-                <div class="clr"></div>
-                <div class="btn_area">
-                    <button class="btn_normal_2 continue_btn">Continue</button>
-                </div>
-            </div>
-            <div id="form_slide_4" class="slides">
-                <h1 class="slide_title">Hydro Project Details</h1>
-                <div class="input_element_holder multiple_fields">
-                    <div class="icon_input">
-                        <span class="icon"><img src="images/radio_on.png" /></span>
-                        <input class="no_label grey_text" type="text" title="No. of turbines planned" id="txtTotalTurbinesPlanned" />
+
+                <div id="hydro_form_slide_4" class="slides">
+                    <h1 class="slide_title">Hydro project details</h1>
+                    <div class="input_frame">
+                        <div class="input_element_holder multiple_fields">
+                            <div class="icon_input">
+                                <span class="icon"><span class="sprite_img icon_size turbines_img"></span></span>
+                                <input id="txtTotalTurbinesPlanned" class="no_label grey_text" type="text" title="No. of turbines planned" />
+                            </div>
+                            <div class="icon_input">
+                                <span class="icon"><span class="sprite_img icon_size capacity_img"></span></span>
+                                <input id="txtProposedCapacity" class="no_label grey_text" type="text" title="Capacity of the hydro project" />
+                            </div>
+                            <div class="icon_input">
+                                <span class="icon"><span class="sprite_img icon_size rs_img"></span></span>
+                                <input id="txtEstimatedProjectCost" class="no_label grey_text" type="text" title="Estimated cost of the project" />
+                            </div>
+                            <div class="icon_input">
+                                <span class="icon"><span class="sprite_img icon_size rs_img"></span></span>
+                                <input id="txtAvgLast3yrTurnOver" class="no_label grey_text" type="text" title="Average turnover in last 3 years" />
+                            </div>
+                        </div>
                     </div>
-                    <div class="icon_input">
-                        <span class="icon"><img src="images/radio_on.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Capacity of the proposed hydro project" id="txtProposedCapacity" />
-                    </div>
-                    <div class="icon_input">
-                        <span class="icon"><img src="images/facebook_icon_white.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Estimated cost of the proposed project" id="txtEstimatedProjectCost" />
-                    </div>
-                    <div class="icon_input">
-                        <span class="icon"><img src="images/google_plus_icon_white.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Average turnover of the organisation in the last 3 years" id="txtAvgLast3yrTurnOver" />
-                    </div>
-                </div>
-                <div class="clr"></div>
-                <div class="btn_area">
-                    <button class="btn_normal_2 continue_btn">Continue</button>
-                </div>
-            </div>
-            <div id="form_slide_5" class="slides">
-                <h1 class="slide_title">Contact Details</h1>
-                <div class="input_element_holder multiple_fields">
-                    <div class="icon_input">
-                        <span class="icon"><img src="images/name_icon.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Contact Person Name" id="txtName" />
-                    </div>
-                    <div class="icon_input">
-                        <span class="icon"><img src="images/mobile_icon_white.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Mobile Number" id="txtMobileNo" />
-                    </div>
-                    <div class="icon_input">
-                        <span class="icon"><img src="images/email_icon_white.png" /></span>
-                        <input class="no_label grey_text" type="text" title="Email" id="txtEmailHydro" />
+                    <div class="clr"></div>
+                    <div class="btn_area">
+                        <button class="btn_normal_2 continue_btn">Continue</button>
                     </div>
                 </div>
-                <div class="clr"></div>
-                <P class="disclaimer_text">
-                    We don’t spam or sell your details to annoying people. <br>
-                    <input type="checkbox" /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus sem pretium nunc semper consectetur. Integer posuere arcu eget mi molestie
-                </P>
-                <div class="btn_area">
-                    <button class="btn_normal_2" id="btnHydroSubmit">Submit</button>
+
+                <div id="hydro_form_slide_5" class="slides">
+                    <h1 class="slide_title">Contact details</h1>
+                    <div class="input_frame">
+                        <div class="input_element_holder multiple_fields">
+                            <div class="icon_input">
+                                <span class="icon"><span class="sprite_img icon_size contact_img"></span></span>
+                                <input id="txtName" class="no_label grey_text" type="text" title="Contact Person Name" />
+                            </div>
+                            <div class="icon_input">
+                                <span class="icon"><span class="sprite_img icon_size email_img"></span></span>
+                                <input id="txtEmailHydro" class="no_label grey_text" type="text" title="Email Id" />
+                            </div>
+                            <div class="icon_input">
+                                <span class="icon"><span class="sprite_img icon_size mob_img"></span></span>
+                                <input id="txtMobileNo" class="no_label grey_text" type="text" title="Mobile Number" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="btn_area">
+                        <button class="btn_normal_2 continue_btn" id="btnHydroSubmit">Finish</button>
+                    </div>
                 </div>
             </div>
         </div>

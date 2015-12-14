@@ -17,8 +17,7 @@ namespace DataModel.Modal
         public String CIN { get; set; }
         public String Pincode { get; set; }
         public String Address { get; set; }
-        public float GPSLatitude { get; set; }
-        public float GPSLongitude { get; set; }
+        public String Location { get; set; }
         public float ProposedCapacity { get; set; }
         public float EstimatedProjectCost { get; set; }
         public float AvgLast3yrTurnOver { get; set; }

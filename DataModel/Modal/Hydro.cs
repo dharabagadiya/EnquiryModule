@@ -12,9 +12,8 @@ namespace DataModel.Modal
         public int HydroID { get; set; }
         public String ApplicantType { get; set; }
         public String Address { get; set; }
+        public String Location { get; set; }
         public String Pincode { get; set; }
-        public float GPSLatitude { get; set; }
-        public float GPSLongitude { get; set; }
         public String ApplicantName { get; set; }
         public String PAN { get; set; }
         public String CIN { get; set; }

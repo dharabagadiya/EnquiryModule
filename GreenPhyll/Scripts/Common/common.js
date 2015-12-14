@@ -42,10 +42,6 @@ $(document).ready(function () {
     $('#btnCreateAccount').off("click").on("click", function () { CreateAccount(); });
     $('#btn_signout').off("click").on("click", function () { Logout(); });
     $('#btnEnquiry').off("click").on("click", function () { AddEnquiry(); });
-    //$('#btnEnquiry1').off("click").on("click", function () { AddEnquiry1(); });
-    //$('#btnEnquiry2').off("click").on("click", function () { AddEnquiry2(); });
-    $('#btnEnquiry3').off("click").on("click", function () { AddEnquiry3(); });
-    $('#btnEnquiry4').off("click").on("click", function () { AddEnquiry4(); });
     $('#btnSendRequest').off("click").on("click", function () { AddjoinInstallerNetwork(); });
     BindEnquiryDetialLinkEvents();
 });
@@ -65,7 +61,6 @@ function GetEnquiryDetail(id) {
             });
         }
     });
-
 };
 function BindEnquiryDetialLinkEvents() {
     $(".single_grid_wrapper").find(".lnkEnquiryDetailLink").off("click").on("click", function () {
@@ -86,7 +81,7 @@ function Login() {
             var status = data;
             if (status) {
                 window.location.reload();
-            } else { }
+            } else { $("#lblInvalidUser").show() }
         }
     });
 }
@@ -94,6 +89,22 @@ function CreateAccount() {
     var username = $("#txtCreateAccountEmail").val();
     var password = $("#txtCreateAccountPassword").val();
     var userRoleID = "2";
+    if ($.trim(username) == "Email" || $.trim(username).length == 0) {
+        alert('Please Enter Valid Email Address');
+        return false;
+    }
+    if (!validateEmail(username)) {
+        alert('Invalid Email Address');
+        return false;
+    }
+    if ($.trim(password) == "Password") {
+        alert('Please Enter Valid Password');
+        return false;
+    }
+    else if ($.trim(password).length < 6) {
+        alert('Password must be greater than 6 characters');
+        return false;
+    }
     $.ajax({
         dataType: "json",
         contentType: "application/json; charset=utf-8",
@@ -108,6 +119,11 @@ function CreateAccount() {
             } else { $("#lblEmailExist").show() }
         }
     });
+}
+function validateEmail(email) {
+    var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+    if (reg.test(email)) { return true; }
+    else { return false; }
 }
 function Logout() {
     $.ajax({
@@ -150,137 +166,6 @@ function AddEnquiry() {
         }
     });
 }
-function AddEnquiry1() {
-    var pincode = $("#txtPincode").val();
-    var address = $("#txtAddress").val();
-    var firstOption = $('.FirstOption').find('.selected').find('.label').text();
-    var secondOption = $('.SecondOption').find('.selected').find('.label').text();
-    var name = $("#txtName").val();
-    var mobileNumber = $("#txtMobileNo").val();
-    var email = $("#txtEmailEnquiry1").val();
-    var lorem = $("#txtLorem").val();
-    var ipsum = $("#txtIpsum").val();
-    var morbi = $("#txtMorbi").val();
-    var dapibus = $("#txtDapibus").val();
-    $.ajax({
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        type: "POST",
-        url: "/Enquiry1/Add",
-        async: false,
-        data: JSON.stringify({ "pincode": pincode, "address": address, "firstOption": firstOption, "secondOption": secondOption, "name": name, "mobileNumber": mobileNumber, "email": email, "lorem": lorem, "ipsum": ipsum, "morbi": morbi, "dapibus": dapibus }),
-        success: function (data) {
-            var status = data;
-            if (status) {
-                //window.location.href = "Enquiry/ThankYou";
-                alert("Success");
-            } else { }
-        }
-    });
-}
-function AddEnquiry2() {
-    var pincode = $("#txtPincode").val();
-    var address = $("#txtAddress").val();
-    var firstOption = $('.FirstOption').find('.selected').find('.label').text();
-    var secondOption = $('.SecondOption').find('.selected').find('.label').text();
-    var name = $("#txtName").val();
-    var mobileNumber = $("#txtMobileNo").val();
-    var email = $("#txtEmailEnquiry2").val();
-    var appName = $("#txtAppName").val();
-    var pan = $("#txtPAN").val();
-    var cin = $("#txtCIN").val();
-    var elit = $("#txtElit").val();
-    var donec = $("#txtDonec").val();
-    var ultrices = $("#txtUltrices").val();
-    var lectus = $("#txtLectus").val();
-    $.ajax({
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        type: "POST",
-        url: "/Enquiry2/Add",
-        async: false,
-        data: JSON.stringify({
-            "pincode": pincode, "address": address, "firstOption": firstOption, "secondOption": secondOption,
-            "name": name, "mobileNumber": mobileNumber, "email": email, "pan": pan, "cin": cin, "elit": elit,
-            "donec": donec, "ultrices": ultrices, "lectus": lectus, "appName": appName
-        }),
-        success: function (data) {
-            var status = data;
-            if (status) {
-                //window.location.href = "Enquiry/ThankYou";
-                alert("Success");
-            } else { }
-        }
-    });
-}
-function AddEnquiry3() {
-    var pincode = $("#txtPincode").val();
-    var address = $("#txtAddress").val();
-    var firstOption = $('.FirstOption').find('.selected').find('.label').text();
-    var name = $("#txtName").val();
-    var mobileNumber = $("#txtMobileNo").val();
-    var email = $("#txtEmailEnquiry3").val();
-    var companyName = $("#txtCompanyName").val();
-    var pan = $("#txtPAN").val();
-    var cin = $("#txtCIN").val();
-    var elit = $("#txtElit").val();
-    var donec = $("#txtDonec").val();
-    var ultrices = $("#txtUltrices").val();
-    var lectus = $("#txtLectus").val();
-    $.ajax({
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        type: "POST",
-        url: "/Enquiry3/Add",
-        async: false,
-        data: JSON.stringify({
-            "pincode": pincode, "address": address, "firstOption": firstOption, 
-            "name": name, "mobileNumber": mobileNumber, "email": email, "pan": pan, "cin": cin, "elit": elit,
-            "donec": donec, "ultrices": ultrices, "lectus": lectus, "companyName": companyName
-        }),
-        success: function (data) {
-            var status = data;
-            if (status) {
-                //window.location.href = "Enquiry/ThankYou";
-                alert("Success");
-            } else { }
-        }
-    });
-}
-function AddEnquiry4() {
-    var pincode = $("#txtPincode").val();
-    var address = $("#txtAddress").val();
-    var firstOption = $('.FirstOption').find('.selected').find('.label').text();
-    var name = $("#txtName").val();
-    var mobileNumber = $("#txtMobileNo").val();
-    var email = $("#txtEmailEnquiry4").val();
-    var companyName = $("#txtCompanyName").val();
-    var pan = $("#txtPAN").val();
-    var cin = $("#txtCIN").val();
-    var elit = $("#txtElit").val();
-    var donec = $("#txtDonec").val();
-    var ultrices = $("#txtUltrices").val();
-    var lectus = $("#txtLectus").val();
-    $.ajax({
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        type: "POST",
-        url: "/Enquiry4/Add",
-        async: false,
-        data: JSON.stringify({
-            "pincode": pincode, "address": address, "firstOption": firstOption,
-            "name": name, "mobileNumber": mobileNumber, "email": email, "pan": pan, "cin": cin, "elit": elit,
-            "donec": donec, "ultrices": ultrices, "lectus": lectus, "companyName": companyName
-        }),
-        success: function (data) {
-            var status = data;
-            if (status) {
-                //window.location.href = "Enquiry/ThankYou";
-                alert("Success");
-            } else { }
-        }
-    });
-}
 function AddjoinInstallerNetwork() {
     var checkBoxField = [];
     $("input[type='checkbox']:checked").each(function () { checkBoxField.push($(this).val()) });
@@ -307,3 +192,4 @@ function AddjoinInstallerNetwork() {
         }
     });
 }
+
