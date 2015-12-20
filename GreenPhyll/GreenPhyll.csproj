@@ -313,6 +313,7 @@
     <Content Include="Scripts\Services\Services.js" />
     <Content Include="Scripts\Solar\solar.js" />
     <Content Include="Scripts\Wind\wind.js" />
+    <Content Include="Views\ProfileSetting\ProfileDetail.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -364,7 +365,6 @@
     <Content Include="Views\Wind\Services.cshtml" />
     <Content Include="Views\Offer\Index.cshtml" />
     <Content Include="Views\Services\Search.cshtml" />
-    <Content Include="Views\ProfileSetting\ProfileDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomAuthentication\CustomAuthentication.csproj">
