@@ -9,10 +9,11 @@
                 <a class="account1" id="textbox">All types</a>
                 <div class="submenu1">
                     <ul class="root1">
+                        <li><a href="/Services/Search">All types</a></li>
                         <li><a href="/Services/Search/1">Solar Service</a></li>
                         <li><a href="/Services/Search/2">Wind Service</a></li>
-                        <li><a href="/Services/Search/3">Hydro Service</a></li>
-                        <li><a href="/Services/Search/4">Bio Service</a></li>
+                        <li><a href="/Services/Search/3">Bio Service</a></li>
+                        <li><a href="/Services/Search/4">Hydro Service</a></li>
                     </ul>
                 </div>
             </div>
@@ -31,12 +32,11 @@
         </div>
     </form>
 </div>
-@*<div class="divServices"></div>*@
 @foreach (var service in Model)
 {
     <div class="results_container">
         <div class="grid_card">
-            <img class="list_thumbnail left" src="images/latestatapollo-.png" />
+            <img class="list_thumbnail left" src="~/images/latestatapollo-.png" />
             <div class="grid_details left">
                 <h1> @service.Title </h1>
                 <p class="details"><span class="fa fa-map-marker location_icon"></span> @service.Location </p>

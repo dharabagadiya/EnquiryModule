@@ -13,8 +13,6 @@ namespace GreenPhyll.Controllers
         {
             var offerManager = new OfferManager();
             var getoffers = offerManager.GetOffers();
-
-           
             return View(getoffers);
         }
     }
