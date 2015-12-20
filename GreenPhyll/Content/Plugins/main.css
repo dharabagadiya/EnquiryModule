@@ -551,11 +551,11 @@ a.account {
     position: relative;
     width:100%;
 }
-.grid_card .list_thumbnail {
+/*.grid_card .list_thumbnail {
     width: 23%;
     height: 150px;
     margin-right: 18px;
-}
+}*/
 .right_nav{
     width:20%;
     margin-top:20px;
@@ -585,14 +585,14 @@ a.account {
 .btn:hover{
     background-color:#007ea7;
 }
-.results_container {
+/*.results_container {
     width:75%;
     background-color: #FFF;
     overflow-y: auto;
     overflow-x: hidden;
 	margin:5px auto;
 	border:1px solid #ccc;
-}
+}*/
 
 /* css for solar renew html page*/
 

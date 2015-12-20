@@ -135,7 +135,9 @@
     <Compile Include="Controllers\HydroController.cs" />
     <Compile Include="Controllers\JoinInstallerNetworkController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OfferController.cs" />
     <Compile Include="Controllers\RenewServicesController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\SolarController.cs" />
     <Compile Include="Controllers\WindController.cs" />
     <Compile Include="Global.asax.cs">
@@ -144,9 +146,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\fonts\font_awesome\fontawesome-webfont.svg" />
-    <Content Include="Content\fonts\helvetica_condenced\helvetica-condensed.svg" />
-    <Content Include="Content\fonts\helvetica_light\helvetica-light.svg" />
+    <Content Include="Content\Plugins\fonts\font_awesome\fontawesome-webfont.svg" />
+    <Content Include="Content\Plugins\fonts\helvetica_condenced\helvetica-condensed.svg" />
+    <Content Include="Content\Plugins\fonts\helvetica_light\helvetica-light.svg" />
+    <Content Include="Content\Plugins\feedback_main.css" />
+    <Content Include="Content\Plugins\font-awesome.css" />
     <Content Include="Content\Plugins\images\bio.png" />
     <Content Include="Content\Plugins\images\check.png" />
     <Content Include="Content\Plugins\images\checkbox_off.png" />
@@ -291,15 +295,18 @@
     <Content Include="images\YouTube.png" />
     <Content Include="images\youtube_icon.png" />
     <Content Include="images\You_1.png" />
+    <Content Include="OfferImages\demo.png" />
     <Content Include="Scripts\Bio\bio.js" />
     <Content Include="Scripts\Common\common.js" />
     <Content Include="Scripts\Common\site.js" />
     <Content Include="Scripts\Hydro\hydro.js" />
     <Content Include="Scripts\Plugins\form_slider.js" />
+    <Content Include="Scripts\Plugins\global.js" />
     <Content Include="Scripts\Plugins\jquery.js" />
     <Content Include="Scripts\Plugins\jquery.popupoverlay.js" />
     <Content Include="Scripts\Plugins\jquery.validate.js" />
     <Content Include="Scripts\Plugins\tabs.js" />
+    <Content Include="Scripts\Services\Services.js" />
     <Content Include="Scripts\Solar\solar.js" />
     <Content Include="Scripts\Wind\wind.js" />
     <Content Include="Web.config">
@@ -324,19 +331,19 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Views\EnquiryList\Index.cshtml" />
-    <Content Include="Content\fonts\helvetica_condenced\helvetica-condensed.eot" />
-    <Content Include="Content\fonts\helvetica_condenced\helvetica-condensed.otf" />
-    <Content Include="Content\fonts\helvetica_condenced\helvetica-condensed.ttf" />
-    <Content Include="Content\fonts\helvetica_condenced\helvetica-condensed.woff" />
-    <Content Include="Content\fonts\helvetica_light\helvetica-light.eot" />
-    <Content Include="Content\fonts\helvetica_light\helvetica-light.otf" />
-    <Content Include="Content\fonts\helvetica_light\helvetica-light.ttf" />
-    <Content Include="Content\fonts\helvetica_light\helvetica-light.woff" />
-    <Content Include="Content\fonts\font_awesome\fontawesome-webfont.eot" />
-    <Content Include="Content\fonts\font_awesome\fontawesome-webfont.ttf" />
-    <Content Include="Content\fonts\font_awesome\fontawesome-webfont.woff" />
-    <Content Include="Content\fonts\font_awesome\fontawesome-webfont.woff2" />
-    <Content Include="Content\fonts\font_awesome\FontAwesome.otf" />
+    <Content Include="Content\Plugins\fonts\helvetica_condenced\helvetica-condensed.eot" />
+    <Content Include="Content\Plugins\fonts\helvetica_condenced\helvetica-condensed.otf" />
+    <Content Include="Content\Plugins\fonts\helvetica_condenced\helvetica-condensed.ttf" />
+    <Content Include="Content\Plugins\fonts\helvetica_condenced\helvetica-condensed.woff" />
+    <Content Include="Content\Plugins\fonts\helvetica_light\helvetica-light.eot" />
+    <Content Include="Content\Plugins\fonts\helvetica_light\helvetica-light.otf" />
+    <Content Include="Content\Plugins\fonts\helvetica_light\helvetica-light.ttf" />
+    <Content Include="Content\Plugins\fonts\helvetica_light\helvetica-light.woff" />
+    <Content Include="Content\Plugins\fonts\font_awesome\fontawesome-webfont.eot" />
+    <Content Include="Content\Plugins\fonts\font_awesome\fontawesome-webfont.ttf" />
+    <Content Include="Content\Plugins\fonts\font_awesome\fontawesome-webfont.woff" />
+    <Content Include="Content\Plugins\fonts\font_awesome\fontawesome-webfont.woff2" />
+    <Content Include="Content\Plugins\fonts\font_awesome\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\EnqueryModule - Web Deploy %282%29.pubxml" />
     <Content Include="Views\Enquiry\Detail.cshtml" />
     <Content Include="Views\Enquiry\ThankYou.cshtml" />
@@ -351,6 +358,8 @@
     <Content Include="Views\Bio\Services.cshtml" />
     <Content Include="Views\Hydro\Services.cshtml" />
     <Content Include="Views\Wind\Services.cshtml" />
+    <Content Include="Views\Offer\Index.cshtml" />
+    <Content Include="Views\Services\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomAuthentication\CustomAuthentication.csproj">

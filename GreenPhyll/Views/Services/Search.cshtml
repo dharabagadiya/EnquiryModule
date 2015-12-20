@@ -1,0 +1,60 @@
+﻿@model List<DataModel.Modal.ServiceGrid>
+@{
+    ViewBag.Title = "Services";
+}
+<div class="block_content">
+    <form id="sim-search-frontpage-form" accept-charset="UTF-8" method="post" action="/">
+        <div>
+            <div class="dropdown1 left">
+                <a class="account1" id="textbox">All types</a>
+                <div class="submenu1">
+                    <ul class="root1">
+                        <li><a href="/Services/Search/1">Solar Service</a></li>
+                        <li><a href="/Services/Search/2">Wind Service</a></li>
+                        <li><a href="/Services/Search/3">Hydro Service</a></li>
+                        <li><a href="/Services/Search/4">Bio Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-item form-type-textfield form-item-search left">
+                <div class="form-element" role="application">
+                    <input aria-autocomplete="list" autocomplete="OFF" placeholder="What are you looking for?" id="edit-search" name="search"
+                           value="" size="60" maxlength="128" class="form-text form-autocomplete" type="text" />
+                </div>
+            </div>
+            <div class="button left">
+                <button class="btn btn_height" style="margin-top:0 !important;"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="list_right right">
+                <button class="btn"> Feedback </button>
+            </div>
+        </div>
+    </form>
+</div>
+@*<div class="divServices"></div>*@
+@foreach (var service in Model)
+{
+    <div class="results_container">
+        <div class="grid_card">
+            <img class="list_thumbnail left" src="images/latestatapollo-.png" />
+            <div class="grid_details left">
+                <h1> @service.Title </h1>
+                <p class="details"><span class="fa fa-map-marker location_icon"></span> @service.Location </p>
+                <div class="content_sec">
+                    <p>
+                        @service.Description
+                    </p>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="right_nav left">
+                <div class="padd_left">
+
+                </div>
+                <div class="list_right">
+                    <button class="feedback_btn btn_mar"> Contact </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

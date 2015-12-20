@@ -55,9 +55,12 @@
     <Compile Include="DataContextInitilizer.cs" />
     <Compile Include="Modal\BioService.cs" />
     <Compile Include="Modal\HydroService.cs" />
+    <Compile Include="Modal\Offer.cs" />
+    <Compile Include="Modal\ServiceGrid.cs" />
     <Compile Include="Modal\SolarService.cs" />
     <Compile Include="Modal\Wind.cs" />
     <Compile Include="Modal\WindService.cs" />
+    <Compile Include="OfferManager.cs" />
     <Compile Include="SolarManager.cs" />
     <Compile Include="WindManager.cs" />
     <Compile Include="HydroManager.cs" />

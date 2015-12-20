@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataModel.Modal;
 
 namespace DataModel
 {
@@ -74,5 +75,7 @@ namespace DataModel
                 return 0;
             }
         }
+        public List<SolarService> GetSolarService()
+        { return Context.SolarServices.ToList(); }
     }
 }

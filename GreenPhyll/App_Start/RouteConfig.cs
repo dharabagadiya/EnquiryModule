@@ -18,6 +18,11 @@ namespace GreenPhyll
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "Service_Grid",
+                url: "{controller}/{action}/{serviceType}/{searchText}",
+                defaults: new { controller = "Home", action = "Index", serviceType = UrlParameter.Optional }
+            );
         }
     }
 }
