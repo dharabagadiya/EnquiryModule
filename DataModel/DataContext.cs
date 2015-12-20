@@ -35,5 +35,6 @@ namespace DataModel
         public DbSet<WindService> WindServices { get; set; }
         public DbSet<JoinInstallerNetwork> JoinInstallerNetworks { get; set; }
         public DbSet<Offer> Offers { get; set; }
+        public DbSet<UserDetail> UserDetails { get; set; }
     }
 }
