@@ -19,6 +19,11 @@ namespace GreenPhyll.Controllers
         {
             var customMembershipProvider = new CustomAuthentication.CustomMembershipProvider();
             var status = customMembershipProvider.CreateUser(username, password, userRoleID);
+            if (status)
+            {
+                var userDetail = customMembershipProvider.GetUser(username);
+                new DataModel.UserDetailManager().Add(userDetail.UserId);
+            }
             return Json(status);
         }
 

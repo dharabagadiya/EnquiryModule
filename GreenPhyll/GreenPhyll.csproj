@@ -136,6 +136,7 @@
     <Compile Include="Controllers\JoinInstallerNetworkController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OfferController.cs" />
+    <Compile Include="Controllers\ProfileSettingController.cs" />
     <Compile Include="Controllers\RenewServicesController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\SolarController.cs" />
@@ -185,6 +186,7 @@
     <Content Include="Content\Plugins\popup.css" />
     <Content Include="Content\Plugins\responsive.css" />
     <Content Include="Content\Plugins\solar_main.css" />
+    <Content Include="Content\Plugins\tabs_main.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="images\agricultural_icon.png" />
@@ -299,6 +301,8 @@
     <Content Include="Scripts\Bio\bio.js" />
     <Content Include="Scripts\Common\common.js" />
     <Content Include="Scripts\Common\site.js" />
+    <Content Include="Scripts\ProfileSetting\profileSetting.js" />
+    <Content Include="Scripts\ProfileSetting\tabs.js" />
     <Content Include="Scripts\Hydro\hydro.js" />
     <Content Include="Scripts\Plugins\form_slider.js" />
     <Content Include="Scripts\Plugins\global.js" />
@@ -360,6 +364,7 @@
     <Content Include="Views\Wind\Services.cshtml" />
     <Content Include="Views\Offer\Index.cshtml" />
     <Content Include="Views\Services\Search.cshtml" />
+    <Content Include="Views\ProfileSetting\ProfileDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomAuthentication\CustomAuthentication.csproj">

@@ -119,10 +119,28 @@ namespace CustomAuthentication
             }
 
         }
+        public bool ChangePassword(int id, string oldPassword, string newPassword)
+        {
+            try
+            {
+                var user = Context.Users.Where(model => model.UserId == id && model.Password.Equals(oldPassword, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+                if (user == null) { return false; }
+                user.Password = newPassword;
+                Context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
         public List<User> GetUsers()
         { return Context.Users.Where(modal => modal.IsDeleted == false).ToList(); }
         public User GetUser(int id)
         { return Context.Users.Where(modal => modal.IsDeleted == false && modal.UserId == id).FirstOrDefault(); }
+        public User GetUser(string userName)
+        { return Context.Users.Where(modal => modal.IsDeleted == false && modal.UserName == userName).FirstOrDefault(); }
         public List<User> GetUsers(int roleID)
         { return Context.Users.Where(modal => modal.Roles.Any(roleModel => roleModel.RoleId == roleID)).ToList(); }
         public static void OnModelCreating(DbModelBuilder modelBuilder)
