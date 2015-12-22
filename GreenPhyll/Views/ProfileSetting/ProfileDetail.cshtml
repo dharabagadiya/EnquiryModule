@@ -6,8 +6,8 @@
 
 <div class="container">
     <ul id="tabs">
-        <li><a href="#ProfileDetail">Profile Detail</a></li>
-        <li class="border_tabs"><a href="#ChangedPassword">Changed Password</a> </li>
+        <li><a href="#ProfileDetail" class="current">Profile Detail</a></li>
+        <li class="border_tabs"><a href="~/ProfileSetting/ChangedPassword">Changed Password</a> </li>
     </ul>
     <div class="content">
         <div id="ProfileDetail" class="tab_section">
@@ -29,26 +29,6 @@
                     </div>
                     <div>
                         <input name="txtLocation" id="txtLocation" class="form_input top_15" type="text" placeholder="Location" value="@Model.Location" />
-                    </div>
-                    <div class="button_wid top_55">
-                        <button type="submit" class="btn_form">Continue</button>
-                    </div>
-                }
-            </div>
-        </div>
-        <div id="ChangedPassword" class="tab_section">
-            <h3>Changed Password</h3>
-            <div class="form_content">
-                @using (Html.BeginForm("ChangedPassword", "ProfileSetting"))
-                {
-                    <div>
-                        <input class="form_input top_15" name="oldPassword" id="oldPassword" type="password" placeholder="Old Password" />
-                    </div>
-                    <div>
-                        <input class="form_input top_15" name="newPassword" id="newPassword" type="password" placeholder="New Password" />
-                    </div>
-                    <div>
-                        <input class="form_input top_15" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" />
                     </div>
                     <div class="button_wid top_55">
                         <button type="submit" class="btn_form">Continue</button>

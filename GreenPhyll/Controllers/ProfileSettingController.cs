@@ -38,6 +38,17 @@ namespace GreenPhyll.Controllers
             return View(userDetail);
         }
 
+        public ActionResult ChangedPassword()
+        {
+            BundleConfig.AddScript("~/Scripts/ProfileSetting", "tabs.js", ControllerName);
+            BundleConfig.AddScript("~/Scripts/ProfileSetting", "profileSetting.js", ControllerName);
+
+            StartupScript = "DoPageSetting();";
+            var userDetail = new DataModel.UserDetailManager().Get(UserDetail.UserId);
+            ViewData["Status"] = false;
+            return View();
+        }
+
         [HttpPost]
         public ActionResult ChangedPassword(FormCollection formCollection)
         {
@@ -46,7 +57,7 @@ namespace GreenPhyll.Controllers
             var newPassword = formCollection["newPassword"].ToString();
             var status = new CustomAuthentication.CustomMembershipProvider().ChangePassword(userID, oldPassword, newPassword);
             ViewData["Status"] = status;
-            return RedirectToAction("ProfileDetail");
+            return View();
         }
     }
 }

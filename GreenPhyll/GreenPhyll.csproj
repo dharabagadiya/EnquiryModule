@@ -365,6 +365,7 @@
     <Content Include="Views\Wind\Services.cshtml" />
     <Content Include="Views\Offer\Index.cshtml" />
     <Content Include="Views\Services\Search.cshtml" />
+    <Content Include="Views\ProfileSetting\ChangedPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomAuthentication\CustomAuthentication.csproj">
