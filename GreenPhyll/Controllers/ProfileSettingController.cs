@@ -18,6 +18,11 @@ namespace GreenPhyll.Controllers
 
         public ActionResult ProfileDetail()
         {
+            if (UserDetail == null)
+            {
+                return RedirectToAction("", "");
+            }
+
             BundleConfig.AddScript("~/Scripts/ProfileSetting", "tabs.js", ControllerName);
             BundleConfig.AddScript("~/Scripts/ProfileSetting", "profileSetting.js", ControllerName);
 
@@ -40,6 +45,11 @@ namespace GreenPhyll.Controllers
 
         public ActionResult ChangedPassword()
         {
+            if (UserDetail == null)
+            {
+                return RedirectToAction("", "");
+            }
+
             BundleConfig.AddScript("~/Scripts/ProfileSetting", "tabs.js", ControllerName);
             BundleConfig.AddScript("~/Scripts/ProfileSetting", "profileSetting.js", ControllerName);
 
