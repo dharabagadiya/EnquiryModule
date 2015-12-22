@@ -19,12 +19,12 @@
                         <li><a href="@Url.Action("","JoinInstallerNetwork")">Join Installer Network</a></li>
                         @if (userDetail == null)
                         {
-                        @*<button class="btn_normal_2 btn_signin left signin_popup_open" id="btn_signin">Sign in</button>*@
-                        <li><a href="#" class="signin_popup_open left" id="btn_signin"> Login </a></li>
+                            <li><a href="#" class="signin_popup_open left" id="btn_signin"> Login </a></li>
                         }
                         else
                         {
-                        <li><a href="#" class="signin_popup_open left" id="btn_signout">Logout</a></li>
+                            <li><a href="~/ProfileSetting/ProfileDetail">Profile Setting</a></li>
+                            <li><a href="#" class="signin_popup_open left" id="btn_signout">Logout</a></li>
                         }
                         <li style="height:40px;">
                             <a href="#" class="app_btn left app_tooltip_open"></a>
