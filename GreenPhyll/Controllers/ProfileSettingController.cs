@@ -35,6 +35,11 @@ namespace GreenPhyll.Controllers
         [HttpPost]
         public ActionResult ProfileDetail(FormCollection formCollection)
         {
+            if (UserDetail == null)
+            {
+                return RedirectToAction("", "");
+            }
+
             var userID = UserDetail.UserId;
             var name = formCollection["txtName"].ToString();
             var mobileNumber = formCollection["txtMobileNumber"].ToString();
@@ -62,6 +67,11 @@ namespace GreenPhyll.Controllers
         [HttpPost]
         public ActionResult ChangedPassword(FormCollection formCollection)
         {
+            if (UserDetail == null)
+            {
+                return RedirectToAction("", "");
+            }
+
             var userID = UserDetail.UserId;
             var oldPassword = formCollection["oldPassword"].ToString();
             var newPassword = formCollection["newPassword"].ToString();
