@@ -1,5 +1,6 @@
 ﻿
 #region Using Namespaces
+using DataModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,12 @@ namespace GreenPhyll.Controllers
             return View();
         }
 
+        public ActionResult MyApplication()
+        {
+            var offerManager = new OfferManager();
+            var getoffers = offerManager.GetOffers();
+            return View(getoffers);
+        }
         public ActionResult ProfileDetail()
         {
             if (UserDetail == null)
@@ -47,7 +54,14 @@ namespace GreenPhyll.Controllers
             var userDetail = new DataModel.UserDetailManager().Update(userID, name, mobileNumber, location);
             return View(userDetail);
         }
-
+        public ActionResult UploadDocuments()
+        {
+            return View();
+        }
+        public ActionResult Feedback()
+        {
+            return View();
+        }
         public ActionResult ChangedPassword()
         {
             if (UserDetail == null)

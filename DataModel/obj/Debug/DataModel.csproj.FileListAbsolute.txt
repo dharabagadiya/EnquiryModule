@@ -134,3 +134,28 @@ D:\Test Project\VS2015\EnquiryModule\DataModel\bin\Debug\System.Web.WebPages.Dep
 D:\Test Project\VS2015\EnquiryModule\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
 D:\Test Project\VS2015\EnquiryModule\DataModel\obj\Debug\DataModel.dll
 D:\Test Project\VS2015\EnquiryModule\DataModel\obj\Debug\DataModel.pdb
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\DataModel.dll.config
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\DataModel.dll
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\DataModel.pdb
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\CustomAuthentication.dll
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\EntityFramework.dll
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\System.Web.Mvc.dll
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\Newtonsoft.Json.dll
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\System.Web.WebPages.dll
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\System.Web.Razor.dll
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\CustomAuthentication.pdb
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\EntityFramework.xml
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\System.Web.Mvc.xml
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\Newtonsoft.Json.xml
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\System.Web.WebPages.xml
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\System.Web.Razor.xml
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Project\EnquiryModule_Git\DataModel\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Project\EnquiryModule_Git\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
+D:\Project\EnquiryModule_Git\DataModel\obj\Debug\DataModel.dll
+D:\Project\EnquiryModule_Git\DataModel\obj\Debug\DataModel.pdb

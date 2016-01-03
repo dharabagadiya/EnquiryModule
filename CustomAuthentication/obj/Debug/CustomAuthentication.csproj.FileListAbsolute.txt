@@ -171,3 +171,28 @@ D:\Test Project\VS2015\EnquiryModule\CustomAuthentication\bin\Debug\System.Web.W
 D:\Test Project\VS2015\EnquiryModule\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.xml
 D:\Test Project\VS2015\EnquiryModule\CustomAuthentication\obj\Debug\CustomAuthentication.dll
 D:\Test Project\VS2015\EnquiryModule\CustomAuthentication\obj\Debug\CustomAuthentication.pdb
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\CustomAuthentication.dll.config
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\CustomAuthentication.dll
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\CustomAuthentication.pdb
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\EntityFramework.dll
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\Newtonsoft.Json.dll
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.Helpers.dll
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.Mvc.dll
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.Razor.dll
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.WebPages.dll
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\EntityFramework.xml
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\Newtonsoft.Json.xml
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.Helpers.xml
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.Mvc.xml
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.Razor.xml
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.WebPages.xml
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Project\EnquiryModule_Git\CustomAuthentication\obj\Debug\CustomAuthentication.csprojResolveAssemblyReference.cache
+D:\Project\EnquiryModule_Git\CustomAuthentication\obj\Debug\CustomAuthentication.dll
+D:\Project\EnquiryModule_Git\CustomAuthentication\obj\Debug\CustomAuthentication.pdb
