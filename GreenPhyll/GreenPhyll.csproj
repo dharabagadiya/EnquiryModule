@@ -258,6 +258,7 @@
     <Content Include="images\Penguins.jpg" />
     <Content Include="images\pin_code_icon.png" />
     <Content Include="images\plant.png" />
+    <Content Include="images\pointer.png" />
     <Content Include="images\prev_slide_btn.png" />
     <Content Include="images\prev_slide_btn_disabled.png" />
     <Content Include="images\radio_off.png" />
@@ -299,8 +300,10 @@
     <Content Include="images\You_1.png" />
     <Content Include="OfferImages\demo.png" />
     <Content Include="Scripts\Bio\bio.js" />
+    <Content Include="Scripts\Bio\service.js" />
     <Content Include="Scripts\Common\common.js" />
     <Content Include="Scripts\Common\site.js" />
+    <Content Include="Scripts\Hydro\service.js" />
     <Content Include="Scripts\ProfileSetting\profileSetting.js" />
     <Content Include="Scripts\ProfileSetting\tabs.js" />
     <Content Include="Scripts\Hydro\hydro.js" />
@@ -311,7 +314,9 @@
     <Content Include="Scripts\Plugins\jquery.validate.js" />
     <Content Include="Scripts\Plugins\tabs.js" />
     <Content Include="Scripts\Services\Services.js" />
+    <Content Include="Scripts\Solar\service.js" />
     <Content Include="Scripts\Solar\solar.js" />
+    <Content Include="Scripts\Wind\service.js" />
     <Content Include="Scripts\Wind\wind.js" />
     <Content Include="Views\ProfileSetting\ProfileDetail.cshtml" />
     <Content Include="Web.config">

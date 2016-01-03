@@ -6,11 +6,15 @@
     <span class="next_slide"></span>
     <div class="container">
         <div id="wind_form_slider" class="form_slider">
+            <div class="error_tooltip">
+                <div class="error_msg"></div>
+                <div class="pointer"></div>
+            </div>
             <div id="wind_slides_group" class="slides_group">
                 <div id="wind_form_slide_1" class="slides">
                     <h1 class="slide_title">State whether you are</h1>
                     <div class="input_frame">
-                        <div class="option_holder radio_options ApplicantType">
+                        <div id="wind_services" class="option_holder radio_options ApplicantType">
                             <div id="Individuals" class="option_box">
                                 <div class="icon margin_icon indivi_img"><div class="bio_indivi_img bioimg_size indivi_bg"></div></div>
                                 <span class="selectable"></span>
@@ -52,15 +56,15 @@
 
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size contact_img"></span></span>
-                                <input id="txtApplicantName" class="no_label grey_text" type="text" title="Name of Applicant \ Organization" />
+                                <input id="txtApplicantName" class="no_label grey_text" type="text" placeholder="Name of Applicant \ Organization" />
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size pan_img"></span></span>
-                                <input id="txtPAN" class="no_label grey_text" type="text" title="Parmanent Account Number (PAN)" />
+                                <input id="txtPAN" class="no_label grey_text" type="text" placeholder="Parmanent Account Number (PAN)" />
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size cin_img"></span></span>
-                                <input id="txtCIN" class="no_label grey_text" type="text" title="Company Identification Number (CIN)" />
+                                <input id="txtCIN" class="no_label grey_text" type="text" placeholder="Company Identification Number (CIN)" />
                             </div>
 
                         </div>
@@ -78,15 +82,15 @@
 
                             <div class="icon_input textarea">
                                 <span class="icon"><span class="sprite_img icon_size add_img"></span></span>
-                                <textarea id="txtAddress" class="no_label grey_text" title="Address"></textarea>
+                                <textarea id="txtAddress" class="no_label grey_text" placeholder="Address"></textarea>
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size add_img"></span></span>
-                                <input id="txtLocation" class="no_label grey_text" type="text" title="Location" />
+                                <input id="txtLocation" class="no_label grey_text" type="text" placeholder="Location" />
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size pin_img"></span></span>
-                                <input id="txtPincode" class="no_label grey_text" type="text" title="Pincode" />
+                                <input id="txtPincode" class="no_label grey_text" type="text" placeholder="Pincode" />
                             </div>
 
                         </div>
@@ -104,19 +108,19 @@
 
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size weg_img"></span></span>
-                                <input id="txtTotalWEGPlanned" class="no_label grey_text" type="text" title="No. of wind electric generators (WEG)" />
+                                <input id="txtTotalWEGPlanned" class="no_label grey_text" type="text" placeholder="No. of wind electric generators (WEG)" />
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size capacity_img"></span></span>
-                                <input id="txtProposedCapacity" class="no_label grey_text" type="text" title="Capacity of the wind farm project" />
+                                <input id="txtProposedCapacity" class="no_label grey_text" type="text" placeholder="Capacity of the wind farm project" />
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size rs_img"></span></span>
-                                <input id="txtEstimatedProjectCost" class="no_label grey_text" type="text" title="Estimated cost of the project" />
+                                <input id="txtEstimatedProjectCost" class="no_label grey_text" type="text" placeholder="Estimated cost of the project" />
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size rs_img"></span></span>
-                                <input id="txtAvgLast3yrTurnOver" class="no_label grey_text" type="text" title="Average turnover in last 3 years" />
+                                <input id="txtAvgLast3yrTurnOver" class="no_label grey_text" type="text" placeholder="Average turnover in last 3 years" />
                             </div>
 
                         </div>
@@ -134,15 +138,15 @@
 
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size contact_img"></span></span>
-                                <input id="txtName" class="no_label grey_text" type="text" title="Contact Person Name" />
+                                <input id="txtName" class="no_label grey_text" type="text" placeholder="Contact Person Name" />
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size email_img"></span></span>
-                                <input id="txtEmailWind" class="no_label grey_text" type="text" title="Email Id" />
+                                <input id="txtEmailWind" class="no_label grey_text" type="text" placeholder="Email Id" />
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size mob_img"></span></span>
-                                <input id="txtMobileNo" class="no_label grey_text" type="text" title="Mobile Number" />
+                                <input id="txtMobileNo" class="no_label grey_text" type="text" placeholder="Mobile Number" />
                             </div>
                         </div>
                     </div>

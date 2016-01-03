@@ -16,7 +16,8 @@ namespace GreenPhyll.Controllers
             allServices.AddRange(new WindManager().GetWindService().Select(model => new DataModel.Modal.ServiceGrid { ServiceType = 2, Re_Type = model.ServiceLookingType, Title = model.ServiceRequestType, Description = model.ServiceRequestMsg, Location = model.Location }).ToList());
             allServices.AddRange(new BioManager().GetBioService().Select(model => new DataModel.Modal.ServiceGrid { ServiceType = 3, Re_Type = model.ServiceLookingType, Title = model.ServiceRequestType, Description = model.ServiceRequestMsg, Location = model.Location }).ToList());
             allServices.AddRange(new HydroManager().GetHydroService().Select(model => new DataModel.Modal.ServiceGrid { ServiceType = 4, Re_Type = model.ServiceLookingType, Title = model.ServiceRequestType, Description = model.ServiceRequestMsg, Location = model.Location }).ToList());
-            allServices = allServices.Where(model => serviceType == 0 || model.ServiceType == serviceType).ToList();
+            allServices = allServices.Where(model => model.ServiceType == serviceType || serviceType == 0).ToList();
+            allServices = allServices.Where(model => model.Title.ToLower().Contains(searchText.ToLower()) || model.Description.ToLower().Contains(searchText.ToLower())).ToList();
             return View(allServices);
         }
     }

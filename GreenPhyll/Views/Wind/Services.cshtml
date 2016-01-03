@@ -8,6 +8,10 @@
     <span class="next_slide"></span>
     <div class="container">
         <div id="wind_renew_form_slider" class="form_slider">
+            <div class="error_tooltip">
+                <div class="error_msg"></div>
+                <div class="pointer"></div>
+            </div>
             <div id="wind_renew_slides_group" class="slides_group">
                 <div id="wind_renew_form_slide_1" class="slides">
                     <h1 class="slide_title">Location of the Wind Farm</h1>
@@ -15,15 +19,15 @@
                         <div class="input_element_holder multiple_fields">
                             <div class="icon_input textarea">
                                 <span class="icon"><span class="sprite_img icon_size add_img"></span></span>
-                                <textarea id="wind_renew_address" class="no_label grey_text" title="Address"></textarea>
+                                <textarea id="wind_renew_address" class="no_label grey_text" placeholder="Address"></textarea>
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size add_img"></span></span>
-                                <input id="txtLocation" class="no_label grey_text" type="text" title="Location" />
+                                <input id="txtLocation" class="no_label grey_text" type="text" placeholder="Location" />
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size pin_img"></span></span>
-                                <input id="wind_renew_pincode" class="no_label grey_text" type="text" title="Pincode" />
+                                <input id="wind_renew_pincode" class="no_label grey_text" type="text" placeholder="Pincode" />
                             </div>
                         </div>
                     </div>
@@ -36,7 +40,7 @@
                 <div id="wind_renew_form_slide_2" class="slides">
                     <h1 class="slide_title" style="padding:15px 0 15px 0 !important;">Service you are looking for</h1>
                     <div class="input_frame">
-                        <div class="option_holder radio_options small_options four_col ServiceLookingType">
+                        <div id="wind_ServiceLookingType" class="option_holder radio_options small_options four_col ServiceLookingType">
                             <div id="wind_renew_turbine_component" class="option_box">
                                 <div class="icon margin_icon component_bg"><div class="solar_renew_img img_size component_img"></div></div>
 
@@ -97,7 +101,7 @@
                 <div id="wind_renew_form_slide_3" class="slides">
                     <h1 class="slide_title" style="padding:15px 0 15px 0 !important;">Select Wind Turbine Manufacturer you are using</h1>
                     <div class="input_frame">
-                        <div class="option_holder radio_options small_options four_col TurbineManufacture">
+                        <div id="wind_TurbineManufacture" class="option_holder radio_options small_options four_col TurbineManufacture">
                             <div id="wind_gamesa" class="option_box">
                                 <img class="icon" src="~/images/govt_icon.png" />
                                 <span class="selectable"></span>
@@ -149,12 +153,12 @@
                     <div class="input_frame">
                         <div class="input_element_holder multiple_fields">
                             <div class="icon_input">
-                                <span class="icon"><img src=~/images/location_icon_white.png" /></span>
-                                <input id="wind_renew_service" class="no_label grey_text" type="text" title="Type Service you are Looking for" />
+                                <span class="icon"><img src="~/images/location_icon_white.png" /></span>
+                                <input id="wind_renew_service" class="no_label grey_text" type="text" placeholder="Type Service you are Looking for" />
                             </div>
                             <div class="icon_input textarea">
                                 <span class="icon"><span class="sprite_img icon_size item_img"></span></span>
-                                <textarea id="wind_renew_msg" class="no_label grey_text" title="Please provide information on your requested item(s)"></textarea>
+                                <textarea id="wind_renew_msg" class="no_label grey_text" placeholder="Please provide information on your requested item(s)"></textarea>
                             </div>
                         </div>
                     </div>
@@ -170,19 +174,19 @@
                         <div class="input_element_holder multiple_fields">
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size com_img"></span></span>
-                                <input id="wind_renew_company_name" class="no_label grey_text" type="text" title="Individual/Company Name" />
+                                <input id="wind_renew_company_name" class="no_label grey_text" type="text" placeholder="Individual/Company Name" />
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size contact_img"></span></span>
-                                <input id="wind_renew_contact_person" class="no_label grey_text" type="text" title="Contact Person Name" />
+                                <input id="wind_renew_contact_person" class="no_label grey_text" type="text" placeholder="Contact Person Name" />
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size email_img"></span></span>
-                                <input id="wind_renew_email" class="no_label grey_text" type="text" title="Email Id" />
+                                <input id="wind_renew_email" class="no_label grey_text" type="text" placeholder="Email Id" />
                             </div>
                             <div class="icon_input">
                                 <span class="icon"><span class="sprite_img icon_size mob_img"></span></span>
-                                <input id="wind_renew_mobile" class="no_label grey_text" type="text" title="Mobile Number" />
+                                <input id="wind_renew_mobile" class="no_label grey_text" type="text" placeholder="Mobile Number" />
                             </div>
                         </div>
                     </div>

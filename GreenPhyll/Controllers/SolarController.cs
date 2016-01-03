@@ -24,7 +24,7 @@ namespace GreenPhyll.Controllers
         }
         public ActionResult Services()
         {
-            BundleConfig.AddScript("~/Scripts/Solar", "solar.js", ControllerName);
+            BundleConfig.AddScript("~/Scripts/Solar", "service.js", ControllerName);
             return View();
         }
         public JsonResult AddServices(string Address, string Pincode, string ServiceLookingType, string ServiceRequestType, string ServiceRequestMsg, string CompanyName, string ContactPersonName, string Email, string MobileNo, string location)
