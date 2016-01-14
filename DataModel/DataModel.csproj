@@ -54,6 +54,7 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="DataContextInitilizer.cs" />
     <Compile Include="Modal\BioService.cs" />
+    <Compile Include="Modal\FeedBack.cs" />
     <Compile Include="Modal\HydroService.cs" />
     <Compile Include="Modal\Offer.cs" />
     <Compile Include="Modal\ServiceGrid.cs" />

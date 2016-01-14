@@ -62,6 +62,21 @@ namespace GreenPhyll.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Feedback(FormCollection formCollection)
+        {
+            if (UserDetail == null)
+            {
+                return RedirectToAction("", "");
+            }
+
+            var userID = UserDetail.UserId;
+            var feedback_question = formCollection["feedback_question"].ToString();
+            var feedback_msg = formCollection["feedback_msg"].ToString();
+            var status = new DataModel.UserDetailManager().Add_FeedBack(userID, feedback_question, feedback_msg);
+            ViewData["Status"] = status;
+            return View();
+        }
         public ActionResult ChangedPassword()
         {
             if (UserDetail == null)

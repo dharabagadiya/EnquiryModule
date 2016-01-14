@@ -36,5 +36,6 @@ namespace DataModel
         public DbSet<JoinInstallerNetwork> JoinInstallerNetworks { get; set; }
         public DbSet<Offer> Offers { get; set; }
         public DbSet<UserDetail> UserDetails { get; set; }
+        public DbSet<FeedBack> FeedBacks { get; set; }
     }
 }

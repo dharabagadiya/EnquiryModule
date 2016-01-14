@@ -193,6 +193,5 @@ D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.Razor.xml
 D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.WebPages.xml
 D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\Project\EnquiryModule_Git\CustomAuthentication\bin\Debug\System.Web.WebPages.Razor.xml
-D:\Project\EnquiryModule_Git\CustomAuthentication\obj\Debug\CustomAuthentication.csprojResolveAssemblyReference.cache
 D:\Project\EnquiryModule_Git\CustomAuthentication\obj\Debug\CustomAuthentication.dll
 D:\Project\EnquiryModule_Git\CustomAuthentication\obj\Debug\CustomAuthentication.pdb
