@@ -44,6 +44,134 @@ namespace DataModel
                 return 0;
             }
         }
+        public int AddSolarRoofTop(string ApplicantType, string pincode, string address, float MonthlyElectricityBill, float ProposedCapacityKW, float ShadowFreeArea, string CompanyName, string name, string mobileNumber, string email, int userId, string location)
+        {
+            try
+            {
+                var SolarRoofTop = new Modal.SolarRoofTop
+                {
+                    ApplicantType = ApplicantType,
+                    Pincode = pincode,
+                    Address = address,
+                    MonthlyElectricityBill = MonthlyElectricityBill,
+                    ProposedCapacityKW = ProposedCapacityKW,
+                    ShadowFreeArea = ShadowFreeArea,
+                    CompanyName = CompanyName,
+                    Name = name,
+                    MobileNo = mobileNumber,
+                    Email = email,
+                    UserId = userId,
+                    Location = location,
+                    IsDeleted = false,
+                    CreateDate = DateTime.Now,
+                    UpdateDate = DateTime.Now
+                };
+
+                Context.SolarRoofTops.Add(SolarRoofTop);
+                Context.SaveChanges();
+                return SolarRoofTop.SolarRoofTopID;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        public int AddSolarPark(string ApplicantType, string pincode, string address, float EstimatedCost, float ProposedCapacityKW, float ShadowFreeArea, string CompanyName, string name, string mobileNumber, string email, int userId, string location)
+        {
+            try
+            {
+                var SolarPark = new Modal.SolarPark
+                {
+                    ApplicantType = ApplicantType,
+                    Pincode = pincode,
+                    Address = address,
+                    EstimatedCost = EstimatedCost,
+                    ProposedCapacityKW = ProposedCapacityKW,
+                    ShadowFreeArea = ShadowFreeArea,
+                    CompanyName = CompanyName,
+                    Name = name,
+                    MobileNo = mobileNumber,
+                    Email = email,
+                    UserId = userId,
+                    Location = location,
+                    IsDeleted = false,
+                    CreateDate = DateTime.Now,
+                    UpdateDate = DateTime.Now
+                };
+
+                Context.SolarParks.Add(SolarPark);
+                Context.SaveChanges();
+                return SolarPark.SolarParkID;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        public int AddSolarPumps(string ApplicantType, string pincode, string address, float MonthlyElectricityBill, float ProposedCapacityHP, float ShadowFreeArea, string CompanyName, string name, string mobileNumber, string email, int userId, string location)
+        {
+            try
+            {
+                var SolarPump = new Modal.SolarPump
+                {
+                    ApplicantType = ApplicantType,
+                    Pincode = pincode,
+                    Address = address,
+                    MonthlyElectricityBill = MonthlyElectricityBill,
+                    ProposedCapacityHP = ProposedCapacityHP,
+                    FarmArea = ShadowFreeArea,
+                    CompanyName = CompanyName,
+                    Name = name,
+                    MobileNo = mobileNumber,
+                    Email = email,
+                    UserId = userId,
+                    Location = location,
+                    IsDeleted = false,
+                    CreateDate = DateTime.Now,
+                    UpdateDate = DateTime.Now
+                };
+
+                Context.SolarPumps.Add(SolarPump);
+                Context.SaveChanges();
+                return SolarPump.SolarPumpID;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        public int AddSolarWaterHeaters(string ApplicantType, string pincode, string address, float MonthlyElectricityBill, float ProposedCapacity, float ShadowFreeArea, string CompanyName, string name, string mobileNumber, string email, int userId, string location)
+        {
+            try
+            {
+                var SolarWaterHeater = new Modal.SolarWaterHeater
+                {
+                    ApplicantType = ApplicantType,
+                    Pincode = pincode,
+                    Address = address,
+                    MonthlyElectricityBill = MonthlyElectricityBill,
+                    ProposedCapacity = ProposedCapacity,
+                    ShadowFreeArea = ShadowFreeArea,
+                    CompanyName = CompanyName,
+                    Name = name,
+                    MobileNo = mobileNumber,
+                    Email = email,
+                    UserId = userId,
+                    Location = location,
+                    IsDeleted = false,
+                    CreateDate = DateTime.Now,
+                    UpdateDate = DateTime.Now
+                };
+
+                Context.SolarWaterHeaters.Add(SolarWaterHeater);
+                Context.SaveChanges();
+                return SolarWaterHeater.SolarWaterHeaterID;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
         public int AddServices(string address, string pincode, string servicelookingtype, string servicerequesttype, string servicerequestmsg, string companyname, string contactpersonname, string email, string mobileno, int userId, string location)
         {
             try

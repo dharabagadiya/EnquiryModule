@@ -1,0 +1,146 @@
+
+
+body{
+	font-family:"Open Sans",sans-serif;
+}
+.tab_wrapper{
+	width:83%;
+	margin:3% 0 0 11%;
+}
+a {
+    text-decoration: none;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.clr{
+	clear:both;
+}
+#tabs{
+	display: table;
+    padding: 0px;
+    width:90%;
+	height:52px;
+    border-width: 1px 1px 3px;
+    border-style: solid;
+    border-color: #E3E3E3 #E3E3E3 #0095D9;
+	margin-left:10px;
+}
+#tabs li {
+	display: table-cell;
+	padding-bottom: 0px;
+	border-left: 1px solid #E3E3E3;
+	font-size:16px;
+	text-align: center;
+	width: 24%;
+}
+#tabs li a:hover{
+	color:#0095D9;
+}
+#tabs li a {
+    display: block;
+    box-sizing: border-box;
+    padding:16px 0;
+    position: relative;
+    color: #868686;
+	font-weight:bold;
+}
+.tab_section {
+	padding: 10px;
+	width:90%;
+}
+#tabs li a.current {
+	background: #0095D9;
+	color: #fff;
+}
+#tabs li a span {
+    display: block;
+    font-size:30px;
+	padding-bottom:10px;
+}
+.icon_img{
+	background:url("images/travel1.png")no-repeat;	
+}
+
+/* css for Grid Tab */
+
+.results_container {
+    width:100%;
+    background-color: #FFF;
+    overflow-y: auto;
+    overflow-x: hidden;
+	margin:0 auto;
+	border:1px solid #ccc;
+	margin-top:5px;
+}
+.results_container:hover{
+	border:1px solid #00ade5;
+}
+.list_title {
+    font-size:20px;
+	color:#666;
+	font-weight:700;
+}
+.content_sec{
+	font-size:15px;
+	margin-top:10px;
+	color: #7F7F7F;
+	padding:5px;
+}
+.grid_details {
+    width:55%;
+    position: relative;
+}
+.grid_card {
+    padding:10px;
+    overflow: auto;
+    border-bottom: 1px solid #E6E6E6;
+    position: relative;
+	width:100%;
+}
+.grid_card .list_thumbnail {
+    width: 23%;
+    height: 150px;
+    margin-right:1%;
+}
+.right_nav{
+	width:20%;
+	margin-top:20px;
+	margin-left:1%;
+}
+.label{
+	font-weight:bold;
+	display:inline;
+}
+.text_right{
+	font-size:14px;
+	width:100%;
+	height:21px;
+}
+.btn{
+    border: 1px solid #00ADE5;
+    background: #00ADE5 none repeat scroll 0% 0%;
+    color: #FFF;
+	font-weight:bold;
+	font-size:16px;
+    line-height: 34px;
+	width: 140px;
+	margin-top:10px;
+	cursor:pointer;
+}
+.btn:hover{
+	background-color:#007ea7;
+}
+
+
+
+
+
+
+
+
+
+

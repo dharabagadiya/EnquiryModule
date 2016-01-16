@@ -9,8 +9,13 @@
 	/*height:265px;*/
 }
 .container_1{
-	margin:0 10% 4%;
+	margin:0 10% 2%;
 	width:80%;
+}
+
+.container_service{
+	margin:0 6% 2%;
+	width:90%;
 }
 
 .head{
@@ -154,15 +159,16 @@
 /* css for form html */
 
 .content_form{
-	width:80%;
-	margin:1% 0 0 8%;
+	width:94%;
+	margin:1% 0 0 3%;
+	/*height:400px;*/
 }
 .content_img{
-	width:33%;
-	height:500px;
+	width:38%;
+	height:550px;
 }
 .form_section{
-	width:66%;
+	width:60%;
 	border:1px solid #eee;
 }
 .form_header {
@@ -218,7 +224,7 @@
     background-position: 0px -48px;
 }
 .payOption1 input[type="radio"]:not(old), .payOption1 input[type="checkbox"]:not(old)  {
-    width: 30px;
+    width:27px;
     margin: 0px;
     padding: 0px;
     opacity: 0;
@@ -227,12 +233,12 @@
     display: inline-block;
     margin-left: -31px;
     padding-left: 25px;
-    background: transparent url("images/check.png") no-repeat scroll 0px 0px;
+    background: transparent url("images/check_box.png") no-repeat scroll 0px 0px;
     line-height:30px;
     cursor: pointer;
 }
 .payOption1 input[type="checkbox"]:checked:not(old) + span {
-    background-position: 0px -42px;
+    background-position: 0px -38px;
 }
 .label_wid{
     width:25%;
@@ -274,6 +280,7 @@
     padding: 6px 12px !important;
     line-height: 1.42857;
     border: 1px solid #CCC;
+	border-radius:4px;
 }
 .border_textbox{
 	border-top-right-radius:4px !important;
@@ -281,6 +288,7 @@
 }
 .textarea_wid{
 	width:57% !important;
+	height:64px !important;
 }
 .button_wid{
 	width:80%;
@@ -288,11 +296,15 @@
 .textbox_wid{
 	width:100%;
 }
+.bor_radius{
+	border-radius:0 !important;
+}
 .panel {
     background-color: #FFF;
     border: 1px solid transparent;
     border-radius: 4px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+	margin-top:28px;
 }
 .panel_footer {
     padding: 10px 15px;
@@ -339,6 +351,7 @@
     padding:0px;
     top: 45px;
     border-bottom: 4px solid #1B8AC7;
+	right:0px;
 }
 .dropdown_menu li a{
 	font-size:15px;
@@ -551,17 +564,17 @@ a.account {
     position: relative;
     width:100%;
 }
-/*.grid_card .list_thumbnail {
+.grid_card .list_thumbnail {
     width: 23%;
     height: 150px;
     margin-right: 18px;
-}*/
+}
 .right_nav{
     width:20%;
     margin-top:20px;
 }
 .label{
-    font-weight:bold;
+    /*font-weight:bold;*/
     display:inline;
 }
 .text_right{
@@ -585,14 +598,14 @@ a.account {
 .btn:hover{
     background-color:#007ea7;
 }
-/*.results_container {
+.results_container {
     width:75%;
     background-color: #FFF;
     overflow-y: auto;
     overflow-x: hidden;
 	margin:5px auto;
 	border:1px solid #ccc;
-}*/
+}
 
 /* css for solar renew html page*/
 
@@ -779,7 +792,7 @@ h2, h3{
     margin:7px 0;
     overflow-x: hidden;
     overflow-y: auto;
-	width:95%;
+	width:94%;
 }
 .rel {
     position: relative;
@@ -1009,7 +1022,9 @@ label {
 .solar_equi_img{ 
 	background-position:-32px -131px !important;
 }
-
+.solar_equipments_img {
+    background-position: -180px -548px !important;
+}
 
 .wind_renew_img{
     background: url("images/Turbine_Sprite.png");
@@ -1061,6 +1076,35 @@ label {
 .services_bg{
 	background-position:-288px -290px;
 }
+.bio_energy {
+    background-position: 5px 8px;
+}
+.marg{
+	margin:10% 20% 0 !important;
+}
+.services_wid{
+	width:25% !important;
+	margin:0 !important;
+}
+.services_height{
+	height:73px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

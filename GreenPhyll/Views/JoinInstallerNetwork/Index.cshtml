@@ -2,104 +2,189 @@
 @{
     ViewBag.Title = "Index";
 }
-<div class="container">
-    <h1 class="page_title">Join Installer Network</h1>
-    <div class="form_area">
-        <ul>
-            <li class="full_width">
-                <div class="label">Label Text here</div>
-                <div class="input_area no_border">
-                    <span>
-                        <input type="checkbox" value="Lorem" /> Lorem
-                    </span>
-                    <span>
-                        <input type="checkbox" value="Ipsum"  /> Ipsum
-                    </span>
-                    <span>
-                        <input type="checkbox" value="Dummy"/> Dummy
-                    </span>
-                    <span>
-                        <input type="checkbox" value="Text"/> Text
-                    </span>
-                    <span>
-                        <input type="checkbox" value=""/> Lorem
-                    </span>
-                </div>
-            </li>
-            <li class="full_width">
-                <div class="label">Label Text here</div>
-                <div class="input_area no_border">
-                    <span>
-                        <input type="radio" name="radio" value="Lorem"/> Lorem
-                    </span>
-                    <span>
-                        <input type="radio" name="radio" value="Ipsum"/> Ipsum
-                    </span>
-                    <span>
-                        <input type="radio" name="radio" value="Dummy text"/> Dummy text
-                    </span>
-                    <span>
-                        <input type="radio" name="radio" value="Text here"/> Text here
-                    </span>
-                    <span>
-                        <input type="radio" name="radio" value="Lorem"/> Lorem
-                    </span>
-                    <span>
-                        <input type="radio" name="radio" value="Text"/> Text
-                    </span>
-                    <span>
-                        <input type="radio" name="radio" value="Lorem Ipsum"/> Lorem Ipsum
-                    </span>
-                </div>
-            </li>
-            <h3 class="sub_head">Contact Information</h3>
-            <li>
-                <div class="label">Name</div>
-                <div class="input_area">
-                    <input type="text" id="txtName"/>
-                </div>
-            </li>
-            <li>
-                <div class="label">Email</div>
-                <div class="input_area">
-                    <input type="text" id="txtEmailJIN"/>
-                </div>
-            </li>
-            <li>
-                <div class="label">Designation</div>
-                <div class="input_area">
-                    <input type="text" id="txtDesignation"/>
-                </div>
-            </li>
-            <li>
-                <div class="label">Desk Number</div>
-                <div class="input_area">
-                    <input type="text" id="txtDeskNumber"/>
-                </div>
-            </li>
-            <li>
-                <div class="label">Company Name</div>
-                <div class="input_area">
-                    <input type="text" id="txtCompanyName"/>
-                </div>
-            </li>
-            <li>
-                <div class="label">Mobile Number</div>
-                <div class="input_area">
-                    <input type="text" id="txtMobileNumber"/>
-                </div>
-            </li>
-            <li class="full_width">
-                <div class="label">Additional Notes</div>
-                <div class="input_area">
-                    <textarea id="txtAdditionalNotes"></textarea>
-                </div>
-            </li>
-            <div class="clr"></div>
-        </ul>
-        <div class="btn_area align_center">
-            <button class="btn_normal_2" id="btnSendRequest">Send Request</button>
-        </div>
-    </div>
-</div>
 
+<div class="content_form">
+    <div class="content_img left">
+        <img style="width:450px;height:550px;" src="~/images/ecologico.png" />
+    </div>
+
+    <div class="form_section left">
+        <h2 class="form_header">
+            Join our Network as partner or Installer or Service Provider
+        </h2>
+
+        <div class="form_group payOption">
+            <label for="banksDropdown" class="label_wid left control_label" style="color:#333; font-size:13px !important;">Renewable Energy </label>
+
+            <div class="input_group ">
+                <input id="DEBIT" name="paymode" value="DEBIT" onclick="setPayOptions()" type="radio"><label for="DEBIT">Solar Energy</label>
+                <input id="NETB" name="paymode" value="NETB" onclick="setPayOptions()" type="radio"><label for="NETB">Wind Power </label>
+                <input id="DEBIT1" name="paymode" value="DEBIT" onclick="setPayOptions()" type="radio"><label for="DEBIT1">Hydro Power </label>
+                <input id="NETB1" name="paymode" value="NETB" onclick="setPayOptions()" type="radio"><label for="NETB1"> Bio Energy </label>
+                <input id="NETB1" name="paymode" value="NETB" onclick="setPayOptions()" type="radio"><label for="NETB1"> Service Provider </label>
+            </div>
+        </div>
+
+        <div class="form_group payOption1">
+            <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Who you are </label>
+            <div class="input_group" style="padding-top:5px;">
+                <input name="paymode" value="DEBIT" onclick="setPayOptions()" type="checkbox" /><span class="padd_label" for="DEBIT">Individual</span>
+                <input name="paymode" value="DEBIT" onclick="setPayOptions()" type="checkbox" /><span class="padd_label" for="DEBIT">Installer </span>
+                <input name="paymode" value="DEBIT" onclick="setPayOptions()" type="checkbox" /><span class="padd_label" for="DEBIT">Service Provider </span>
+                <input name="paymode" value="NETB" onclick="setPayOptions()" type="checkbox" /><span class="padd_label" for="NETB"> Partner </span>
+            </div>
+        </div>
+
+        <div class="form_group">
+            <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Company </label>
+            <div class="textbox_wid">
+                <div class="input_group_addon padd_icon left"><img class="icon_img" src="~/images/Briefcase.png" /></div>
+                <input class="form_control border_textbox no_label" id="txtCompanyName" name="qpemail" placeholder="Company" onkeyup="validateQPUser(this);"
+                       autocomplete="off" type="text" />
+            </div>
+        </div>
+
+        <div class="form_group">
+            <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Name </label>
+            <div class="textbox_wid">
+                <div class="input_group_addon padd_icon left"><img class="icon_img" src="~/images/user_1.png" /></div>
+                <input class="form_control border_textbox no_label" id="txtName" name="qpemail" placeholder="Name" onkeyup="validateQPUser(this);"
+                       autocomplete="off" type="text" />
+            </div>
+        </div>
+
+        <div class="form_group">
+            <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Email </label>
+            <div class="textbox_wid">
+                <div class="input_group_addon padd_icon left"><img class="icon_img" src="~/images/email.png" /></div>
+                <input class="form_control border_textbox no_label" id="txtEmailJIN" name="qpemail" placeholder="Email" onkeyup="validateQPUser(this);"
+                       autocomplete="off" type="text" />
+            </div>
+        </div>
+
+        <div class="form_group">
+            <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Mobile No </label>
+            <div class="button_wid">
+                <div class="input_group_addon left">+91</div>
+                <input class="form_control border_textbox no_label" id="txtMobileNumber" name="qpemail" placeholder="Mobile No" onkeyup="validateQPUser(this);"
+                       autocomplete="off" type="text" />
+            </div>
+        </div>
+
+        <div class="form_group">
+            <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Your Message </label>
+            <div class="textbox_wid">
+                <textarea class="form_control textarea_wid no_label" name="qpemail" type="text" id="txtAdditionalNotes"></textarea>
+            </div>
+        </div>
+
+        <div id="buttonSection" class="panel clearfix">
+            <div class="panel_footer">
+                <div class="button_wid"></div>
+                <div class="btn_wid">
+                    <button type="button" onclick="validateBDPGPayment()" id="btnSendRequest" class="btn btn_primary">Pay Now</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    @*<h1 class="page_title">Join Installer Network</h1>
+        <div class="form_area">
+            <ul>
+                <li class="full_width">
+                    <div class="label">Label Text here</div>
+                    <div class="input_area no_border">
+                        <span>
+                            <input type="checkbox" value="Lorem" /> Lorem
+                        </span>
+                        <span>
+                            <input type="checkbox" value="Ipsum"  /> Ipsum
+                        </span>
+                        <span>
+                            <input type="checkbox" value="Dummy"/> Dummy
+                        </span>
+                        <span>
+                            <input type="checkbox" value="Text"/> Text
+                        </span>
+                        <span>
+                            <input type="checkbox" value=""/> Lorem
+                        </span>
+                    </div>
+                </li>
+                <li class="full_width">
+                    <div class="label">Label Text here</div>
+                    <div class="input_area no_border">
+                        <span>
+                            <input type="radio" name="radio" value="Lorem"/> Lorem
+                        </span>
+                        <span>
+                            <input type="radio" name="radio" value="Ipsum"/> Ipsum
+                        </span>
+                        <span>
+                            <input type="radio" name="radio" value="Dummy text"/> Dummy text
+                        </span>
+                        <span>
+                            <input type="radio" name="radio" value="Text here"/> Text here
+                        </span>
+                        <span>
+                            <input type="radio" name="radio" value="Lorem"/> Lorem
+                        </span>
+                        <span>
+                            <input type="radio" name="radio" value="Text"/> Text
+                        </span>
+                        <span>
+                            <input type="radio" name="radio" value="Lorem Ipsum"/> Lorem Ipsum
+                        </span>
+                    </div>
+                </li>
+                <h3 class="sub_head">Contact Information</h3>
+                <li>
+                    <div class="label">Name</div>
+                    <div class="input_area">
+                        <input type="text" id="txtName"/>
+                    </div>
+                </li>
+                <li>
+                    <div class="label">Email</div>
+                    <div class="input_area">
+                        <input type="text" id="txtEmailJIN"/>
+                    </div>
+                </li>
+                <li>
+                    <div class="label">Designation</div>
+                    <div class="input_area">
+                        <input type="text" id="txtDesignation"/>
+                    </div>
+                </li>
+                <li>
+                    <div class="label">Desk Number</div>
+                    <div class="input_area">
+                        <input type="text" id="txtDeskNumber"/>
+                    </div>
+                </li>
+                <li>
+                    <div class="label">Company Name</div>
+                    <div class="input_area">
+                        <input type="text" id="txtCompanyName"/>
+                    </div>
+                </li>
+                <li>
+                    <div class="label">Mobile Number</div>
+                    <div class="input_area">
+                        <input type="text" id="txtMobileNumber"/>
+                    </div>
+                </li>
+                <li class="full_width">
+                    <div class="label">Additional Notes</div>
+                    <div class="input_area">
+                        <textarea id="txtAdditionalNotes"></textarea>
+                    </div>
+                </li>
+                <div class="clr"></div>
+            </ul>
+            <div class="btn_area align_center">
+                <button class="btn_normal_2" id="btnSendRequest">Send Request</button>
+            </div>
+        </div>*@
+</div>

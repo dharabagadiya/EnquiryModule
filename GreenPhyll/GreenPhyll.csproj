@@ -186,7 +186,7 @@
     <Content Include="Content\Plugins\popup.css" />
     <Content Include="Content\Plugins\responsive.css" />
     <Content Include="Content\Plugins\solar_main.css" />
-    <Content Include="Content\Plugins\tabs_main.css" />
+    <Content Include="Content\Plugins\tab_main.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="images\agricultural_icon.png" />
@@ -202,6 +202,7 @@
     <Content Include="images\Corporate.png" />
     <Content Include="images\corporate_icon.png" />
     <Content Include="images\Desert.jpg" />
+    <Content Include="images\ecologico.png" />
     <Content Include="images\edit.png" />
     <Content Include="images\email.png" />
     <Content Include="images\email_icon.png" />
@@ -285,12 +286,14 @@
     <Content Include="images\solar_water_heaters.png" />
     <Content Include="images\Sun.png" />
     <Content Include="images\Sun_64.png" />
+    <Content Include="images\tata.png" />
     <Content Include="images\trust_icon.png" />
     <Content Include="images\Twitter.png" />
     <Content Include="images\twitter_icon.png" />
     <Content Include="images\up_pointer_tooltip.png" />
     <Content Include="images\user.png" />
     <Content Include="images\user_1.png" />
+    <Content Include="images\vikram.png" />
     <Content Include="images\watsapp_icon.png" />
     <Content Include="images\wind_icon.png" />
     <Content Include="images\wind_solar.png" />
@@ -316,6 +319,11 @@
     <Content Include="Scripts\Services\Services.js" />
     <Content Include="Scripts\Solar\service.js" />
     <Content Include="Scripts\Solar\solar.js" />
+    <Content Include="Scripts\Solar\SolarEquipments.js" />
+    <Content Include="Scripts\Solar\SolarPark.js" />
+    <Content Include="Scripts\Solar\SolarPumps.js" />
+    <Content Include="Scripts\Solar\SolarRoofTop.js" />
+    <Content Include="Scripts\Solar\SolarWaterHeaters.js" />
     <Content Include="Scripts\Wind\service.js" />
     <Content Include="Scripts\Wind\wind.js" />
     <Content Include="Views\ProfileSetting\ProfileDetail.cshtml" />
@@ -374,6 +382,12 @@
     <Content Include="Views\ProfileSetting\MyApplication.cshtml" />
     <Content Include="Views\ProfileSetting\UploadDocuments.cshtml" />
     <Content Include="Views\ProfileSetting\Feedback.cshtml" />
+    <Content Include="Views\Solar\SolarLanding.cshtml" />
+    <Content Include="Views\Solar\SolarRoofTop.cshtml" />
+    <Content Include="Views\Solar\SolarPark.cshtml" />
+    <Content Include="Views\Solar\SolarPumps.cshtml" />
+    <Content Include="Views\Solar\SolarWaterHeaters.cshtml" />
+    <Content Include="Views\Solar\SolarEquipments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomAuthentication\CustomAuthentication.csproj">

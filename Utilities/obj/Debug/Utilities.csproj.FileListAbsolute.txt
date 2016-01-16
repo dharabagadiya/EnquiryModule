@@ -2,3 +2,4 @@ D:\Project\EnquiryModule_Git\Utilities\bin\Debug\Utilities.dll
 D:\Project\EnquiryModule_Git\Utilities\bin\Debug\Utilities.pdb
 D:\Project\EnquiryModule_Git\Utilities\obj\Debug\Utilities.dll
 D:\Project\EnquiryModule_Git\Utilities\obj\Debug\Utilities.pdb
+D:\Project\EnquiryModule_Git\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache

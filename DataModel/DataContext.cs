@@ -30,6 +30,10 @@ namespace DataModel
         public DbSet<Bio> Bios { get; set; }
         public DbSet<BioService> BioServices { get; set; }
         public DbSet<Solar> Solars { get; set; }
+        public DbSet<SolarRoofTop> SolarRoofTops { get; set; }
+        public DbSet<SolarPark> SolarParks { get; set; }
+        public DbSet<SolarPump> SolarPumps { get; set; }
+        public DbSet<SolarWaterHeater> SolarWaterHeaters { get; set; }
         public DbSet<SolarService> SolarServices { get; set; }
         public DbSet<Wind> Winds { get; set; }
         public DbSet<WindService> WindServices { get; set; }
