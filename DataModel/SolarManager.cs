@@ -172,6 +172,39 @@ namespace DataModel
                 return 0;
             }
         }
+        public int AddSolarEquipments(string SolarServiceType, string ApplicantType, string pincode, string address, float Budget, float EquipmentNumber, string Message, string CompanyName, string name, string mobileNumber, string email, int userId, string location)
+        {
+            try
+            {
+                var SolarEquipment = new Modal.SolarEquipment
+                {
+                    SolarServiceType = SolarServiceType,
+                    ApplicantType = ApplicantType,
+                    Pincode = pincode,
+                    Address = address,
+                    Budget = Budget,
+                    EquipmentNumber = EquipmentNumber,
+                    Message = Message,
+                    CompanyName = CompanyName,
+                    Name = name,
+                    MobileNo = mobileNumber,
+                    Email = email,
+                    UserId = userId,
+                    Location = location,
+                    IsDeleted = false,
+                    CreateDate = DateTime.Now,
+                    UpdateDate = DateTime.Now
+                };
+
+                Context.SolarEquipments.Add(SolarEquipment);
+                Context.SaveChanges();
+                return SolarEquipment.SolarEquipmentID;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
         public int AddServices(string address, string pincode, string servicelookingtype, string servicerequesttype, string servicerequestmsg, string companyname, string contactpersonname, string email, string mobileno, int userId, string location)
         {
             try

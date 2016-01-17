@@ -27,7 +27,8 @@ bio.AddBioDetail = function () {
             var status = data;
             if (status) {
                 //window.location.href = "Enquiry/ThankYou";
-                alert("Success");
+                window.location.href = "/Offer/";
+                //alert("Success");
             } else { }
         }
     });

@@ -53,6 +53,7 @@
     <Compile Include="BioManager.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="DataContextInitilizer.cs" />
+    <Compile Include="Modal\SolarEquipment.cs" />
     <Compile Include="Modal\SolarPump.cs" />
     <Compile Include="Modal\BioService.cs" />
     <Compile Include="Modal\FeedBack.cs" />

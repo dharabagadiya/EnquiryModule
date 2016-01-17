@@ -35,6 +35,7 @@ namespace DataModel
         public DbSet<SolarPump> SolarPumps { get; set; }
         public DbSet<SolarWaterHeater> SolarWaterHeaters { get; set; }
         public DbSet<SolarService> SolarServices { get; set; }
+        public DbSet<SolarEquipment> SolarEquipments { get; set; }
         public DbSet<Wind> Winds { get; set; }
         public DbSet<WindService> WindServices { get; set; }
         public DbSet<JoinInstallerNetwork> JoinInstallerNetworks { get; set; }

@@ -72,7 +72,16 @@ namespace GreenPhyll.Controllers
         }
         public ActionResult SolarEquipments()
         {
+            BundleConfig.AddScript("~/Scripts/Solar", "SolarEquipments.js", ControllerName);
             return View();
+        }
+        public JsonResult AddSolarEquipments(string SolarServiceType, string ApplicantType, string pincode, string address, float Budget, float EquipmentNumber, string Message, string CompanyName, string name, string mobileNumber, string email, string location)
+        {
+            var userId = UserDetail == null ? 0 : UserDetail.UserId;
+            var SolarManager = new SolarManager();
+            var status = SolarManager.AddSolarEquipments(SolarServiceType, ApplicantType, pincode, address, Budget, EquipmentNumber, Message, CompanyName, name, mobileNumber, email, userId, location);
+            Session["Enquery_ID"] = status;
+            return Json(status != 0);
         }
         public JsonResult Add(string SolarServiceType, string ApplicantType, string pincode, string address, float MonthlyElectricityBill, float ProposedCapacityKW, float ShadowFreeArea, string IntallationReqForm, string CompanyName, string name, string mobileNumber, string email, string location)
         {
