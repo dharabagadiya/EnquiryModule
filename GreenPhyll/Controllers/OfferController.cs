@@ -9,10 +9,10 @@ namespace GreenPhyll.Controllers
 {
     public class OfferController : BaseController
     {
-        public ActionResult Index()
+        public ActionResult Index(string serviceType = "")
         {
             var offerManager = new OfferManager();
-            var getoffers = offerManager.GetOffers();
+            var getoffers = offerManager.GetOffers(serviceType);
             return View(getoffers);
         }
     }

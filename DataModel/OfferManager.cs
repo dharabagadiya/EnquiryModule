@@ -10,7 +10,7 @@ namespace DataModel
     public class OfferManager
     {
         private DataContext Context = new DataContext();
-        public List<Offer> GetOffers()
-        { return Context.Offers.ToList(); }
+        public List<Offer> GetOffers(string offerType)
+        { return Context.Offers.Where(model => model.ReType == offerType).ToList(); }
     }
 }

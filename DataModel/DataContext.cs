@@ -42,5 +42,6 @@ namespace DataModel
         public DbSet<Offer> Offers { get; set; }
         public DbSet<UserDetail> UserDetails { get; set; }
         public DbSet<FeedBack> FeedBacks { get; set; }
+        public DbSet<UploadDocument> UploadDocuments { get; set; }
     }
 }

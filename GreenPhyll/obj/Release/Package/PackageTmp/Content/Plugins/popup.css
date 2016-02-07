@@ -1,0 +1,36 @@
+
+@charset "utf-8";
+/* CSS Document */
+
+.popup{
+	background:#f9fafb;
+	padding:20px;
+	width:auto !important;
+}
+.tooltip{
+	background:#fff !important;
+	box-shadow:0px 0px 5px #999;
+}
+.tooltip_pointer{
+	margin:-18px auto 0 auto;
+}
+.popup .btn{
+	background:#fff !important;
+	border-radius:4px;
+	height:40px;
+	color:#02A6D8;
+	text-align:center;
+	cursor:pointer;
+	border:none;
+	border:1px solid #02A6D8;
+}
+.popup_close_btn{
+	background:url(images/remove_btn.png) no-repeat center;
+	width:18px;
+	height:18px;
+	display:inline-block;
+	cursor:pointer;
+	position:absolute;
+	top:10px;
+	right:10px;
+}

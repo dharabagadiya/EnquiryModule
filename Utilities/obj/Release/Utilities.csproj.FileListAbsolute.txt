@@ -1,0 +1,4 @@
+D:\Project\EnquiryModule_Git\Utilities\bin\Release\Utilities.dll
+D:\Project\EnquiryModule_Git\Utilities\bin\Release\Utilities.pdb
+D:\Project\EnquiryModule_Git\Utilities\obj\Release\Utilities.dll
+D:\Project\EnquiryModule_Git\Utilities\obj\Release\Utilities.pdb

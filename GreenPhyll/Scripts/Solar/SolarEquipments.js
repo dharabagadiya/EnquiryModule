@@ -24,7 +24,8 @@ solar.AddSolarDetail = function () {
             var status = data;
             if (status) {
                 //window.location.href = "Enquiry/ThankYou";
-                window.location.href = "/Offer/";
+                $('.divLoader').addClass('DN');
+                window.location.href = "/Offer/Index/Solar Equipment";
                 //alert("Success");
             } else { }
         }
@@ -94,6 +95,7 @@ solar.AddSolarValidation = function () {
             } else {
                 $('.error_tooltip').hide();
                 solar.AddSolarDetail();
+                $('.divLoader').removeClass('DN');
             }
         }
     });

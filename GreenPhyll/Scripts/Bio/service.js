@@ -21,13 +21,12 @@ bio.AddBioServicesDetail = function () {
         success: function (data) {
             var status = data;
             if (status) {
-                //window.location.href = "Enquiry/ThankYou";
-                alert("Success");
+                window.location.href = "/Bio/ThankYou";
+                //alert("Success");
             } else { }
         }
     });
 }
-
 bio.AddBioServiceValidation = function () {
     current_slide = 1;
     $('.next_slide').click(function () {
@@ -42,42 +41,173 @@ bio.AddBioServiceValidation = function () {
         var bio_mobile_val = $('#bio_renew_mobile').val();
 
         if (current_slide == 1) {
-            if ((bio_address_val == '') || (bio_pincode_val == '') || (bio_location_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!pin_format.test(bio_pincode_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Pin code should be 6 digits');
-            } else {
-                $('.error_tooltip').hide();
+            if (bio_address_val == "" && bio_location_val == "" && bio_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (bio_location_val == "" && bio_pincode_val == "") {
+                $("#add123").hide();
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (bio_address_val == "" && bio_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (bio_address_val == "" && bio_location_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").hide();
+            }
+            else if (bio_address_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").hide();
+            }
+            else if (bio_location_val == "") {
+                $("#loc123").show().text("Please Enter location");
+                $("#add123").hide();
+                $("#pin123").hide();
+            }
+            else if (bio_pincode_val == "") {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (!pin_format.test(bio_pincode_val)) {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $('#pin123').show().text('Pin code should be 6 digits');
+            }
+            else {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").hide();
                 next_slide();
                 $('.prev_slide.disabled').removeClass('disabled');
             }
         }
         if (current_slide == 2) {
             if ($('#service_type .option_box.selected').length > 0) {
-                $('.error_tooltip').hide();
+                $('#serviceLooking').hide();
                 next_slide();
             } else {
-                $('.error_tooltip').show().find('.error_msg').text('Select one Bio Service');
+                $('#serviceLooking').show().text('Select one Bio Service');
             }
         }
         if (current_slide == 3) {
-            if ((bio_renew_service_val == '') || (bio_renew_msg_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else {
-                $('.error_tooltip').hide();
+            if (bio_renew_service_val == "" && bio_renew_msg_val == "") {
+                $('#serviceType').show().text('Please Enter Service you are Looking');
+                $('#serviceMsg').show().text('Please provide information');
+            }
+            else if (bio_renew_service_val == "") {
+                $('#serviceType').show().text('Please Enter Service you are Looking');
+                $('#serviceMsg').hide();
+            }
+            else if (bio_renew_msg_val == "") {
+                $('#serviceMsg').show().text('Please provide information');
+                $('#serviceType').hide();
+            }
+            else {
+                $('#serviceMsg').hide();
+                $('#serviceType').hide();
                 next_slide();
                 $('.next_slide').addClass('disabled');
             }
         }
         if (current_slide == 4) {
-            if ((bio_company_name_val == '') || (bio_contact_person_val == '') || (bio_email_val == '') || (bio_mobile_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!email_format.test(bio_email_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Email Id is invalid');
-            } else if (!mobile_num_format.test(bio_mobile_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Mobile number is invalid');
-            } else {
-                $('.error_tooltip').hide();
+            if ((bio_company_name_val == '') && (bio_contact_person_val == '') && (bio_email_val == '') && (bio_mobile_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((bio_contact_person_val == '') && (bio_email_val == '') && (bio_mobile_val == '')) {
+                $('#companyName').hide();
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((bio_company_name_val == '') && (bio_contact_person_val == '') && (bio_email_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if ((bio_company_name_val == '') && (bio_mobile_val == '') && (bio_email_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((bio_company_name_val == '') && (bio_mobile_val == '') && (bio_contact_person_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((bio_email_val == '') && (bio_mobile_val == '')) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((bio_company_name_val == '') && (bio_contact_person_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if ((bio_company_name_val == '') && (bio_mobile_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (bio_company_name_val == '') {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if (bio_contact_person_val == '') {
+                $('#companyName').hide();
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if (bio_email_val == '') {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if (!email_format.test(bio_email_val)) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Email Id is invalid');
+                $('#mobile').hide();
+            }
+            else if (bio_mobile_val == '') {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (!mobile_num_format.test(bio_mobile_val)) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Mobile number is invalid');
+            }
+            else {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').hide();
+                $('.divLoader').removeClass('DN');
                 bio.AddBioServicesDetail();
             }
         }

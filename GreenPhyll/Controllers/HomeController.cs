@@ -8,6 +8,7 @@ namespace GreenPhyll.Controllers
     {
         public ActionResult Index()
         {
+            BundleConfig.AddScript("~/Scripts/Services", "Services.js", ControllerName);
             return View();
         }
     }

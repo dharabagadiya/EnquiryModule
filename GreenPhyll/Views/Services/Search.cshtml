@@ -1,34 +1,35 @@
-﻿@model List<DataModel.Modal.ServiceGrid>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<DataModel.Modal.ServiceGrid>
 @{
     ViewBag.Title = "Services";
 }
+<style>
+    .footer_new { position: relative !important; }
+</style>
 <div class="block_content">
     <form id="sim-search-frontpage-form" accept-charset="UTF-8" method="post" action="/">
-        <div>
-            <div class="dropdown1 left">
-                <a class="account1" id="textbox">All types</a>
-                <div class="submenu1">
-                    <ul class="root1">
-                        <li><a href="/Services/Search">All types</a></li>
-                        <li><a href="/Services/Search/1">Solar Service</a></li>
-                        <li><a href="/Services/Search/2">Wind Service</a></li>
-                        <li><a href="/Services/Search/3">Bio Service</a></li>
-                        <li><a href="/Services/Search/4">Hydro Service</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="top_head" style="margin:5px auto !important;height:45px !important;">
             <div class="form-item form-type-textfield form-item-search left">
                 <div class="form-element" role="application">
                     <input aria-autocomplete="list" autocomplete="OFF" placeholder="What are you looking for?" id="edit-search" name="search"
                            value="" size="60" maxlength="128" class="form-text form-autocomplete" type="text" />
                 </div>
             </div>
+            <div class="dropdown1 left">
+                <select id="ddlCategory">
+                    <option value="0">Any Category</option>
+                    <option value="1">Solar Service</option>
+                    <option value="2">Wind Service</option>
+                    <option value="3">Bio Service</option>
+                    <option value="4">Hydro Service</option>
+                </select>
+            </div>
+
             <div class="button left">
-                <div id="btnSearch" class="btn btn_height" style="margin-top:0 !important;"><i class="fa fa-search"></i></div>
+                <div id="btnSearch" class="btn btn_height" style="margin-top:0 !important;">Search</div>
             </div>
-            <div class="list_right right">
-                <button class="btn"> Feedback </button>
-            </div>
+
         </div>
     </form>
 </div>
@@ -58,3 +59,7 @@
         </div>
     </div>
 }
+<div class="pagination">
+    @Html.PagedListPager(Model, page => Url.Action("Search", new { page }), 
+    new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded })
+</div>

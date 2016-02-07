@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Security;
 #endregion
@@ -143,6 +144,33 @@ namespace CustomAuthentication
         { return Context.Users.Where(modal => modal.IsDeleted == false && modal.UserName == userName).FirstOrDefault(); }
         public List<User> GetUsers(int roleID)
         { return Context.Users.Where(modal => modal.Roles.Any(roleModel => roleModel.RoleId == roleID)).ToList(); }
+        public string CreatePassword(int length)
+        {
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+            return res.ToString();
+        }
+        public bool UpdatePassword(string email, string password)
+        {
+            try
+            {
+                var user = Context.Users.Where(modal => modal.IsDeleted == false && modal.Email == email).FirstOrDefault(); 
+                if (user == null) { return false; }
+                user.Password = password;
+                Context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
         public static void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()

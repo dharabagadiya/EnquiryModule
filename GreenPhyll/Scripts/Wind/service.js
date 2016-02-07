@@ -22,8 +22,8 @@ wind.AddWindServicesDetail = function () {
         success: function (data) {
             var status = data;
             if (status) {
-                //window.location.href = "Enquiry/ThankYou";
-                window.location.href = "/Offer/";
+                window.location.href = "/Bio/ThankYou";
+                //window.location.href = "/Offer/Index/Wind";
                 //alert("Success");
             } else { }
         }
@@ -43,50 +43,181 @@ wind.AddWindServiceValidation = function () {
         var wind_mobile_val = $('#wind_renew_mobile').val();
 
         if (current_slide == 1) {
-            if ((wind_address_val == '') || (wind_pincode_val == '') || (wind_location_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!pin_format.test(wind_pincode_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Pin code should be 6 digits');
-            } else {
-                $('.error_tooltip').hide();
+            if (wind_address_val == "" && wind_location_val == "" && wind_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (wind_location_val == "" && wind_pincode_val == "") {
+                $("#add123").hide();
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (wind_address_val == "" && wind_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (wind_address_val == "" && wind_location_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").hide();
+            }
+            else if (wind_address_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").hide();
+            }
+            else if (wind_location_val == "") {
+                $("#loc123").show().text("Please Enter location");
+                $("#add123").hide();
+                $("#pin123").hide();
+            }
+            else if (wind_pincode_val == "") {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (!pin_format.test(wind_pincode_val)) {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $('#pin123').show().text('Pin code should be 6 digits');
+            }
+            else {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").hide();
                 next_slide();
                 $('.prev_slide.disabled').removeClass('disabled');
             }
         }
         if (current_slide == 2) {
             if ($('#wind_ServiceLookingType .option_box.selected').length > 0) {
-                $('.error_tooltip').hide();
+                $('#serviceLooking').hide();
                 next_slide();
             } else {
-                $('.error_tooltip').show().find('.error_msg').text('Select one Wind Service');
+                $('#serviceLooking').show().text('Select one Hydro Service');
             }
         }
         if (current_slide == 3) {
             if ($('#wind_TurbineManufacture .option_box.selected').length > 0) {
-                $('.error_tooltip').hide();
+                $('#turbineManufacturer').hide();
                 next_slide();
             } else {
-                $('.error_tooltip').show().find('.error_msg').text('Select one Wind Service');
+                $('#turbineManufacturer').show().text('Select wind turbine');
             }
         }
         if (current_slide == 4) {
-            if ((wind_renew_service_val == '') || (wind_renew_msg_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else {
-                $('.error_tooltip').hide();
+            if (wind_renew_service_val == "" && wind_renew_msg_val == "") {
+                $('#serviceType').show().text('Please Enter Service you are Looking');
+                $('#serviceMsg').show().text('Please provide information');
+            }
+            else if (wind_renew_service_val == "") {
+                $('#serviceType').show().text('Please Enter Service you are Looking');
+                $('#serviceMsg').hide();
+            }
+            else if (wind_renew_msg_val == "") {
+                $('#serviceMsg').show().text('Please provide information');
+                $('#serviceType').hide();
+            }
+            else {
+                $('#serviceMsg').hide();
+                $('#serviceType').hide();
                 next_slide();
                 $('.next_slide').addClass('disabled');
             }
         }
         if (current_slide == 5) {
-            if ((wind_company_name_val == '') || (wind_contact_person_val == '') || (wind_email_val == '') || (wind_mobile_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!email_format.test(wind_email_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Email Id is invalid');
-            } else if (!mobile_num_format.test(wind_mobile_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Mobile number is invalid');
-            } else {
-                $('.error_tooltip').hide();
+            if ((wind_company_name_val == '') && (wind_contact_person_val == '') && (wind_email_val == '') && (wind_mobile_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((wind_contact_person_val == '') && (wind_email_val == '') && (wind_mobile_val == '')) {
+                $('#companyName').hide();
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((wind_company_name_val == '') && (wind_contact_person_val == '') && (wind_email_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if ((wind_company_name_val == '') && (wind_mobile_val == '') && (wind_email_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((wind_company_name_val == '') && (wind_mobile_val == '') && (wind_contact_person_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((wind_email_val == '') && (wind_mobile_val == '')) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((wind_company_name_val == '') && (wind_contact_person_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if ((wind_company_name_val == '') && (wind_mobile_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (wind_company_name_val == '') {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if (wind_contact_person_val == '') {
+                $('#companyName').hide();
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if (wind_email_val == '') {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if (!email_format.test(wind_email_val)) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Email Id is invalid');
+                $('#mobile').hide();
+            }
+            else if (wind_mobile_val == '') {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (!mobile_num_format.test(wind_mobile_val)) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Mobile number is invalid');
+            }
+            else {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').hide();
+                $('.divLoader').removeClass('DN');
                 wind.AddWindServicesDetail();
             }
         }

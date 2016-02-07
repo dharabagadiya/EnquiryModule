@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - GreenPhyll</title>
     @*@Styles.Render("~/Content/css")*@
-    <script src="~/Scripts/Common/site.js"></script>
     @Styles.Render(BundleConfig.GetStylesBundlePath(ViewData["Controller_Name"].ToString()).ToArray())
 </head>
 <body>
     <div id="wrapper">
         <div class="header">
             <div class="container">
-                <div class="logo"><a href="@Url.Action("","Home")">RenewIn </a></div>
+                <div class="logo"><a href="@Url.Action("","Home")"><img src="~/images/logo.png" /> </a></div>
                 <div class="navigation">
-                    <ul>
+                    <ul class="menu">
+                        <li><a href="@Url.Action("HowRenewIn", "Pages")">How RenewIn Market Place Works</a></li>
+                        <li><a href="@Url.Action("PlaceSearch", "Pages")">Why use a Place Search Request</a></li>
                         <li><a href="@Url.Action("","JoinInstallerNetwork")">Join Installer Network</a></li>
-                        <li><a href="@Url.Action("Search", "Services")">Search Services</a></li>
+                        <li>@*<a href="@Url.Action("Search", "Services")">Search Services</a>*@</li>
                         @if (userDetail == null)
                         {
                             <li><a href="#" class="signin_popup_open left" id="btn_signin"> Login </a></li>
@@ -27,19 +28,38 @@
                             <li><a href="~/ProfileSetting/MyApplication">Profile Setting</a></li>
                             <li><a href="#" class="signin_popup_open left" id="btn_signout">Logout</a></li>
                         }
-                        <li style="height:40px;">
+                        @*<li style="height:40px;">
+                                <a href="#" class="app_btn left app_tooltip_open"></a>
+                                <ul class="dropdown_menu">
+                                    <li><a href="#">Join Installer Network</a></li>
+                                    <li><a href="@Url.Action("Search", "Services")">Services</a></li>
+                                    <li><a href="@Url.Action("","Offer")">Offer</a></li>
+                                    <li><a href="#">Solar Energy</a></li>
+                                    <li><a href="#">Wind Power</a></li>
+                                    <li><a href="#">Hydro Power</a></li>
+                                    <li><a href="#">Bio Energy</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Our Process</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                </ul>
+                            </li>*@
+                        <li>
                             <a href="#" class="app_btn left app_tooltip_open"></a>
-                            <ul class="dropdown_menu">
-                                <li><a href="#">Join Installer Network</a></li>
-                                <li><a href="@Url.Action("Search", "Services")">Services</a></li>
-                                <li><a href="@Url.Action("","Offer")">Offer</a></li>
-                                <li><a href="#">Solar Energy</a></li>
-                                <li><a href="#">Wind Power</a></li>
-                                <li><a href="#">Hydro Power</a></li>
-                                <li><a href="#">Bio Energy</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Our Process</a></li>
-                                <li><a href="#">About Us</a></li>
+                            <ul class="sub-menu">
+                                <li><a href="@Url.Action("","JoinInstallerNetwork")">Join Installer Network</a></li>
+                                <li><a href="@Url.Action("SolarLanding", "Solar")">Solar Energy</a></li>
+                                <li><a href="@Url.Action("", "Wind")">Wind Power</a></li>
+                                <li><a href="@Url.Action("", "Hydro")">Hydro Power</a></li>
+                                <li><a href="@Url.Action("", "Bio")">Bio Energy</a></li>
+                                <li><a href="@Url.Action("Search", "Services")">Place Search Request</a></li>
+                                @if (userDetail != null)
+                                {
+                                    <li><a href="~/ProfileSetting/MyApplication">My Applications</a></li>
+                                }
+                                <li><a href="#">Search Services</a></li>
+                                <li><a href="@Url.Action("Partners", "Pages")">Partners</a></li>
+                                <li><a href="@Url.Action("AboutUs", "Pages")">About Us</a></li>
+
                             </ul>
                         </li>
                     </ul>
@@ -47,15 +67,13 @@
                 <div class="clr"></div>
             </div>
         </div>
-        <div class="content_area" style="padding-top:0px;">
-            @RenderBody()
-        </div>
+        @RenderBody()
         <div class="clr"></div>
         <div class="footer_new fixed_footer">
             <div class="container">
                 <div class="smm">
-                    <a href="our_process.html"><h4 class="left">Our Process</h4></a>
-                    <a href="about_us.html"><h4 class="left padd">About Us</h4></a>
+                    <a href="@Url.Action("Partners", "Pages")"><h4 class="left">Partners</h4></a>
+                    <a href="@Url.Action("AboutUs", "Pages")"><h4 class="left padd">About Us</h4></a>
                 </div>
                 <div class="smm right">
                     <h4 class="left">Follow Us</h4>
@@ -80,6 +98,9 @@
                 <div class="clr"></div>
             </div>
         </div>
+    </div>
+    <div class="divLoader DN">
+        <img src="~/images/loading.gif" width="100" height="100" />
     </div>
     <form action="" method="post" id="register-form">
         <div id="signin_popup" class="popup">
@@ -106,15 +127,15 @@
                     </ul>
                     <div class="tab_content_group">
                         <div id="new_user" class="tab_content active">
-                            <label hidden="hidden" id="lblEmailExist" style="color:red">Email Already Exist</label>
-                            <input class="input top_10 no_label grey_text" type="text" title="Email" id="txtCreateAccountEmail" />
-                            <input class="input top_10 no_label grey_text" type="password" title="Password" id="txtCreateAccountPassword" />
+                            <input class="input top_10 no_label grey_text" type="text" placeholder="Email" id="txtCreateAccountEmail" />
+                            <input class="input top_10 no_label grey_text" type="password" placeholder="Password" id="txtCreateAccountPassword" />
+                            <label hidden="hidden" id="lblCreateAccount" style="color:red"></label>
                             <button class="btn block top_20" id="btnCreateAccount" type="submit">Create an Account</button>
                         </div>
                         <div id="existing_user" class="tab_content">
-                            <label hidden="hidden" id="lblInvalidUser" style="color:red">Invalid User</label>
-                            <input class="input top_10 no_label grey_text" type="text" title="Email" id="txtEmail" />
-                            <input class="input top_10 no_label grey_text bot_15" type="password" title="Password" id="txtPassword" />
+                            <input class="input top_10 no_label grey_text" type="text" placeholder="Email" id="txtEmail" />
+                            <input class="input top_10 no_label grey_text bot_15" type="password" placeholder="Password" id="txtPassword" />
+                            <label hidden="hidden" id="lblSignIn" style="color:red"></label>
                             <a id="forgot_pwd_link" class="forgot_pwd" href="#">Forgot Password ?</a>
                             <button class="btn block" id="btnSignIn">Sign In</button>
                         </div>
@@ -123,9 +144,11 @@
                 <div id="forgot_password" class="tab_content">
                     <h3 class="sub_title">Reset Password</h3>
                     <p>Enter the email address associated with your account and we will email you a link to reset your password.</p>
-                    <input class="input top_10 no_label grey_text bot_15" type="text" title="Enter Your Email" />
+                    <input class="input top_10 no_label grey_text bot_15" type="text" placeholder="Enter Your Email" id="txtForgotPasswordEmail" />
+                    <label hidden="hidden" id="lblForgotEmail"></label>
+                    <label hidden="hidden" id="lblInvalidForgotEmail" style="color:red"></label>
                     <a id="back_to_login" class="forgot_pwd" href="#"> Back to Login</a>
-                    <button class="btn block">Send Rest Link</button>
+                    <button class="btn block" id="btnForgotPassword">Send Rest Link</button>
                 </div>
             </div>
         </div>

@@ -1,0 +1,44 @@
+﻿@model DataModel.Modal.UserDetail
+@{ var userDetail = (CustomAuthentication.User)ViewData["UserDetail"]; }
+@{
+    ViewBag.Title = "ProfileDetail";
+}
+
+<div class="container">
+    <ul id="tabs">
+        <li class="border_tabs"><a href="~/ProfileSetting/MyApplication">My Applications</a></li>
+        <li><a href="#ProfileDetail" class="current">Profile Detail</a></li>
+        <li class="border_tabs"><a href="~/ProfileSetting/UploadDocuments">Upload Documents</a> </li>
+        <li class="border_tabs"><a href="~/ProfileSetting/Feedback">Feedback</a> </li>
+        <li class="border_tabs"><a href="~/ProfileSetting/ChangedPassword">Changed Password</a> </li>
+    </ul>
+    <div class="content">
+        <div id="ProfileDetail" class="tab_section">
+            <h3>Profile Detail</h3>
+            <div class="form_content" id="register-form">
+                @using (Html.BeginForm())
+                {
+                    <div>
+                        <input name="txtName" id="txtName" class="form_input top_15" type="text" placeholder="Name"  value="@Model.Name" />
+                    </div>
+                    <div style="height:55px;">
+                        <input name="txtEmailAddress" readonly="readonly" id="txtEmailAddress" class="form_input top_15 left_padd" type="text" placeholder="Email" value="@userDetail.Email" />
+                        <span class="emailicon">
+                            <img src="~/images/mail.png" alt="Mail" />
+                        </span>
+                    </div>
+                    <div>
+                        <input name="txtMobileNumber" id="txtMobileNumber" class="form_input top_15" type="text" placeholder="Mobile No" value="@Model.MobileNo" />
+                    </div>
+                    <div>
+                        <input name="txtLocation" id="txtLocation" class="form_input top_15" type="text" placeholder="Location" value="@Model.Location" />
+                    </div>
+                    <div class="button_wid top_55">
+                        <button type="submit" class="btn_form">Continue</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>

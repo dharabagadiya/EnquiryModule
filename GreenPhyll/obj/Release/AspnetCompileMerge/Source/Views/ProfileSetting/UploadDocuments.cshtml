@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "UploadDocuments";
+}
+
+<div class="container">
+    <ul id="tabs">
+        <li class="border_tabs"><a href="~/ProfileSetting/MyApplication">My Applications</a></li>
+        <li class="border_tabs"><a href="~/ProfileSetting/ProfileDetail">Profile Detail</a></li>
+        <li><a href="#UploadDocuments" class="current">Upload Documents</a></li>
+        <li class="border_tabs"><a href="~/ProfileSetting/Feedback">Feedback</a></li>
+        <li class="border_tabs"><a href="~/ProfileSetting/ChangedPassword">Changed Password</a></li>
+    </ul>
+    <div class="content">
+        <div class="content_file">
+            <h3>Upload Documents</h3>
+            <div id="content_frame_area" class="shadow_box left_10">
+                <div border="0" cellpadding="0" cellspacing="0" class="form_table_big">
+                    <div class="text_pan left"> ELECTRICITY BILL </div>
+                    <label class="file left">
+                        <span class="file-label">Choose a File..</span>
+                        <input type="file">
+                        <span class="file-value" aria-hidden="true"></span>
+                    </label>
+                    <button class="round_btn" onClick="upload_file();">Upload</button>
+                    <div class="relative">
+                        <div id="id_card_photo_preview" class="id_card_photo_preview">
+                            <h3>File Uploaded </h3>
+                            <a class="link top_10 block left" onClick="remove_file();">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content_frame_area" class="shadow_box left_10">
+                <div border="0" cellpadding="0" cellspacing="0" class="form_table_big">
+                    <div class="text_pan left"> PAN CARD </div>
+                    <label class="file left">
+                        <span class="file-label">Choose a File..</span>
+                        <input type="file">
+                        <span class="file-value" aria-hidden="true"></span>
+                    </label>
+                    <button class="round_btn" onClick="upload_file();">Upload</button>
+                    <div class="relative">
+                        <div id="id_card_photo_preview" class="id_card_photo_preview">
+                            <h3>File Uploaded </h3>
+                            <a class="link top_10 block left" onClick="remove_file();">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content_frame_area" class="shadow_box left_10">
+                <div border="0" cellpadding="0" cellspacing="0" class="form_table_big">
+                    <div class="text_pan left"> VOTER ID </div>
+                    <label class="file left">
+                        <span class="file-label">Choose a File..</span>
+                        <input type="file">
+                        <span class="file-value" aria-hidden="true"></span>
+                    </label>
+                    <button class="round_btn" onClick="upload_file();">Upload</button>
+                    <div class="relative">
+                        <div id="id_card_photo_preview" class="id_card_photo_preview">
+                            <h3>File Uploaded </h3>
+                            <a class="link top_10 block left" onClick="remove_file();">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content_frame_area" class="shadow_box left_10">
+                <div border="0" cellpadding="0" cellspacing="0" class="form_table_big">
+                    <div class="text_pan left"> COMPANY DOCS </div>
+                    <label class="file left">
+                        <span class="file-label">Choose a File..</span>
+                        <input type="file">
+                        <span class="file-value" aria-hidden="true"></span>
+                    </label>
+                    <button class="round_btn" onClick="upload_file();">Upload</button>
+                    <div class="relative">
+                        <div id="id_card_photo_preview" class="id_card_photo_preview">
+                            <h3>File Uploaded </h3>
+                            <a class="link top_10 block left" onClick="remove_file();">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button_wid top_55">
+                <button type="button" class="btn_form but_wid">Continue</button>
+            </div>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>
+

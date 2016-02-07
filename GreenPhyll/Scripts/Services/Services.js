@@ -19,7 +19,8 @@ $(document).ready(function () {
     });
     $('#btnSearch').off('click').on('click', function () {
         var searchTxt = $('#edit-search').val();
-        window.location.href = '/Services/Search/0/' + searchTxt;
+        var category = $('#ddlCategory').val();
+        window.location.href = '/Services/Search/' + category + '/' + searchTxt;
     })
 });
 

@@ -2,7 +2,19 @@ var pin_format = /^\d{6}$/;
 var number_only = /[^0-9]/g;
 var email_format = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 var mobile_num_format = /^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
-
+function isNumberKey(evt) {
+    //var charCode = (evt.which) ? evt.which : event.keyCode
+    //if (charCode > 31 && (charCode < 48 || charCode > 57))
+    //    return false;
+    //return true;
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (
+        (charCode != 45 || $(element).val().indexOf('-') != -1) &&      // “-” CHECK MINUS, AND ONLY ONE.
+        (charCode != 46 || $(element).val().indexOf('.') != -1) &&      // “.” CHECK DOT, AND ONLY ONE.
+        (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}
 $(document).ready(function () {
     current_slide = 1;
     slide_left = 0;

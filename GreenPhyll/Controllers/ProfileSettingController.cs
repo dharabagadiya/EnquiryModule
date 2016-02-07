@@ -3,9 +3,11 @@
 using DataModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Utilities;
 #endregion
 
 namespace GreenPhyll.Controllers
@@ -20,7 +22,7 @@ namespace GreenPhyll.Controllers
         public ActionResult MyApplication()
         {
             var offerManager = new OfferManager();
-            var getoffers = offerManager.GetOffers();
+            var getoffers = offerManager.GetOffers("Bio");
             return View(getoffers);
         }
         public ActionResult ProfileDetail()
@@ -38,7 +40,6 @@ namespace GreenPhyll.Controllers
             ViewData["Status"] = false;
             return View(userDetail);
         }
-
         [HttpPost]
         public ActionResult ProfileDetail(FormCollection formCollection)
         {
@@ -56,6 +57,9 @@ namespace GreenPhyll.Controllers
         }
         public ActionResult UploadDocuments()
         {
+            BundleConfig.AddScript("~/Scripts/ProfileSetting", "profileSetting.js", ControllerName);
+
+            StartupScript = "DoPageSetting();";
             return View();
         }
         public ActionResult Feedback()
@@ -73,7 +77,7 @@ namespace GreenPhyll.Controllers
             var userID = UserDetail.UserId;
             var feedback_question = formCollection["feedback_question"].ToString();
             var feedback_msg = formCollection["feedback_msg"].ToString();
-            var status = new DataModel.UserDetailManager().Add_FeedBack(userID, feedback_question, feedback_msg);
+            var status = new DataModel.ProfileSettingManager().Add_FeedBack(userID, feedback_question, feedback_msg);
             ViewData["Status"] = status;
             return View();
         }
@@ -92,7 +96,6 @@ namespace GreenPhyll.Controllers
             ViewData["Status"] = false;
             return View();
         }
-
         [HttpPost]
         public ActionResult ChangedPassword(FormCollection formCollection)
         {
@@ -107,6 +110,34 @@ namespace GreenPhyll.Controllers
             var status = new CustomAuthentication.CustomMembershipProvider().ChangePassword(userID, oldPassword, newPassword);
             ViewData["Status"] = status;
             return View();
+        }
+        [HttpPost]
+        public JsonResult UploadFile()
+        {
+            var status = false;
+            HttpPostedFileBase myFile = null;
+            if (Request.Files.Count > 0) myFile = Request.Files[0];
+            if (myFile != null && myFile.ContentLength != 0)
+            {
+                var userID = UserDetail.UserId;
+                string pathForSaving = Server.MapPath("~/DocumentsUpload");
+                if (SharedFunction.CreateFolderIfNeeded(pathForSaving))
+                {
+                    try
+                    {
+                        string fileName = DateTime.Now.ToString("MMddyyyyHHmmss") + Path.GetExtension(myFile.FileName);
+                        myFile.SaveAs(Path.Combine(pathForSaving, fileName));
+                        string path = "~/DocumentsUpload/" + fileName;
+                        var profileManager = new ProfileSettingManager();
+                        status = profileManager.AddFile(userID, path, myFile.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        return Json(ex.InnerException);
+                    }
+                }
+            }
+            return Json(status);
         }
     }
 }

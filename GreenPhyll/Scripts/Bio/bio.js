@@ -27,7 +27,8 @@ bio.AddBioDetail = function () {
             var status = data;
             if (status) {
                 //window.location.href = "Enquiry/ThankYou";
-                window.location.href = "/Offer/";
+                $('.divLoader').addClass('DN');
+                window.location.href = "/Offer/Index/Bio";
                 //alert("Success");
             } else { }
         }
@@ -52,63 +53,248 @@ bio.AddBioValidation = function () {
 
         if (current_slide == 1) {
             if ($('#bio_services .option_box.selected').length > 0) {
-                $('.error_tooltip').hide();
+                $('#bioType').hide();
                 next_slide();
                 $('.prev_slide.disabled').removeClass('disabled');
             } else {
-                $('.error_tooltip').show().find('.error_msg').text('Select one Bio Service');
+                $('#bioType').show().text('Select one Bio Service');
             }
         }
         if (current_slide == 2) {
             if ($('#bio_role .option_box.selected').length > 0) {
-                $('.error_tooltip').hide();
+                $('#stateWhether').hide();
                 next_slide();
             } else {
-                $('.error_tooltip').show().find('.error_msg').text('Select one Option Below');
+                $('#stateWhether').show().text('Select one Option Below');
             }
         }
         if (current_slide == 3) {
-            if ((bio_applicant_name_val == '') || (bio_pan == '') || (bio_cin == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else {
-                $('.error_tooltip').hide();
+            if ((bio_applicant_name_val == '') && (bio_pan == '') && (bio_cin == '')) {
+                $('#nameOfApplicant').show().text('Enter Name of Applicant');
+                $('#PAN').show().text('Enter PAN');
+                $('#CIN').show().text('Enter CIN');
+            }
+            else if (bio_pan == '' && bio_cin == '') {
+                $('#nameOfApplicant').hide();
+                $('#PAN').show().text('Enter PAN');
+                $('#CIN').show().text('Enter CIN');
+            }
+            else if (bio_applicant_name_val == '' && bio_cin == '') {
+                $('#nameOfApplicant').show().text('Enter Name of Applicant');
+                $('#PAN').hide();
+                $('#CIN').show().text('Enter CIN');
+            }
+            else if (bio_applicant_name_val == '' && bio_pan == '') {
+                $('#nameOfApplicant').show().text('Enter Name of Applicant');
+                $('#PAN').show().text('Enter PAN');
+                $('#CIN').hide();
+            }
+            else if (bio_applicant_name_val == '') {
+                $('#nameOfApplicant').show().text('Enter Name of Applicant');
+                $('#PAN').hide();
+                $('#CIN').hide();
+            }
+            else if (bio_pan == '') {
+                $('#nameOfApplicant').hide();
+                $('#PAN').show().text('Enter PAN');
+                $('#CIN').hide();
+            }
+            else if (bio_cin == '') {
+                $('#nameOfApplicant').hide();
+                $('#PAN').hide();
+                $('#CIN').show().text('Enter CIN');
+            }
+            else {
+                $('#nameOfApplicant').hide();
+                $('#PAN').hide();
+                $('#CIN').hide();
                 next_slide();
             }
         }
         if (current_slide == 4) {
-            if ((bio_address_val == '') || (bio_pincode_val == '') || (bio_location_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!pin_format.test(bio_pincode_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Pin code should be 6 digits');
-            } else {
-                $('.error_tooltip').hide();
+            if (bio_address_val == "" && bio_location_val == "" && bio_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (bio_location_val == "" && bio_pincode_val == "") {
+                $("#add123").hide();
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (bio_address_val == "" && bio_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (bio_address_val == "" && bio_location_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").hide();
+            }
+            else if (bio_address_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").hide();
+            }
+            else if (bio_location_val == "") {
+                $("#loc123").show().text("Please Enter location");
+                $("#add123").hide();
+                $("#pin123").hide();
+            }
+            else if (bio_pincode_val == "") {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (!pin_format.test(bio_pincode_val)) {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $('#pin123').show().text('Pin code should be 6 digits');
+            }
+            else {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").hide();
                 next_slide();
+                $('.prev_slide.disabled').removeClass('disabled');
             }
         }
         if (current_slide == 5) {
-            if ((bio_proposed_capacity_val == '') || (bio_estimated_project_cost_val == '') || (bio_turn_over_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (number_only.test(bio_turn_over_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Average turnover should be digits');
-            } else if (number_only.test(bio_estimated_project_cost_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Estimated cost should be digits');
-            } else if (number_only.test(bio_proposed_capacity_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Capacity of bio plant should be digits');
-            } else {
-                $('.error_tooltip').hide();
+            if ((bio_proposed_capacity_val == '') && (bio_estimated_project_cost_val == '') && (bio_turn_over_val == '')) {
+                $('#capacity').show().text('Enter Capacity of the bio project');
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (bio_estimated_project_cost_val == '' && bio_turn_over_val == '') {
+                $('#capacity').hide();
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (bio_proposed_capacity_val == '' && bio_turn_over_val == '') {
+                $('#capacity').show().text('Enter Capacity of the bio project');
+                $('#cost').hide();
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (bio_proposed_capacity_val == '' && bio_estimated_project_cost_val=='') {
+                $('#capacity').show().text('Enter Capacity of the bio project');
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').hide();
+            }
+            else if (bio_proposed_capacity_val == '') {
+                $('#capacity').show().text('Enter Capacity of the bio project');
+                $('#cost').hide();
+                $('#turnover').hide();
+            }
+            else if (bio_estimated_project_cost_val=='') {
+                $('#capacity').hide();
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').hide();
+            }
+            else if (bio_turn_over_val == '') {
+                $('#capacity').hide();
+                $('#cost').hide();
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else {
+                $('#capacity').hide();
+                $('#cost').hide();
+                $('#turnover').hide();
                 next_slide();
                 $('.next_slide').addClass('disabled');
             }
         }
         if (current_slide == 6) {
-            if ((bio_company_name_val == '') || (bio_contact_person_val == '') || (bio_email_val == '') || (bio_mobile_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!email_format.test(bio_email_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Email Id is invalid');
-            } else if (!mobile_num_format.test(bio_mobile_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Mobile number is invalid');
-            } else {
-                $('.error_tooltip').hide();
+            if ((bio_company_name_val == '') && (bio_contact_person_val == '') && (bio_email_val == '') && (bio_mobile_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((bio_contact_person_val == '') && (bio_email_val == '') && (bio_mobile_val == '')) {
+                $('#companyName').hide();
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((bio_company_name_val == '') && (bio_contact_person_val == '') && (bio_email_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if ((bio_company_name_val == '') && (bio_mobile_val == '') && (bio_email_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((bio_company_name_val == '') && (bio_mobile_val == '') && (bio_contact_person_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((bio_email_val == '') && (bio_mobile_val == '')) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((bio_company_name_val == '') && (bio_contact_person_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if ((bio_company_name_val == '') && (bio_mobile_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (bio_company_name_val == '') {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if (bio_contact_person_val == '') {
+                $('#companyName').hide();
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if (bio_email_val == '') {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if (!email_format.test(bio_email_val)) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Email Id is invalid');
+                $('#mobile').hide();
+            }
+            else if (bio_mobile_val == '') {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (!mobile_num_format.test(bio_mobile_val)) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Mobile number is invalid');
+            }
+            else {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').hide();
+                $('.divLoader').removeClass('DN');
                 bio.AddBioDetail();
             }
         }
