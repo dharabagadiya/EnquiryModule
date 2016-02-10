@@ -105,7 +105,7 @@ function CreateAccount() {
     var username = $("#txtCreateAccountEmail").val().trim();
     var password = $("#txtCreateAccountPassword").val().trim();
     var userRoleID = "2";
-    if (username== "") {
+    if (username == "") {
         $("#lblCreateAccount").show();
         $("#lblCreateAccount").empty().html('Please enter email address').css('color', 'red');
         return false;
@@ -138,7 +138,7 @@ function CreateAccount() {
             if (status) {
                 $('.divLoader').addClass('DN');
                 $("#lblCreateAccount").show();
-                $("#lblCreateAccount").empty().html('Successfully created').css('color','green');
+                $("#lblCreateAccount").empty().html('Successfully created').css('color', 'green');
             } else {
                 $('.divLoader').addClass('DN');
                 $("#lblCreateAccount").show();
@@ -227,20 +227,21 @@ function AddjoinInstallerNetwork() {
     $("input[type='checkbox']:checked").each(function () { checkBoxField.push($(this).val()) });
     var name = $("#txtName").val();
     var email = $("#txtEmailJIN").val();
-    var designation = $("#txtDesignation").val();
-    var deskNumber = $("#txtDeskNumber").val();
     var companyName = $("#txtCompanyName").val();
     var mobileNumber = $("#txtMobileNumber").val();
     var additionalNotes = $("#txtAdditionalNotes").val();
     var radioField = $("input[type='radio']:checked").val();
     var checkboxField = checkBoxField.join(',');
+
+    //$('#email').show();
+
     $.ajax({
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         type: "POST",
         url: "/JoinInstallerNetwork/Add",
         async: false,
-        data: JSON.stringify({ "name": name, "email": email, "mobileNumber": mobileNumber, "designation": designation, "deskNumber": deskNumber, "companyName": companyName, "additionalNotes": additionalNotes, "radioField": radioField, "checkboxField": checkboxField }),
+        data: JSON.stringify({ "name": name, "email": email, "mobileNumber": mobileNumber, "companyName": companyName, "additionalNotes": additionalNotes, "radioField": radioField, "checkboxField": checkboxField }),
         success: function (data) {
             var status = data;
             if (status) { alert("success") }

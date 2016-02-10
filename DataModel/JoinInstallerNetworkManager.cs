@@ -10,7 +10,7 @@ namespace DataModel
     public class JoinInstallerNetworkManager
     {
         private DataContext Context = new DataContext();
-        public bool Add(string name, string email, string mobileNumber, string designation, string deskNumber, string companyName, string additionalNotes, string radioField, string checkboxField)
+        public bool Add(string name, string email, string mobileNumber, string companyName, string additionalNotes, string radioField, string checkboxField)
         {
             try
             {
@@ -19,12 +19,10 @@ namespace DataModel
                     Name = name,
                     Email = email,
                     MobileNumber = mobileNumber,
-                    Designation = designation,
-                    DeskNumber = deskNumber,
                     CompanyName = companyName,
-                    AdditionalNotes = additionalNotes,
-                    RadioField = radioField,
-                    CheckboxField = checkboxField,
+                    Message = additionalNotes,
+                    BusinessArea = radioField,
+                    WhoYouAre = checkboxField,
                     IsDeleted = false,
                     CreateDate = DateTime.Now,
                     UpdateDate = DateTime.Now

@@ -12,20 +12,20 @@
         <div class="form_group payOption">
             <label for="banksDropdown" class="label_wid left control_label" style="color:#333; font-size:13px !important;"> Business Area </label>
             <div class="input_group ">
-                <input id="DEBIT" name="paymode" value="DEBIT" type="radio"><label style="margin-left: -33px;" for="DEBIT">Solar Energy</label>
-                <input id="NETB" name="paymode" value="NETB" type="radio"><label for="NETB">Wind Power </label>
-                <input id="DEBIT1" name="paymode" value="DEBIT" type="radio"><label for="DEBIT1">Hydro Power </label>
-                <input id="NETB1" name="paymode" value="NETB" type="radio"><label for="NETB1"> Bio Energy </label>
-                <input id="NETB1" name="paymode" value="NETB" type="radio"><label for="NETB1"> Service Provider </label>
+                <input id="DEBIT" name="paymode" value="Solar Energy" type="radio"><label style="margin-left: -33px;" for="DEBIT">Solar Energy</label>
+                <input id="NETB" name="paymode" value="Wind Power" type="radio"><label for="NETB">Wind Power </label>
+                <input id="DEBIT1" name="paymode" value="Hydro Power" type="radio"><label for="DEBIT1">Hydro Power </label>
+                <input id="NETB1" name="paymode" value="Bio Energy" type="radio"><label for="NETB1"> Bio Energy </label>
+                <input id="NETB1" name="paymode" value="Service Provider" type="radio"><label for="NETB1"> Service Provider </label>
             </div>
         </div>
         <div class="form_group payOption1">
             <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Who you are </label>
             <div class="input_group" style="padding-top:5px;">
-                <input name="paymode" value="DEBIT" type="checkbox" /><span class="padd_label" style="margin-left: -33px;" for="DEBIT">Individual</span>
-                <input name="paymode" value="DEBIT" type="checkbox" /><span class="padd_label" for="DEBIT">Installer </span>
-                <input name="paymode" value="DEBIT" type="checkbox" /><span class="padd_label" for="DEBIT">Service Provider </span>
-                <input name="paymode" value="NETB" type="checkbox" /><span class="padd_label" for="NETB"> Partner </span>
+                <input name="paymode" value="Individual" type="checkbox" /><span class="padd_label" style="margin-left: -33px;" for="DEBIT">Individual</span>
+                <input name="paymode" value="Installer" type="checkbox" /><span class="padd_label" for="DEBIT">Installer </span>
+                <input name="paymode" value="Service Provider" type="checkbox" /><span class="padd_label" for="DEBIT">Service Provider </span>
+                <input name="paymode" value="Partner" type="checkbox" /><span class="padd_label" for="NETB"> Partner </span>
             </div>
         </div>
         <div class="form_group">
@@ -51,12 +51,13 @@
                 <input class="form_control border_textbox no_label" id="txtEmailJIN" name="qpemail" placeholder="Email" 
                        autocomplete="off" type="text" />
             </div>
+            <span id="email" class="left_arrow" style="margin-left:-195px;">sfsdfsd</span>
         </div>
         <div class="form_group">
             <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Mobile No </label>
             <div class="button_wid">
                 <div class="input_group_addon left">+91</div>
-                <input class="form_control border_textbox no_label" id="txtMobileNumber" name="qpemail" placeholder="Mobile No" 
+                <input class="form_control border_textbox no_label" id="txtMobileNumber" name="qpemail" placeholder="Mobile No"  onkeypress="return isNumberKey(event)" maxlength="10" 
                        autocomplete="off" type="text" />
             </div>
         </div>
