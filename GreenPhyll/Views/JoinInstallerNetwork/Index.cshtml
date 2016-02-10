@@ -7,79 +7,70 @@
     <div class="content_img left">
         <img style="width:450px;height:550px;" src="~/images/ecologico.png" />
     </div>
-
     <div class="form_section left" style="height:550px !important;">
         <div class="form" style="margin-bottom:5px"><h1> Join our Network as partner or Installer or Service Provider </h1></div>
-
         <div class="form_group payOption">
             <label for="banksDropdown" class="label_wid left control_label" style="color:#333; font-size:13px !important;"> Business Area </label>
-
             <div class="input_group ">
-                <input id="DEBIT" name="paymode" value="DEBIT"  type="radio"><label style="margin-left: -33px;" for="DEBIT">Solar Energy</label>
-                <input id="NETB" name="paymode" value="NETB"  type="radio"><label for="NETB">Wind Power </label>
-                <input id="DEBIT1" name="paymode" value="DEBIT"  type="radio"><label for="DEBIT1">Hydro Power </label>
-                <input id="NETB1" name="paymode" value="NETB"  type="radio"><label for="NETB1"> Bio Energy </label>
-                <input id="NETB1" name="paymode" value="NETB"  type="radio"><label for="NETB1"> Service Provider </label></div>
+                <input id="DEBIT" name="paymode" value="DEBIT" type="radio"><label style="margin-left: -33px;" for="DEBIT">Solar Energy</label>
+                <input id="NETB" name="paymode" value="NETB" type="radio"><label for="NETB">Wind Power </label>
+                <input id="DEBIT1" name="paymode" value="DEBIT" type="radio"><label for="DEBIT1">Hydro Power </label>
+                <input id="NETB1" name="paymode" value="NETB" type="radio"><label for="NETB1"> Bio Energy </label>
+                <input id="NETB1" name="paymode" value="NETB" type="radio"><label for="NETB1"> Service Provider </label>
+            </div>
         </div>
-
         <div class="form_group payOption1">
             <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Who you are </label>
             <div class="input_group" style="padding-top:5px;">
-                <input name="paymode" value="DEBIT"  type="checkbox" /><span class="padd_label" style="margin-left: -33px;" for="DEBIT">Individual</span>
-                <input name="paymode" value="DEBIT"  type="checkbox" /><span class="padd_label" for="DEBIT">Installer </span>
-                <input name="paymode" value="DEBIT"  type="checkbox" /><span class="padd_label" for="DEBIT">Service Provider </span>
-                <input name="paymode" value="NETB"  type="checkbox" /><span class="padd_label" for="NETB"> Partner </span>
+                <input name="paymode" value="DEBIT" type="checkbox" /><span class="padd_label" style="margin-left: -33px;" for="DEBIT">Individual</span>
+                <input name="paymode" value="DEBIT" type="checkbox" /><span class="padd_label" for="DEBIT">Installer </span>
+                <input name="paymode" value="DEBIT" type="checkbox" /><span class="padd_label" for="DEBIT">Service Provider </span>
+                <input name="paymode" value="NETB" type="checkbox" /><span class="padd_label" for="NETB"> Partner </span>
             </div>
         </div>
-
         <div class="form_group">
             <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Company </label>
             <div class="textbox_wid">
                 <div class="input_group_addon padd_icon left"><img class="icon_img" src="~/images/Briefcase.png" /></div>
-                <input class="form_control border_textbox no_label" id="qpemail" name="qpemail" placeholder="Company" onkeyup="validateQPUser(this);"
+                <input class="form_control border_textbox no_label" id="txtCompanyName" name="qpemail" placeholder="Company"
                        autocomplete="off" type="text" />
             </div>
         </div>
-
         <div class="form_group">
             <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Name </label>
             <div class="textbox_wid">
                 <div class="input_group_addon padd_icon left"><img class="icon_img" src="~/images/user_1.png" /></div>
-                <input class="form_control border_textbox no_label" id="qpemail" name="qpemail" placeholder="Name" onkeyup="validateQPUser(this);"
+                <input class="form_control border_textbox no_label" id="txtName" name="qpemail" placeholder="Name"
                        autocomplete="off" type="text" />
             </div>
         </div>
-
         <div class="form_group">
             <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Email </label>
             <div class="textbox_wid">
                 <div class="input_group_addon padd_icon left"><img class="icon_img" src="~/images/email.png" /></div>
-                <input class="form_control border_textbox no_label" id="qpemail" name="qpemail" placeholder="Email" onkeyup="validateQPUser(this);"
+                <input class="form_control border_textbox no_label" id="txtEmailJIN" name="qpemail" placeholder="Email" 
                        autocomplete="off" type="text" />
             </div>
         </div>
-
         <div class="form_group">
             <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Mobile No </label>
             <div class="button_wid">
                 <div class="input_group_addon left">+91</div>
-                <input class="form_control border_textbox no_label" id="qpemail" name="qpemail" placeholder="Mobile No" onkeyup="validateQPUser(this);"
+                <input class="form_control border_textbox no_label" id="txtMobileNumber" name="qpemail" placeholder="Mobile No" 
                        autocomplete="off" type="text" />
             </div>
         </div>
-
         <div class="form_group">
             <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Your Message </label>
             <div class="textbox_wid">
-                <textarea class="form_control textarea_wid no_label" name="qpemail" type="text"></textarea>
+                <textarea class="form_control textarea_wid no_label" name="qpemail" type="text" id="txtAdditionalNotes"></textarea>
             </div>
         </div>
-
         <div id="buttonSection" class="panel clearfix">
             <div class="panel_footer">
                 <div class="button_wid"></div>
                 <div class="btn_wid">
-                    <button type="button" onclick="validateBDPGPayment()" id="proccedBtn" class="btn btn_primary">Pay Now</button>
+                    <button type="button" id="btnSendRequest" class="btn btn_primary">Pay Now</button>
                 </div>
                 <div class="clr"></div>
             </div>

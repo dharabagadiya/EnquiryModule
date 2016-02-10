@@ -46,48 +46,198 @@ solar.AddSolarValidation = function () {
 
         if (current_slide == 1) {
             if ($('#solar_role .option_box.selected').length > 0) {
-                $('.error_tooltip').hide();
+                $('#stateWhether').hide();
                 next_slide();
+                $('.prev_slide.disabled').removeClass('disabled');
             } else {
-                $('.error_tooltip').show().find('.error_msg').text('Select one Option Below');
+                $('#stateWhether').show().text('Select one Option Below');
             }
         }
         if (current_slide == 2) {
-            if ((solar_address_val == '') || (solar_pincode_val == '') || (solar_location_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!pin_format.test(solar_pincode_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Pin code should be 6 digits');
-            } else {
-                $('.error_tooltip').hide();
+            if (solar_address_val == "" && solar_location_val == "" && solar_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (solar_location_val == "" && solar_pincode_val == "") {
+                $("#add123").hide();
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (solar_address_val == "" && solar_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (solar_address_val == "" && solar_location_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").hide();
+            }
+            else if (solar_address_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").hide();
+            }
+            else if (solar_location_val == "") {
+                $("#loc123").show().text("Please Enter location");
+                $("#add123").hide();
+                $("#pin123").hide();
+            }
+            else if (solar_pincode_val == "") {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (!pin_format.test(solar_pincode_val)) {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $('#pin123').show().text('Pin code should be 6 digits');
+            }
+            else {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").hide();
                 next_slide();
+                $('.prev_slide.disabled').removeClass('disabled');
             }
         }
         if (current_slide == 3) {
-            if ((estimated_SolPark_Cost == '') || (solar_shadow_free_area_val == '') || (solar_capacity_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (number_only.test(estimated_SolPark_Cost)) {
-                $('.error_tooltip').show().find('.error_msg').text('Estimated Project Cost should be digits');
-            } else if (number_only.test(solar_shadow_free_area_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Shadow free area should be digits');
-            } else if (number_only.test(solar_capacity_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Capacity of solar plant should be digits');
-            } else {
-                $('.error_tooltip').hide();
+            if ((estimated_SolPark_Cost == '') && (solar_shadow_free_area_val == '') && (solar_capacity_val == '')) {
+                $('#ebill').show().text('Enter Average Monthly Electricity Bill');
+                $('#freeArea').show().text('Enter Shadow free area');
+                $('#capacity').show().text('Enter Capacity of Solar power plant');
+            }
+            else if (solar_shadow_free_area_val == '' && solar_capacity_val == '') {
+                $('#ebill').hide();
+                $('#freeArea').show().text('Enter Shadow free area');
+                $('#capacity').show().text('Enter Capacity of Solar power plant');
+            }
+            else if (estimated_SolPark_Cost == '' && solar_capacity_val == '') {
+                $('#ebill').show().text('Enter Average Monthly Electricity Bill');
+                $('#freeArea').hide();
+                $('#capacity').show().text('Enter Capacity of Solar power plant');
+            }
+            else if (estimated_SolPark_Cost == '' && solar_shadow_free_area_val == '') {
+                $('#ebill').show().text('Enter Average Monthly Electricity Bill');
+                $('#freeArea').show().text('Enter Shadow free area');
+                $('#capacity').hide();
+            }
+            else if (estimated_SolPark_Cost == '') {
+                $('#ebill').show().text('Enter Average Monthly Electricity Bill');
+                $('#freeArea').hide();
+                $('#capacity').hide();
+            }
+            else if (solar_shadow_free_area_val == '') {
+                $('#ebill').hide();
+                $('#freeArea').show().text('EnterShadow free area');
+                $('#capacity').hide();
+            }
+            else if (solar_capacity_val == '') {
+                $('#ebill').hide();
+                $('#freeArea').hide();
+                $('#capacity').show().text('Enter Capacity of Solar power plant');
+            }
+            else {
+                $('#ebill').hide();
+                $('#freeArea').hide();
+                $('#capacity').hide();
                 next_slide();
                 $('.next_slide').addClass('disabled');
             }
         }
         if (current_slide == 4) {
-            if ((solar_company_name_val == '') || (solar_contact_person_val == '') || (solar_email_val == '') || (solar_mobile_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!email_format.test(solar_email_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Email Id is invalid');
-            } else if (!mobile_num_format.test(solar_mobile_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Mobile number is invalid');
-            } else {
-                $('.error_tooltip').hide();
-                solar.AddSolarDetail();
+            if ((solar_company_name_val == '') && (solar_contact_person_val == '') && (solar_email_val == '') && (solar_mobile_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((solar_contact_person_val == '') && (solar_email_val == '') && (solar_mobile_val == '')) {
+                $('#companyName').hide();
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((solar_company_name_val == '') && (solar_contact_person_val == '') && (solar_email_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if ((solar_company_name_val == '') && (solar_mobile_val == '') && (solar_email_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((solar_company_name_val == '') && (solar_mobile_val == '') && (solar_contact_person_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((solar_email_val == '') && (solar_mobile_val == '')) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((solar_company_name_val == '') && (solar_contact_person_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if ((solar_company_name_val == '') && (solar_mobile_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (solar_company_name_val == '') {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if (solar_contact_person_val == '') {
+                $('#companyName').hide();
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if (solar_email_val == '') {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if (!email_format.test(solar_email_val)) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Email Id is invalid');
+                $('#mobile').hide();
+            }
+            else if (solar_mobile_val == '') {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (!mobile_num_format.test(solar_mobile_val)) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Mobile number is invalid');
+            }
+            else {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').hide();
                 $('.divLoader').removeClass('DN');
+                solar.AddSolarDetail();
             }
         }
     });
