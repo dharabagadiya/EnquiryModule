@@ -2,7 +2,11 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<div class="breadcrumb left">
+    <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    <span class=""><a href="#"> View Offers </a></span>
+</div>
 @foreach (var offer in Model)
 {
     <div class="results_container">

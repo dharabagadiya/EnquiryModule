@@ -57,7 +57,7 @@ bio.AddBioValidation = function () {
                 next_slide();
                 $('.prev_slide.disabled').removeClass('disabled');
             } else {
-                $('#bioType').show().text('Select one Bio Service');
+                $('#bioType').show().text('Please select an option to proceed');
             }
         }
         if (current_slide == 2) {
@@ -65,7 +65,7 @@ bio.AddBioValidation = function () {
                 $('#stateWhether').hide();
                 next_slide();
             } else {
-                $('#stateWhether').show().text('Select one Option Below');
+                $('#stateWhether').show().text('Please select an option to proceed');
             }
         }
         if (current_slide == 3) {
@@ -97,6 +97,11 @@ bio.AddBioValidation = function () {
             else if (bio_pan == '') {
                 $('#nameOfApplicant').hide();
                 $('#PAN').show().text('Enter PAN');
+                $('#CIN').hide();
+            }
+            else if (!pan_format.test(bio_pan)) {
+                $('#nameOfApplicant').hide();
+                $('#PAN').show().text('Please enter your correct PAN Number');
                 $('#CIN').hide();
             }
             else if (bio_cin == '') {

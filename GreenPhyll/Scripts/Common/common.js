@@ -225,28 +225,131 @@ function AddEnquiry() {
 function AddjoinInstallerNetwork() {
     var checkBoxField = [];
     $("input[type='checkbox']:checked").each(function () { checkBoxField.push($(this).val()) });
+    var checkboxField = checkBoxField.join(',');
+    var radioField = $("input[type='radio']:checked").val();
     var name = $("#txtName").val();
     var email = $("#txtEmailJIN").val();
     var companyName = $("#txtCompanyName").val();
     var mobileNumber = $("#txtMobileNumber").val();
     var additionalNotes = $("#txtAdditionalNotes").val();
-    var radioField = $("input[type='radio']:checked").val();
-    var checkboxField = checkBoxField.join(',');
 
-    //$('#email').show();
-
-    $.ajax({
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        type: "POST",
-        url: "/JoinInstallerNetwork/Add",
-        async: false,
-        data: JSON.stringify({ "name": name, "email": email, "mobileNumber": mobileNumber, "companyName": companyName, "additionalNotes": additionalNotes, "radioField": radioField, "checkboxField": checkboxField }),
-        success: function (data) {
-            var status = data;
-            if (status) { alert("success") }
-            else { }
-        }
-    });
+    if (name == '' && email == '' && companyName == '' && mobileNumber == '') {
+        $('#name').show().text("Please Enter Name");
+        $('#email').show().text("Please Enter Email");
+        $('#company').show().text("Please Enter Company Name");
+        $('#mobile').show().text("Please Enter Mobile No");
+    }
+    else if (email == '' && companyName == '' && mobileNumber == '') {
+        $('#name').hide();
+        $('#email').show().text("Please Enter Email");
+        $('#company').show().text("Please Enter Company Name");
+        $('#mobile').show().text("Please Enter Mobile No");
+    }
+    else if (name == '' && email == '' && mobileNumber == '') {
+        $('#name').show().text("Please Enter Name");
+        $('#email').show().text("Please Enter Email");
+        $('#company').hide();
+        $('#mobile').show().text("Please Enter Mobile No");
+    }
+    else if (companyName == '' && mobileNumber == '') {
+        $('#name').hide();
+        $('#email').hide();
+        $('#company').show().text("Please Enter Company Name");
+        $('#mobile').show().text("Please Enter Mobile No");
+    }
+    else if (name == '' && email == '' && companyName == '') {
+        $('#name').show().text("Please Enter Name");
+        $('#email').show().text("Please Enter Email");
+        $('#company').show().text("Please Enter Company Name");
+        $('#mobile').hide();
+    }
+    else if (name == '' && email == '') {
+        $('#name').show().text("Please Enter Name");
+        $('#email').show().text("Please Enter Email");
+        $('#company').hide();
+        $('#mobile').hide();
+    }
+    else if (name == '' && mobileNumber == '') {
+        $('#name').show().text("Please Enter Name");
+        $('#email').hide();
+        $('#company').hide();
+        $('#mobile').show().text("Please Enter Mobile No");
+    }
+    else if (email == '' && companyName == '') {
+        $('#name').hide();
+        $('#email').show().text("Please Enter Email");
+        $('#company').show().text("Please Enter Company Name");
+        $('#mobile').hide();
+    }
+    else if (email == '' && mobileNumber == '') {
+        $('#name').hide();
+        $('#email').show().text("Please Enter Email");
+        $('#company').hide();
+        $('#mobile').show().text("Please Enter Mobile No");
+    }
+    else if (name == '' && companyName == '') {
+        $('#name').show().text("Please Enter Name");
+        $('#email').hide();
+        $('#company').show().text("Please Enter Company Name");
+        $('#mobile').hide();
+    }
+    else if (name == '') {
+        $('#name').show().text("Please Enter Name");
+        $('#email').hide();
+        $('#company').hide();
+        $('#mobile').hide();
+    }
+    else if (email == '') {
+        $('#name').hide();
+        $('#email').show().text("Please Enter Email");
+        $('#company').hide();
+        $('#mobile').hide();
+    }
+    else if (!email_format.test(email)) {
+        $('#name').hide();
+        $('#email').show().text('Email Id is invalid');
+        $('#company').hide();
+        $('#mobile').hide();
+    }
+    else if (companyName == '') {
+        $('#name').hide();
+        $('#email').hide();
+        $('#company').show().text("Please Enter Company Name");
+        $('#mobile').hide();
+    }
+    else if (mobileNumber == '') {
+        $('#name').hide();
+        $('#email').hide();
+        $('#company').hide();
+        $('#mobile').show().text("Please Enter Mobile No");
+    }
+    else if (!mobile_num_format.test(mobileNumber)) {
+        $('#name').hide();
+        $('#email').hide();
+        $('#company').hide();
+        $('#mobile').show().text('Mobile number is invalid');
+    }
+    else {
+        $('#name').hide();
+        $('#email').hide();
+        $('#company').hide();
+        $('#mobile').hide();
+        $.ajax({
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            type: "POST",
+            url: "/JoinInstallerNetwork/Add",
+            async: false,
+            data: JSON.stringify({ "name": name, "email": email, "mobileNumber": mobileNumber, "companyName": companyName, "additionalNotes": additionalNotes, "radioField": radioField, "checkboxField": checkboxField }),
+            success: function (data) {
+                var status = data;
+                if (status) {
+                    alert("success");
+                    window.location.reload();
+                }
+                else { }
+            }
+        });
+    }
 }
 

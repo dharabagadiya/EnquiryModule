@@ -2,7 +2,16 @@
 @{
     ViewBag.Title = "SolarServices";
 }
-
+<style>
+    .footer_new { position: relative !important; }
+</style>
+<div class="breadcrumb left">
+    <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    <span class=""><a href="@Url.Action("", "RenewServices")"> Place Search Request </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    <span class=""><a href="@Url.Action("Services", "Solar")"> Solar Services </a></span>
+</div>
 <div class="form_slider_wrapper">
     <span class="prev_slide"></span>
     <span class="next_slide"></span>

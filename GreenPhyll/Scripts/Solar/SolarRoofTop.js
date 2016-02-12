@@ -51,7 +51,7 @@ solar.AddSolarValidation = function () {
                 next_slide();
                 $('.prev_slide.disabled').removeClass('disabled');
             } else {
-                $('#stateWhether').show().text('Select one Option Below');
+                $('#stateWhether').show().text('Please select an option to proceed');
             }
         }
         if (current_slide == 2) {

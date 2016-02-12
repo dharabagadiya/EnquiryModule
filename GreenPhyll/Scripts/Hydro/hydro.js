@@ -57,7 +57,7 @@ hydro.AddHydroValidation = function () {
                 next_slide();
                 $('.prev_slide.disabled').removeClass('disabled');
             } else {
-                $('#stateWhether').show().text('Select one Hydro Service');
+                $('#stateWhether').show().text('Please select an option to proceed');
             }
         }
         if (current_slide == 2) {

@@ -2,6 +2,11 @@
 @{
     ViewBag.Title = "Bio";
 }
+<div class="breadcrumb left">
+    <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    <span class=""><a href="@Url.Action("", "Bio")"> Bio Energy </a></span>
+</div>
 <div class="form_slider_wrapper">
     <span class="prev_slide"></span>
     <span class="next_slide"></span>
@@ -102,7 +107,7 @@
                             <div class="MB15">
                                 <div class="icon_input">
                                     <span class="icon"><span class="sprite_img icon_size pan_img"></span></span>
-                                    <input id="txtPAN" class="no_label grey_text" type="text" placeholder="Parmanent Account Number (PAN)" />
+                                    <input id="txtPAN" class="no_label grey_text" type="text" placeholder="Parmanent Account Number (PAN)" maxlength="10"/>
                                 </div>
                                 <span id="PAN" class="left_arrow" style="margin-left:-215px;"></span>
                             </div>

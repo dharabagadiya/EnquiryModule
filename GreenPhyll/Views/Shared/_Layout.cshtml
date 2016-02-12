@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - GreenPhyll</title>
-    @*@Styles.Render("~/Content/css")*@
     @Styles.Render(BundleConfig.GetStylesBundlePath(ViewData["Controller_Name"].ToString()).ToArray())
 </head>
 <body>
@@ -18,7 +17,6 @@
                         <li><a href="@Url.Action("HowRenewIn", "Pages")">How RenewIn Market Place Works</a></li>
                         <li><a href="@Url.Action("PlaceSearch", "Pages")">Why use a Place Search Request</a></li>
                         <li><a href="@Url.Action("","JoinInstallerNetwork")">Join Installer Network</a></li>
-                        <li>@*<a href="@Url.Action("Search", "Services")">Search Services</a>*@</li>
                         @if (userDetail == null)
                         {
                             <li><a href="#" class="signin_popup_open left" id="btn_signin"> Login </a></li>
@@ -28,21 +26,6 @@
                             <li><a href="~/ProfileSetting/MyApplication">Profile Setting</a></li>
                             <li><a href="#" class="signin_popup_open left" id="btn_signout">Logout</a></li>
                         }
-                        @*<li style="height:40px;">
-                                <a href="#" class="app_btn left app_tooltip_open"></a>
-                                <ul class="dropdown_menu">
-                                    <li><a href="#">Join Installer Network</a></li>
-                                    <li><a href="@Url.Action("Search", "Services")">Services</a></li>
-                                    <li><a href="@Url.Action("","Offer")">Offer</a></li>
-                                    <li><a href="#">Solar Energy</a></li>
-                                    <li><a href="#">Wind Power</a></li>
-                                    <li><a href="#">Hydro Power</a></li>
-                                    <li><a href="#">Bio Energy</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Our Process</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                </ul>
-                            </li>*@
                         <li>
                             <a href="#" class="app_btn left app_tooltip_open"></a>
                             <ul class="sub-menu">

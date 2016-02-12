@@ -94,7 +94,7 @@ bio.AddBioServiceValidation = function () {
                 $('#serviceLooking').hide();
                 next_slide();
             } else {
-                $('#serviceLooking').show().text('Select one Bio Service');
+                $('#serviceLooking').show().text('Please select an option to proceed');
             }
         }
         if (current_slide == 3) {

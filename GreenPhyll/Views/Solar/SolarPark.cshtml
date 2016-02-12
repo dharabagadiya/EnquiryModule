@@ -1,6 +1,13 @@
 ﻿@{
     ViewBag.Title = "SolarPark";
 }
+<div class="breadcrumb left">
+    <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    <span class=""><a href="@Url.Action("SolarLanding", "Solar")"> Solar Energy </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    <span class=""><a href="@Url.Action("SolarPark", "Solar")"> Solar Park </a></span>
+</div>
 <div class="form_slider_wrapper">
     <span class="prev_slide"></span>
     <span class="next_slide"></span>

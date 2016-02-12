@@ -49,7 +49,7 @@
 .form_horizontal .form_group { margin-left: 0px; margin-right: 0px; }
 .form_group .control_label { padding-left: 20px; padding-top: 10px; }
 .form_group label { font-weight: 700; color: #333; font-size: 13px; }
-.form_group span { font-weight: 700; color: #333; font-size: 13px; }
+.form_group span { font-weight: 700; /*color: #333;*/ font-size: 13px; }
 .form_group { margin-bottom: 10px; }
 .payOption { margin-top: 4px; height: 44px; }
 .payOption1 { height: 44px; }
@@ -387,6 +387,7 @@ textarea, .form-item div.autocomplete-deluxe-container div.autocomplete-deluxe-m
 .divLoader { position: absolute; top: 268px; margin-left: 612px; z-index: 999999; }
 .DN { display: none; }
 .MB15 { margin-bottom: 15px; }
+.MA { margin-left: auto; margin-right: auto; }
 
 
 .menu { margin: 0px auto; }

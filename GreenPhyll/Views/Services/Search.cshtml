@@ -7,6 +7,18 @@
 <style>
     .footer_new { position: relative !important; }
 </style>
+<div class="breadcrumb left">
+    <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    @*<span class=""><a href="#"> Wind Turbines </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>*@
+    <span class=""><a href="@Url.Action("Search", "Services")"> Search Results </a></span>
+</div>
+
+<div class="breadcrumb1 left">
+    <span class="left"><p> Can not find what you are looking for?  </p></span>
+    <a class="btn_request" href="@Url.Action("Search", "Services")"> Place search request </a>
+</div>
 <div class="block_content">
     <form id="sim-search-frontpage-form" accept-charset="UTF-8" method="post" action="/">
         <div class="top_head" style="margin:5px auto !important;height:45px !important;">
@@ -33,33 +45,40 @@
         </div>
     </form>
 </div>
-@foreach (var service in Model)
+@if (Model.Count == 0)
 {
-    <div class="results_container">
-        <div class="grid_card">
-            <img class="list_thumbnail left" src="~/images/latestatapollo-.png" />
-            <div class="grid_details left">
-                <h1> @service.Title </h1>
-                <p class="details"><span class="fa fa-map-marker location_icon"></span> @service.Location </p>
-                <div class="content_sec">
-                    <p>
-                        @service.Description
-                    </p>
+    <div class="MA" style="width:105px;">No results found</div>
+}
+else
+{
+    foreach (var service in Model)
+    {
+        <div class="results_container">
+            <div class="grid_card">
+                <img class="list_thumbnail left" src="~/images/latestatapollo-.png" />
+                <div class="grid_details left">
+                    <h1> @service.Title </h1>
+                    <p class="details"><span class="fa fa-map-marker location_icon"></span> @service.Location </p>
+                    <div class="content_sec">
+                        <p>
+                            @service.Description
+                        </p>
+                    </div>
+                    <div class="clr"></div>
                 </div>
-                <div class="clr"></div>
-            </div>
-            <div class="right_nav left">
-                <div class="padd_left">
+                <div class="right_nav left">
+                    <div class="padd_left">
 
-                </div>
-                <div class="list_right">
-                    <button class="feedback_btn btn_mar"> Contact </button>
+                    </div>
+                    <div class="list_right">
+                        <button class="feedback_btn btn_mar"> Contact </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    }
 }
 <div class="pagination">
-    @Html.PagedListPager(Model, page => Url.Action("Search", new { page }), 
+    @Html.PagedListPager(Model, page => Url.Action("Search", new { page }),
     new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded })
 </div>

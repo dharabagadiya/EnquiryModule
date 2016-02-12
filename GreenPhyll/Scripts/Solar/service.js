@@ -95,7 +95,7 @@ solar.AddSolarServiceValidation = function () {
                 $('#serviceLooking').hide();
                 next_slide();
             } else {
-                $('#serviceLooking').show().text('Select one Solar Service');
+                $('#serviceLooking').show().text('Please select an option to proceed');
             }
         }
         if (current_slide == 3) {
@@ -209,7 +209,6 @@ solar.AddSolarServiceValidation = function () {
                 $('#email').hide();
                 $('#mobile').hide();
                 $('.divLoader').removeClass('DN');
-                debugger
                 solar.AddSolarServicesDetail();
             }
         }

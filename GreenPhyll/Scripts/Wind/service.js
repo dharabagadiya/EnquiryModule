@@ -96,7 +96,7 @@ wind.AddWindServiceValidation = function () {
                 $('#serviceLooking').hide();
                 next_slide();
             } else {
-                $('#serviceLooking').show().text('Select one Hydro Service');
+                $('#serviceLooking').show().text('Please select an option to proceed');
             }
         }
         if (current_slide == 3) {
@@ -104,7 +104,7 @@ wind.AddWindServiceValidation = function () {
                 $('#turbineManufacturer').hide();
                 next_slide();
             } else {
-                $('#turbineManufacturer').show().text('Select wind turbine');
+                $('#turbineManufacturer').show().text('Please select an option to proceed');
             }
         }
         if (current_slide == 4) {
