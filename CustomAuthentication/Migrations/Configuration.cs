@@ -1,6 +1,7 @@
 namespace CustomAuthentication.Migrations
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -14,18 +15,12 @@ namespace CustomAuthentication.Migrations
 
         protected override void Seed(CustomAuthentication.DataContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            //// Default Roles --- No Changes In Role List
+            //var userRoles = new List<Role>();
+            //userRoles.Add(new Role { RoleName = "Admin" });
+            //userRoles.Add(new Role { RoleName = "Anonymous" });
+            //context.Roles.AddRange(userRoles);
+            //context.SaveChanges();
         }
     }
 }

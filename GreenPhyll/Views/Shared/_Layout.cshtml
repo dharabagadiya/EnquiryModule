@@ -23,7 +23,7 @@
                         }
                         else
                         {
-                            <li><a href="~/ProfileSetting/MyApplication">Profile Setting</a></li>
+                            <li>@*<a href="~/ProfileSetting/MyApplication">Profile Setting</a>*@</li>
                             <li><a href="#" class="signin_popup_open left" id="btn_signout">Logout</a></li>
                         }
                         <li>
@@ -34,7 +34,7 @@
                                 <li><a href="@Url.Action("", "Wind")">Wind Power</a></li>
                                 <li><a href="@Url.Action("", "Hydro")">Hydro Power</a></li>
                                 <li><a href="@Url.Action("", "Bio")">Bio Energy</a></li>
-                                <li><a href="@Url.Action("Search", "Services")">Place Search Request</a></li>
+                                <li><a href="@Url.Action("", "RenewServices")">Place Search Request</a></li>
                                 @if (userDetail != null)
                                 {
                                     <li><a href="~/ProfileSetting/MyApplication">My Applications</a></li>
@@ -90,11 +90,11 @@
             <div class="popup_det">
                 <div class="popup_close_btn signin_popup_close"></div>
                 <h2 class="top_10">Sign In</h2>
-                <div class="social_login_btn top_20 facebook">
+                <div class="social_login_btn top_20 facebook" onclick="fb_login()">
                     <span class="icon"></span>
-                    <span class="label">Sign in with Facebook</span>
+                    <span class="label" scope="email,publish_actions">Sign in with Facebook</span>
                 </div>
-                <div class="social_login_btn top_20 google">
+                <div class="social_login_btn top_20 google" onclick="Googlelogin()">
                     <span class="icon"></span>
                     <span class="label">Sign in with Google</span>
                 </div>

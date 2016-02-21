@@ -20,6 +20,18 @@ namespace GreenPhyll.Controllers
             var status = customMembershipProvider.Authenticate(username, password);
             return Json(status);
         }
+        public JsonResult GoogleAuthenticate(string username)
+        {
+            var customMembershipProvider = new CustomAuthentication.CustomMembershipProvider();
+            var status = customMembershipProvider.GoogleAuthenticate(username);
+            return Json(status);
+        }
+        public JsonResult FacebookAuthenticate(string id)
+        {
+            var customMembershipProvider = new CustomAuthentication.CustomMembershipProvider();
+            var status = customMembershipProvider.FacebookAuthenticate(id);
+            return Json(status);
+        }
         public JsonResult CreateAccount(string username, string password, int userRoleID)
         {
             var customMembershipProvider = new CustomAuthentication.CustomMembershipProvider();
@@ -31,7 +43,28 @@ namespace GreenPhyll.Controllers
             }
             return Json(status);
         }
-
+        public JsonResult GoogleCreateAccount(string username, int userRoleID)
+        {
+            var customMembershipProvider = new CustomAuthentication.CustomMembershipProvider();
+            var status = customMembershipProvider.GoogleCreateUser(username, userRoleID);
+            if (status)
+            {
+                var userDetail = customMembershipProvider.GetUser(username);
+                new DataModel.UserDetailManager().Add(userDetail.UserId);
+            }
+            return Json(status);
+        }
+        public JsonResult FacebookCreateAccount(string id, int userRoleID)
+        {
+            var customMembershipProvider = new CustomAuthentication.CustomMembershipProvider();
+            var status = customMembershipProvider.FacebookCreateUser(id, userRoleID);
+            if (status)
+            {
+                var userDetail = customMembershipProvider.GetUser(id);
+                new DataModel.UserDetailManager().Add(userDetail.UserId);
+            }
+            return Json(status);
+        }
         [AllowAnonymous]
         public JsonResult LogOut()
         {

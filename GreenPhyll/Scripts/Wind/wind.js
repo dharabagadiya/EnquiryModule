@@ -91,6 +91,11 @@ wind.AddWindValidation = function () {
                 $('#PAN').show().text('Enter PAN');
                 $('#CIN').hide();
             }
+            else if (!pan_format.test(wind_pan)) {
+                $('#nameOfApplicant').hide();
+                $('#PAN').show().text('Please enter your correct PAN Number');
+                $('#CIN').hide();
+            }
             else if (wind_cin == '') {
                 $('#nameOfApplicant').hide();
                 $('#PAN').hide();

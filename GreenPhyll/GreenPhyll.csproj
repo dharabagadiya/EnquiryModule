@@ -252,6 +252,8 @@
     <Content Include="images\icon_3.png" />
     <Content Include="images\icon_4.png" />
     <Content Include="images\icon_5.png" />
+    <Content Include="images\Image1.jpg" />
+    <Content Include="images\image2.jpg" />
     <Content Include="images\img.jpg" />
     <Content Include="images\Individual.png" />
     <Content Include="images\individual_icon.png" />
@@ -346,6 +348,7 @@
     <Content Include="Scripts\Bio\service.js" />
     <Content Include="Scripts\Common\common.js" />
     <Content Include="Scripts\Hydro\service.js" />
+    <Content Include="Scripts\Offer\offer.js" />
     <Content Include="Scripts\Plugins\jquery-1.11.3.js" />
     <Content Include="Scripts\Plugins\jquery-ui-1.9.2.js" />
     <Content Include="Scripts\Plugins\jquery.fileupload.js" />

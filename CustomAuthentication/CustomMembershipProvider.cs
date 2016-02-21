@@ -56,6 +56,50 @@ namespace CustomAuthentication
                 return false;
             }
         }
+        public bool GoogleCreateUser(string username, int userRoleID)
+        {
+            try
+            {
+                if (Context.Users.Any(model => model.UserName.Equals(username, StringComparison.InvariantCultureIgnoreCase))) { return false; }
+                var roles = Context.Roles.Where(model => model.RoleId == userRoleID).ToList();
+                Context.Users.Add(new User
+                {
+                    Email = username,
+                    UserName = username,
+                    Roles = roles,
+                    Password = "GoogleLogin",
+                    CreateDate = DateTime.UtcNow,
+                });
+                Context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool FacebookCreateUser(string id, int userRoleID)
+        {
+            try
+            {
+                if (Context.Users.Any(model => model.UserName.Equals(id, StringComparison.InvariantCultureIgnoreCase))) { return false; }
+                var roles = Context.Roles.Where(model => model.RoleId == userRoleID).ToList();
+                Context.Users.Add(new User
+                {
+                    Email = id,
+                    UserName = id,
+                    Roles = roles,
+                    Password = "FacebookLogin",
+                    CreateDate = DateTime.UtcNow,
+                });
+                Context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public bool CreateUser(string firstName, string lastName, string emildID, int userRoleID)
         {
             try
@@ -83,6 +127,18 @@ namespace CustomAuthentication
         public bool Authenticate(string username, string password)
         {
             var user = Context.Users.Where(model => (model.UserName.Equals(username) || model.Email.Equals(username)) && model.Password.Equals(password)).FirstOrDefault();
+            if (user == null) { return false; }
+            else { InitializeUserSession(user); return true; };
+        }
+        public bool GoogleAuthenticate(string username)
+        {
+            var user = Context.Users.Where(model => (model.UserName.Equals(username) || model.Email.Equals(username)) && model.Password.Equals("GoogleLogin")).FirstOrDefault();
+            if (user == null) { return false; }
+            else { InitializeUserSession(user); return true; };
+        }
+        public bool FacebookAuthenticate(string id)
+        {
+            var user = Context.Users.Where(model => (model.UserName.Equals(id) || model.Email.Equals(id)) && model.Password.Equals("FacebookLogin")).FirstOrDefault();
             if (user == null) { return false; }
             else { InitializeUserSession(user); return true; };
         }
@@ -159,7 +215,7 @@ namespace CustomAuthentication
         {
             try
             {
-                var user = Context.Users.Where(modal => modal.IsDeleted == false && modal.Email == email).FirstOrDefault(); 
+                var user = Context.Users.Where(modal => modal.IsDeleted == false && modal.Email == email).FirstOrDefault();
                 if (user == null) { return false; }
                 user.Password = password;
                 Context.SaveChanges();

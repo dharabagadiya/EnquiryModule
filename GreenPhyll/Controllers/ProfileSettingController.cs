@@ -21,8 +21,9 @@ namespace GreenPhyll.Controllers
 
         public ActionResult MyApplication()
         {
+            var userId = UserDetail == null ? 0 : UserDetail.UserId;
             var offerManager = new OfferManager();
-            var getoffers = offerManager.GetOffers("Bio");
+            var getoffers = offerManager.GetOffersOnUserId(userId);
             return View(getoffers);
         }
         public ActionResult ProfileDetail()

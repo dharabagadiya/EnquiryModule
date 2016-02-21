@@ -10,14 +10,12 @@
 <div class="breadcrumb left">
     <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
     <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
-    @*<span class=""><a href="#"> Wind Turbines </a></span>
-    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>*@
     <span class=""><a href="@Url.Action("Search", "Services")"> Search Results </a></span>
 </div>
 
 <div class="breadcrumb1 left">
     <span class="left"><p> Can not find what you are looking for?  </p></span>
-    <a class="btn_request" href="@Url.Action("Search", "Services")"> Place search request </a>
+    <a class="btn_request" href="@Url.Action("", "RenewServices")"> Place search request </a>
 </div>
 <div class="block_content">
     <form id="sim-search-frontpage-form" accept-charset="UTF-8" method="post" action="/">
@@ -71,7 +69,7 @@ else
 
                     </div>
                     <div class="list_right">
-                        <button class="feedback_btn btn_mar"> Contact </button>
+                        <button class="feedback_btn btn_mar" data-service-id="@service.ServiceId"  data-service-type="@service.Service"> Contact </button>
                     </div>
                 </div>
             </div>

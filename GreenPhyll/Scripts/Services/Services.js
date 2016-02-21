@@ -24,4 +24,25 @@ $(document).ready(function () {
     })
 });
 
+$('.feedback_btn').click(function () {
+    services.ServiceType = $(this).attr("data-service-type");
+    services.ServiceId = parseInt($(this).attr("data-service-id"));
+    $.ajax({
+        dataType: "html",
+        contentType: "application/json; charset=utf-8",
+        type: "POST",
+        url: "/Services/MapServices",
+        async: false,
+        data: JSON.stringify(services),
+        success: function (data) {
+            var status = data;
+            if (status == -1) {
+                $('#btn_signin').click();
+            } else {
+                alert("We will contact you");
+            }
+        }
+    });
+});
+
 

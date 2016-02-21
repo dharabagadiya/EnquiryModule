@@ -66,10 +66,13 @@
     <Compile Include="Modal\SolarWaterHeater.cs" />
     <Compile Include="Modal\UploadDocument.cs" />
     <Compile Include="Modal\UserDetail.cs" />
+    <Compile Include="Modal\UserOffer.cs" />
+    <Compile Include="Modal\UserService.cs" />
     <Compile Include="Modal\Wind.cs" />
     <Compile Include="Modal\WindService.cs" />
     <Compile Include="OfferManager.cs" />
     <Compile Include="ProfileSettingManager.cs" />
+    <Compile Include="ServiceManager.cs" />
     <Compile Include="SolarManager.cs" />
     <Compile Include="UserDetailManager.cs" />
     <Compile Include="WindManager.cs" />
