@@ -183,14 +183,15 @@ namespace CustomAuthentication
                 var user = Context.Users.Where(model => model.UserId == id && model.Password.Equals(oldPassword, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
                 if (user == null) { return false; }
                 user.Password = newPassword;
+                user.OldPassword = newPassword;
+                user.ConfirmPassword = newPassword;
                 Context.SaveChanges();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
                 return false;
             }
-
         }
         public List<User> GetUsers()
         { return Context.Users.Where(modal => modal.IsDeleted == false).ToList(); }

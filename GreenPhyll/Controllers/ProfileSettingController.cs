@@ -24,6 +24,10 @@ namespace GreenPhyll.Controllers
             var userId = UserDetail == null ? 0 : UserDetail.UserId;
             var offerManager = new OfferManager();
             var getoffers = offerManager.GetOffersOnUserId(userId);
+            if (UserDetail == null)
+            {
+                return RedirectToAction("", "");
+            }
             return View(getoffers);
         }
         public ActionResult ProfileDetail()
@@ -59,12 +63,19 @@ namespace GreenPhyll.Controllers
         public ActionResult UploadDocuments()
         {
             BundleConfig.AddScript("~/Scripts/ProfileSetting", "profileSetting.js", ControllerName);
-
+            if (UserDetail == null)
+            {
+                return RedirectToAction("", "");
+            }
             StartupScript = "DoPageSetting();";
             return View();
         }
         public ActionResult Feedback()
         {
+            if (UserDetail == null)
+            {
+                return RedirectToAction("", "");
+            }
             return View();
         }
         [HttpPost]
@@ -107,7 +118,7 @@ namespace GreenPhyll.Controllers
 
             var userID = UserDetail.UserId;
             var oldPassword = formCollection["oldPassword"].ToString();
-            var newPassword = formCollection["newPassword"].ToString();
+            var newPassword = formCollection["Password"].ToString();
             var status = new CustomAuthentication.CustomMembershipProvider().ChangePassword(userID, oldPassword, newPassword);
             ViewData["Status"] = status;
             return View();

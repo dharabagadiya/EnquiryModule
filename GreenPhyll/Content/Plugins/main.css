@@ -6,7 +6,7 @@
 .container_1 { margin: 0 10% 2%; width: 80%; }
 
 .container_service { margin: 0 6% 2%; width: 90%; }
-
+.text-danger { color: red; }
 .head { color: #0A3873; }
 .head_renew { color: #01A84F; }
 .head_india { color: #134F98; }
