@@ -26,7 +26,8 @@ hydro.AddHydroDetail = function () {
             var status = data;
             if (status) {
                 //window.location.href = "Enquiry/ThankYou";
-                window.location.href = "/Offer/";
+                $('.divLoader').addClass('DN');
+                window.location.href = "/Offer/Index/Hydro";
                 //alert("Success");
             } else { }
         }
@@ -50,60 +51,251 @@ hydro.AddHydroValidation = function () {
         var hydro_email_val = $('#txtEmailHydro').val();
         var hydro_mobile_val = $('#txtMobileNo').val();
 
-        debugger
         if (current_slide == 1) {
             if ($('#hydro_services .option_box.selected').length > 0) {
-                $('.error_tooltip').hide();
+                $('#stateWhether').hide();
                 next_slide();
                 $('.prev_slide.disabled').removeClass('disabled');
             } else {
-                $('.error_tooltip').show().find('.error_msg').text('Select one Hydro Service');
+                $('#stateWhether').show().text('Please select an option to proceed');
             }
         }
         if (current_slide == 2) {
-            if ((hydro_applicant_name_val == '') || (hydro_pan == '') || (hydro_cin == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else {
-                $('.error_tooltip').hide();
+            if ((hydro_applicant_name_val == '') && (hydro_pan == '') && (hydro_cin == '')) {
+                $('#nameOfApplicant').show().text('Enter Name of Applicant');
+                $('#PAN').show().text('Enter PAN');
+                $('#CIN').show().text('Enter CIN');
+            }
+            else if (hydro_pan == '' && hydro_cin == '') {
+                $('#nameOfApplicant').hide();
+                $('#PAN').show().text('Enter PAN');
+                $('#CIN').show().text('Enter CIN');
+            }
+            else if (hydro_applicant_name_val == '' && hydro_cin == '') {
+                $('#nameOfApplicant').show().text('Enter Name of Applicant');
+                $('#PAN').hide();
+                $('#CIN').show().text('Enter CIN');
+            }
+            else if (hydro_applicant_name_val == '' && hydro_pan == '') {
+                $('#nameOfApplicant').show().text('Enter Name of Applicant');
+                $('#PAN').show().text('Enter PAN');
+                $('#CIN').hide();
+            }
+            else if (hydro_applicant_name_val == '') {
+                $('#nameOfApplicant').show().text('Enter Name of Applicant');
+                $('#PAN').hide();
+                $('#CIN').hide();
+            }
+            else if (hydro_pan == '') {
+                $('#nameOfApplicant').hide();
+                $('#PAN').show().text('Enter PAN');
+                $('#CIN').hide();
+            }
+            else if (!pan_format.test(hydro_pan)) {
+                $('#nameOfApplicant').hide();
+                $('#PAN').show().text('Please enter your correct PAN Number');
+                $('#CIN').hide();
+            }
+            else if (hydro_cin == '') {
+                $('#nameOfApplicant').hide();
+                $('#PAN').hide();
+                $('#CIN').show().text('Enter CIN');
+            }
+            else {
+                $('#nameOfApplicant').hide();
+                $('#PAN').hide();
+                $('#CIN').hide();
                 next_slide();
             }
         }
         if (current_slide == 3) {
-            if ((hydro_address_val == '') || (hydro_pincode_val == '') || (hydro_location_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!pin_format.test(hydro_pincode_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Pin code should be 6 digits');
-            } else {
-                $('.error_tooltip').hide();
+            if (hydro_address_val == "" && hydro_location_val == "" && hydro_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (hydro_location_val == "" && hydro_pincode_val == "") {
+                $("#add123").hide();
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (hydro_address_val == "" && hydro_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (hydro_address_val == "" && hydro_location_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").hide();
+            }
+            else if (hydro_address_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").hide();
+            }
+            else if (hydro_location_val == "") {
+                $("#loc123").show().text("Please Enter location");
+                $("#add123").hide();
+                $("#pin123").hide();
+            }
+            else if (hydro_pincode_val == "") {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (!pin_format.test(hydro_pincode_val)) {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $('#pin123').show().text('Pin code should be 6 digits');
+            }
+            else {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").hide();
                 next_slide();
+                $('.prev_slide.disabled').removeClass('disabled');
             }
         }
         if (current_slide == 4) {
-            if ((hydro_proposed_capacity_val == '') || (hydro_estimated_project_cost_val == '') || (hydro_turn_over_val == '' || (hydro_TotalTurbinesPlanned_val == ''))) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (number_only.test(hydro_turn_over_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Average turnover should be digits');
-            } else if (number_only.test(hydro_estimated_project_cost_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Estimated cost should be digits');
-            } else if (number_only.test(hydro_proposed_capacity_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Capacity of wind plant should be digits');
-            } else if (number_only.test(hydro_TotalTurbinesPlanned_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('No. of turbines planned should be digits');
-            } else {
-                $('.error_tooltip').hide();
+            if (hydro_TotalTurbinesPlanned_val == '' && hydro_proposed_capacity_val == '' && hydro_estimated_project_cost_val == '' && hydro_turn_over_val == '') {
+                $('#turbines').show().text('Enter No. of turbines planned');
+                $('#capacity').show().text('Enter Capacity of the hydro project');
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (hydro_proposed_capacity_val == '' && hydro_estimated_project_cost_val == '' && hydro_turn_over_val == '') {
+                $('#turbines').hide();
+                $('#capacity').show().text('Enter Capacity of the hydro project');
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (hydro_TotalTurbinesPlanned_val == '' && hydro_proposed_capacity_val == '' && hydro_estimated_project_cost_val == '') {
+                $('#turbines').show().text('Enter No. of turbines planned');
+                $('#capacity').show().text('Enter Capacity of the hydro project');
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').hide();
+            }
+            else if (hydro_TotalTurbinesPlanned_val == '' && hydro_estimated_project_cost_val == '' && hydro_turn_over_val == '') {
+                $('#turbines').show().text('Enter No. of turbines planned');
+                $('#capacity').hide();
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (hydro_TotalTurbinesPlanned_val == '' && hydro_proposed_capacity_val == '' && hydro_turn_over_val == '') {
+                $('#turbines').show().text('Enter No. of turbines planned');
+                $('#capacity').show().text('Enter Capacity of the hydro project');
+                $('#cost').hide();
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (hydro_estimated_project_cost_val == '' && hydro_turn_over_val == '') {
+                $('#turbines').hide();
+                $('#capacity').hide();
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (hydro_proposed_capacity_val == '' && hydro_turn_over_val == '') {
+                $('#turbines').hide();
+                $('#capacity').show().text('Enter Capacity of the hydro project');
+                $('#cost').hide();
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (hydro_proposed_capacity_val == '' && hydro_estimated_project_cost_val == '') {
+                $('#turbines').hide();
+                $('#capacity').show().text('Enter Capacity of the hydro project');
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').hide();
+            }
+            else if (hydro_TotalTurbinesPlanned_val == '' && hydro_proposed_capacity_val=='') {
+                $('#turbines').show().text('Enter No. of turbines planned');
+                $('#capacity').show().text('Enter Capacity of the hydro project');
+                $('#cost').hide();
+                $('#turnover').hide();
+            }
+            else if (hydro_TotalTurbinesPlanned_val == '') {
+                $('#turbines').show().text('Enter No. of turbines planned');
+                $('#capacity').hide();
+                $('#cost').hide();
+                $('#turnover').hide();
+            }
+            else if (hydro_proposed_capacity_val == '') {
+                $('#turbines').hide();
+                $('#capacity').show().text('Enter Capacity of the hydro project');
+                $('#cost').hide();
+                $('#turnover').hide();
+            }
+            else if (hydro_estimated_project_cost_val == '') {
+                $('#turbines').hide();
+                $('#capacity').hide();
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').hide();
+            }
+            else if (hydro_turn_over_val == '') {
+                $('#turbines').hide();
+                $('#capacity').hide();
+                $('#cost').hide();
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else {
+                $('#turbines').hide();
+                $('#capacity').hide();
+                $('#cost').hide();
+                $('#turnover').hide();
                 next_slide();
                 $('.next_slide').addClass('disabled');
             }
         }
         if (current_slide == 5) {
-            if ((hydro_contact_person_val == '') || (hydro_email_val == '') || (hydro_mobile_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!email_format.test(hydro_email_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Email Id is invalid');
-            } else if (!mobile_num_format.test(hydro_mobile_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Mobile number is invalid');
-            } else {
-                $('.error_tooltip').hide();
+            if (hydro_contact_person_val == '' && hydro_email_val == '' && hydro_mobile_val == '') {
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((hydro_contact_person_val == '') && (hydro_email_val == '')) {
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if ((hydro_mobile_val == '') && (hydro_email_val == '')) {
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((hydro_mobile_val == '') && (hydro_contact_person_val == '')) {
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (hydro_contact_person_val == '') {
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if (hydro_email_val == '') {
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if (hydro_mobile_val == '') {
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (!email_format.test(hydro_email_val)) {
+                $('#contactName').hide();
+                $('#email').show().text('Email Id is invalid');
+                $('#mobile').hide();
+            }
+            else if (!mobile_num_format.test(hydro_mobile_val)) {
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Mobile number is invalid');
+            }
+            else {
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').hide();
+                $('.divLoader').removeClass('DN');
                 hydro.AddHydroDetail();
             }
         }

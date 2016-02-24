@@ -1,15 +1,18 @@
 ﻿@{
     ViewBag.Title = "SolarPark";
 }
+<div class="breadcrumb left">
+    <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    <span class=""><a href="@Url.Action("SolarLanding", "Solar")"> Solar Energy </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    <span class=""><a href="@Url.Action("SolarPark", "Solar")"> Solar Park </a></span>
+</div>
 <div class="form_slider_wrapper">
     <span class="prev_slide"></span>
     <span class="next_slide"></span>
     <div class="container">
         <div id="solar_form_slider" class="form_slider">
-            <div class="error_tooltip">
-                <div class="error_msg"></div>
-                <div class="pointer"></div>
-            </div>
             <div id="solar_slides_group" class="slides_group">
 
                 <div id="solar_form_slide_2" class="slides">
@@ -47,6 +50,7 @@
                     </div>
 
                     <div class="clr"></div>
+                    <span id="stateWhether" class="left_arrow" style="margin-left:-7px;"></span>
                     <div class="btn_area">
                         <button class="btn_normal_2 continue_btn">Continue</button>
                     </div>
@@ -56,18 +60,26 @@
                     <h1 class="slide_title">Location of the proposed solar park</h1>
                     <div class="input_frame">
                         <div class="input_element_holder multiple_fields">
-
-                            <div class="icon_input textarea">
-                                <span class="icon"><span class="sprite_img icon_size add_img"></span></span>
-                                <textarea id="solar_address" class="no_label grey_text" placeholder="Address"></textarea>
+                            <div class="MB15">
+                                <div class="icon_input textarea">
+                                    <span class="icon"><span class="sprite_img icon_size add_img"></span></span>
+                                    <textarea id="solar_address" class="no_label grey_text" placeholder="Address"></textarea>
+                                </div>
+                                <span id="add123" class="left_arrow"></span>
                             </div>
-                            <div class="icon_input">
-                                <span class="icon"><span class="sprite_img icon_size add_img"></span></span>
-                                <input id="solar_location" class="no_label grey_text" type="text" placeholder="Location" />
+                            <div class="MB15">
+                                <div class="icon_input">
+                                    <span class="icon"><span class="sprite_img icon_size add_img"></span></span>
+                                    <input id="solar_location" class="no_label grey_text" type="text" placeholder="Location" />
+                                </div>
+                                <span id="loc123" class="left_arrow"></span>
                             </div>
-                            <div class="icon_input">
-                                <span class="icon"><span class="sprite_img icon_size pin_img"></span></span>
-                                <input id="solar_pincode" class="no_label grey_text" type="text" placeholder="Pincode" />
+                            <div class="MB15">
+                                <div class="icon_input">
+                                    <span class="icon"><span class="sprite_img icon_size pin_img"></span></span>
+                                    <input id="solar_pincode" class="no_label grey_text" type="text" placeholder="Pincode" onkeypress="return isNumberKey(event)" data-minlength="6" maxlength="6" />
+                                </div>
+                                <span id="pin123" class="left_arrow" style="margin-left:-130px;"></span>
                             </div>
                         </div>
                     </div>
@@ -81,18 +93,26 @@
                     <h1 class="slide_title">Solar Park details</h1>
                     <div class="input_frame">
                         <div class="input_element_holder multiple_fields">
-
-                            <div class="icon_input">
-                                <span class="icon"><span class="sprite_img icon_size rs_img"></span></span>
-                                <input id="estimated_SolPark_Cost" class="no_label grey_text" type="text" placeholder="Estimated Project Cost" />
+                            <div class="MB15">
+                                <div class="icon_input">
+                                    <span class="icon"><span class="sprite_img icon_size rs_img"></span></span>
+                                    <input id="estimated_SolPark_Cost" class="no_label grey_text" type="text" placeholder="Estimated Project Cost" onkeypress="return isNumberKey(event)" maxlength="10" />
+                                </div>
+                                <span id="ebill" class="left_arrow" style="margin-left:-56px;"></span>
                             </div>
-                            <div class="icon_input">
-                                <span class="icon"><span class="sprite_img icon_size shadow_img"></span></span>
-                                <input id="shadow_free_area_for_SolPark" class="no_label grey_text" type="text" placeholder="Area available for solar park in sq. mts" />
+                            <div class="MB15">
+                                <div class="icon_input">
+                                    <span class="icon"><span class="sprite_img icon_size shadow_img"></span></span>
+                                    <input id="shadow_free_area_for_SolPark" class="no_label grey_text" type="text" placeholder="Area available for solar park in sq. mts" onkeypress="return isNumberKey(event)" maxlength="10" />
+                                </div>
+                                <span id="freeArea" class="left_arrow" style="margin-left:-133px;"></span>
                             </div>
-                            <div class="icon_input">
-                                <span class="icon"><span class="sprite_img icon_size capacity_img"></span></span>
-                                <input id="solar_park_capacity" class="no_label grey_text" type="text" placeholder="Capacity of Solar power plant in MegaWatt" />
+                            <div class="MB15">
+                                <div class="icon_input">
+                                    <span class="icon"><span class="sprite_img icon_size capacity_img"></span></span>
+                                    <input id="solar_park_capacity" class="no_label grey_text" type="text" placeholder="Capacity of Solar power plant in MegaWatt" onkeypress="return isNumberKey(event)" maxlength="10" />
+                                </div>
+                                <span id="capacity" class="left_arrow" style="margin-left:-65px;"></span>
                             </div>
                         </div>
                     </div>
@@ -106,21 +126,33 @@
                     <h1 class="slide_title">Contact details</h1>
                     <div class="input_frame">
                         <div class="input_element_holder multiple_fields">
-                            <div class="icon_input">
-                                <span class="icon"><span class="sprite_img icon_size com_img"></span></span>
-                                <input id="solar_company_name" class="no_label grey_text" type="text" placeholder="Company Name" />
+                            <div class="MB15">
+                                <div class="icon_input">
+                                    <span class="icon"><span class="sprite_img icon_size com_img"></span></span>
+                                    <input id="solar_company_name" class="no_label grey_text" type="text" placeholder="Company Name" />
+                                </div>
+                                <span id="companyName" class="left_arrow"></span>
                             </div>
-                            <div class="icon_input">
-                                <span class="icon"><span class="sprite_img icon_size contact_img"></span></span>
-                                <input id="solar_contact_person" class="no_label grey_text" type="text" placeholder="Contact Person Name" />
+                            <div class="MB15">
+                                <div class="icon_input">
+                                    <span class="icon"><span class="sprite_img icon_size contact_img"></span></span>
+                                    <input id="solar_contact_person" class="no_label grey_text" type="text" placeholder="Contact Person Name" />
+                                </div>
+                                <span id="contactName" class="left_arrow" style=" margin-left: -111px;"></span>
                             </div>
-                            <div class="icon_input">
-                                <span class="icon"><span class="sprite_img icon_size email_img"></span></span>
-                                <input id="solar_email" class="no_label grey_text" type="text" placeholder="Email Id" />
+                            <div class="MB15">
+                                <div class="icon_input">
+                                    <span class="icon"><span class="sprite_img icon_size email_img"></span></span>
+                                    <input id="solar_email" class="no_label grey_text" type="text" placeholder="Email Id" />
+                                </div>
+                                <span id="email" class="left_arrow" style="margin-left:-195px;"></span>
                             </div>
-                            <div class="icon_input">
-                                <span class="icon"><span class="sprite_img icon_size mob_img"></span></span>
-                                <input id="solar_mobile" class="no_label grey_text" type="text" placeholder="Mobile Number" />
+                            <div class="MB15">
+                                <div class="icon_input">
+                                    <span class="icon"><span class="sprite_img icon_size mob_img"></span></span>
+                                    <input id="solar_mobile" class="no_label grey_text" type="text" placeholder="Mobile Number" onkeypress="return isNumberKey(event)" maxlength="10" />
+                                </div>
+                                <span id="mobile" class="left_arrow"></span>
                             </div>
                         </div>
                     </div>

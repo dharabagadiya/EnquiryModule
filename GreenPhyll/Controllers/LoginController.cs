@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace GreenPhyll.Controllers
+namespace RenewIn.Controllers
 {
     public class LoginController : Controller
     {

@@ -57,6 +57,7 @@ $(document).ready(function () {
     $('#btnForgotPassword').click(function () { ForgotPassword(); });
     BindEnquiryDetialLinkEvents();
     FacebookLoginLoad();
+    BindUploadPhoto();
 });
 function GetEnquiryDetail(id) {
     $.ajax({
@@ -528,5 +529,40 @@ function FacebookCreateAccount(id) {
     });
 }
 //Facebook Login end
+var uploadFile = [];
+//upload photo in service pages
+function BindUploadPhoto() {
+    $("#uploadFile").on("change", function () {
+        var totalImgs = $('#uploadedImgs .imagePreview').length;
+        if (totalImgs <= 5) {
+            var files = !!this.files ? this.files : [];
+            if (!files.length || !window.FileReader) return;
+
+            if (/^image/.test(files[0].type)) {
+                debugger
+                var reader = new FileReader();
+                reader.readAsDataURL(files[0]);
+                uploadFile.push(files[0]);
+                reader.onloadend = function () {
+                    var newImgDiv = $('#newImgTemplate');
+                    newImgDiv.find('.imagePreview').css("background-image", "url(" + this.result + ")");
+                    $('#uploadedImgs').append(newImgDiv.html());
+                }
+            }
+            //$(".firstUpload, .vBarDivider, .examplePhotoPack").hide();
+            $(".imgAC715").css('width', '100%');
+            if (totalImgs == 4) {
+                $('#addNewImgBtn').hide();
+            }
+        }
+        else {
+            alert("Only five images can be uploaded");
+        }
+    });
+    $(document).on('click', '.add_photos .remove_photo', function () {
+        $(this).parents('.add_photos').remove();
+        $('#addNewImgBtn').show();
+    });
+};
 
 

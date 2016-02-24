@@ -1,4 +1,5 @@
 ﻿@{ var userDetail = (CustomAuthentication.User)ViewData["UserDetail"]; }
+@model DataModel.Modal.FeedBack
 @{
     ViewBag.Title = "Feedback";
 }
@@ -15,11 +16,15 @@
         <div class="form_content">
             @using (Html.BeginForm("Feedback", "ProfileSetting"))
             {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div>
-                    <input class="form_input top_15" type="text" placeholder="Feedback / Query / Support Question" id="feedback_question" name="feedback_question"/>
+                    @Html.TextBoxFor(Model => Model.Feedback_Question, new { @class = "form_input top_15", @placeholder = "Feedback / Query / Support Question", @id = "feedback_question", @type = "text" })
+                    @Html.ValidationMessageFor(Model => Model.Feedback_Question, "", new { @class = "text-danger" })
                 </div>
                 <div>
-                    <textarea class="form_input textarea_input top_15" id="feedback_msg" name="feedback_msg" type="text" placeholder="Please let us know your feedback or Suggestion or Type here to ask any support questions." ></textarea>
+                    @Html.TextAreaFor(Model => Model.Feedback_Msg, new { @class = "form_input textarea_input top_15", @placeholder = "Please let us know your feedback or Suggestion or Type here to ask any support questions.", @id = "feedback_msg", @type = "text" })
+                    @Html.ValidationMessageFor(Model => Model.Feedback_Msg, "", new { @class = "text-danger" })
                 </div>
                 <div class="button_wid top_55">
                     <button type="submit" class="btn_form">Continue</button>

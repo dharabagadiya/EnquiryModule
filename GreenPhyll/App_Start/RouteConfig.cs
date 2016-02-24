@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace GreenPhyll
+namespace RenewIn
 {
     public class RouteConfig
     {
@@ -18,11 +18,11 @@ namespace GreenPhyll
                url: "{controller}/{action}/{serviceType}/{searchText}",
                defaults: new { controller = "Home", action = "Index", serviceType = UrlParameter.Optional, searchText = UrlParameter.Optional }
            );
-           // routes.MapRoute(
-           //    name: "Offer_Grid",
-           //    url: "{controller}/{action}/{offerType}",
-           //    defaults: new { controller = "Home", action = "Index", offerType = UrlParameter.Optional }
-           //);
+            // routes.MapRoute(
+            //    name: "Offer_Grid",
+            //    url: "{controller}/{action}/{offerType}",
+            //    defaults: new { controller = "Home", action = "Index", offerType = UrlParameter.Optional }
+            //);
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

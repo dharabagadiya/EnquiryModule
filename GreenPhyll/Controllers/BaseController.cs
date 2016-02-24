@@ -9,7 +9,7 @@ using System.Web.Mvc.Filters;
 using CustomAuthentication.Security;
 #endregion
 
-namespace GreenPhyll.Controllers
+namespace RenewIn.Controllers
 {
     abstract public class BaseController : Controller
     {

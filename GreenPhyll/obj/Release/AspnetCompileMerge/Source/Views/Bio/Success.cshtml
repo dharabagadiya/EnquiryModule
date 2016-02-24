@@ -1,0 +1,531 @@
+﻿@model DataModel.Modal.UserDetail
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solar</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+
+<body>
+    <div bgcolor="white" lang="EN-US" link="blue" vlink="purple">
+        <div>
+            <div>
+                <table border="0" cellspacing="0" cellpadding="0" style="max-width:620px;min-width:620px">
+                    <tbody>
+                        <tr>
+                            <td width="100%" style="width:100.0%;padding:0in 0in 0in 0in">
+                                <div align="center">
+                                    <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;background:#0A3873;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding:0in 0in 0in 0in">
+                                                    <div align="center">
+                                                        <table border="0" cellspacing="0" cellpadding="0" width="96%" height="50" style="width:96.0%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding:10px 0in 10px 0in;">
+                                                                        <p>
+                                                                            <span style="font-size:1.0pt">
+                                                                                <a href="#" target="_blank">
+                                                                                    @*<span style="text-decoration:none"><img border="0" src="~/images/logo_solar.png" alt="Solar"></span>*@
+                                                                                    <span style="text-decoration:none"><img border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAcCAYAAABFwxCgAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkZFNzgyNkU3Q0Q2MTFFNUI4MDhBMDNEM0JDQjJGMEIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkZFNzgyNkY3Q0Q2MTFFNUI4MDhBMDNEM0JDQjJGMEIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGRkU3ODI2QzdDRDYxMUU1QjgwOEEwM0QzQkNCMkYwQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGRkU3ODI2RDdDRDYxMUU1QjgwOEEwM0QzQkNCMkYwQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjJhybsAAALZSURBVHja7FuBjeowDE0RC/SPkBXKCGWE+yP0j0BHgBFgBBgBRiAjkBH+jdBrTo5URXVit+k19GrJQpDUtfNi57lA1jSNWGXZkjkgUxHXoKrVB+gqPMHWOksFZFcMyH9b/VyxWy7IFuj9it2yQRaQzbcVv7RA3hLn1fCat/rRqkTmlSvI70u83N11brXqmWeI2G5d1rQyeTPwuhPyeYFkt9kU91b/Q3ANvD9DZcCqwgHmGX3BewHXPMGOsXn12Bnqw6szz2rp2HTHD4HxF2ON48VvMrmjmIgeDc3NW702NHm2Wjj2Dz3zzGeVx87ZsTHGhztyf59/x8542TN+Z6xfjPi/dRO5MnRbqFB2uRXgCme+TyRkHiaVk21jfHgQfPFVsgLpQMYIN/5R5RojXsp3MxivkWClU+6wIChgxfBBB+KWjHURHpsc4cQ/GuQqAHKJBLiD83yPBFwS27QMXkNn2hgfQiAXgfFyApA58bNBPnT0jmScKdUXz452W6sLkbhhdm4Dqg3HBxWwmTM2l/DY5Ao1fnaffCScxXVnpxaB8/onJIYPyrEjCUDmyP1ne74fi3j9Q7Li3UUhIEpCBcknKNWzgnwNsD5bDbo943GGeLk+aKRC5AGQ5UTn8awgWzJW/ZJMLgaArFIHOQP9EzjwP34ByC6I2jlvsUyfDeQtc74lWEPATOHHBVwfPkFzD6nTDqHry3QtZvyufTvgGo0ETlngUwIgnwZkc+l5RvDoqWJlKufxUJD7Auc8zOiSoKKnB/xJlk7x4eHEJQltWTLt0xiQY/Wx5cyLQfEhVGYpWTprJm8msqsR9i09ixubnMTyIeSTImzORYJ8Q1ip/Y72iZAclaAPikDMQhmvlgayBHLDZZN1ZAYa0wdFAE95yJ5YIshmofaMHVxPQLhi+qAIZVinWKqnYNei01rZ33vZ73ULh5nas+wy4ULE8kG/M8jZ+jeZ5cuXAAMAUXyw2mreeIUAAAAASUVORK5CYII=" alt="Solar"></span>
+                                                                                </a>
+                                                                                <u></u><u></u>
+                                                                            </span>
+                                                                        </p>
+                                                                    </td>
+
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" valign="top" style="width:100.0%;padding:0in 0in 0in 0in">
+                                <div align="center">
+                                    <table border="1" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-top:none;border-left:solid #006a9f 1.0pt;border-bottom:none;border-right:solid #006a9f 1.0pt">
+                                        <tbody>
+                                            <tr>
+                                                <td style="border:none;padding:15.0pt 7.5pt 3.75pt 7.5pt">
+                                                    <div align="center">
+                                                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;background:white">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding:0in 0in 0in 0in">
+                                                                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td nowrap="" style="padding:0in 0in 0in 3.75pt"><p style="line-height:12.0pt"><span style="font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f"><span class="il">@Model.Name</span>,<u></u><u></u></span></p></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div align="center">
+                                                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+                                                            <tbody>
+                                                                <tr style="height:.75pt">
+                                                                    <td style="background:#e1e8ed;padding:0in 0in 0in 0in;height:.75pt"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div align="center">
+                                                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding:0in 0in 0in 0in">
+                                                                        <div align="center">
+                                                                            <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="padding:0in 0in 0in 0in">
+                                                                                            <p class="MsoNormal">
+                                                                                                <span style="color:#66757f">
+                                                                                                </span><span style="font-size:24.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#66757f">Welcome...</span><span style="color:#66757f"> </span><u></u><u></u>
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td style="padding:0in 0in 0in 0in"><p style="line-height:17.25pt; padding:0; margin:5px 0;"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.<u></u><u></u></span></p></td>
+                                                                                    </tr>
+                                                                                    <tr style="height:9.0pt">
+                                                                                        <td style="padding:0in 0in 0in 0in;height:9.0pt"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="background:#ffffcc;padding:11.25pt 11.25pt 11.25pt 11.25pt"><p class="MsoNormal" style="line-height:17.25pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<u></u><u></u></span></p></td>
+                                                                                    </tr>
+                                                                                    <tr style="height:9.0pt">
+                                                                                        <td style="padding:0in 0in 0in 0in;height:9.0pt"></td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td style="padding:0in 0in 0in 0in">
+                                                                                            <p style="margin-bottom:7.5pt;background:#008888;border-radius:6px; padding:5px;"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:white">Details<u></u><u></u></span></p>
+                                                                                            <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse">
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <td width="274" style="width:35%;border:solid #c8c8c8 1.0pt;background:#f4f4f4;padding:0.5pt 3.75pt 0.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Name <u></u><u></u></span></p></td>
+                                                                                                        <td style="border:solid #c8c8c8 1.0pt;border-left:none;padding:3.75pt 3.75pt 2.25pt 11.25pt">@Model.Name</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:solid #c8c8c8 1.0pt;border-top:none;background:#f4f4f4;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Location <u></u><u></u></span></p></td>
+                                                                                                        <td style="border-top:none;border-left:none;border-bottom:solid #c8c8c8 1.0pt;border-right:solid #c8c8c8 1.0pt;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">@Model.Location<u></u><u></u></span></p></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:solid #c8c8c8 1.0pt;border-top:none;background:#f4f4f4;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Field 3<u></u><u></u></span></p></td>
+                                                                                                        <td style="border-top:none;border-left:none;border-bottom:solid #c8c8c8 1.0pt;border-right:solid #c8c8c8 1.0pt;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Rs. 5,000 <u></u><u></u></span></p></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:solid #c8c8c8 1.0pt;border-top:none;background:#f4f4f4;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Field 4<u></u><u></u></span></p></td>
+                                                                                                        <td style="border-top:none;border-left:none;border-bottom:solid #c8c8c8 1.0pt;border-right:solid #c8c8c8 1.0pt;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Dummy text comes here<u></u><u></u></span></p></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:solid #c8c8c8 1.0pt;border-top:none;background:#f4f4f4;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Field 5<u></u><u></u></span></p></td>
+                                                                                                        <td style="border-top:none;border-left:none;border-bottom:solid #c8c8c8 1.0pt;border-right:solid #c8c8c8 1.0pt;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Content<u></u><u></u></span></p></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:solid #c8c8c8 1.0pt;border-top:none;background:#f4f4f4;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Dummy<u></u><u></u></span></p></td>
+                                                                                                        <td style="border-top:none;border-left:none;border-bottom:solid #c8c8c8 1.0pt;border-right:solid #c8c8c8 1.0pt;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Test<u></u><u></u></span></p></td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr style="height:15.0pt">
+                                                                                        <td style="padding:0in 0in 0in 0in;height:15.0pt"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="padding:0in 0in 0in 0in"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:9.0pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop  <u></u><u></u></span></p></td>
+                                                                                    </tr>
+                                                                                    <tr style="height:33.0pt">
+                                                                                        <td style="padding:0in 0in 0in 0in;height:33.0pt">
+                                                                                            <div align="center">
+                                                                                                <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+                                                                                                    <tbody>
+                                                                                                        <tr>
+                                                                                                            <td>
+                                                                                                                <p style="margin:0;">
+                                                                                                                    <span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">
+                                                                                                                        <br>
+                                                                                                                        Sincerely,<br>
+                                                                                                                        <br>
+                                                                                                                        Solar<u></u><u></u>
+                                                                                                                    </span>
+                                                                                                                </p>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr style="height:9.0pt">
+                                                                                                            <td style="padding:0in 0in 0in 0in;height:9.0pt"></td>
+                                                                                                        </tr>
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="padding:0in 0in 0in 0in"></td>
+                                                                                    </tr>
+                                                                                    <tr style="height:2.25pt">
+                                                                                        <td style="padding:0in 0in 0in 0in;height:2.25pt"></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p class="MsoNormal" align="center" style="text-align:center"><u></u><u></u></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border:none;padding:0in 0in 0in 0in">
+                                                    <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="padding:0in 0in 0in 0in"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#0A3873;padding:0in 0in 0in 0in">
+                                <div align="center">
+                                    <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;background:#F6F6F6;color:#000;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding:0in 0in 0in 0in">
+
+                                                    <div class="smm right">
+                                                        <h3>RenewIn ,Raja Rajeshwari Nagar, Bangalore -560098 </h3>
+                                                        <h4 style="text-align:center">Follow Us</h4>
+                                                        <div class="">
+                                                            <ul class="smmlink">
+                                                                <li>
+                                                                    <a href="home.html " class="fb" target="_blank">
+                                                                        <img style="padding:1px;" src="images/Facebook_1.png">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="home.html" class="twtlink" target="_blank">
+                                                                        <img style="padding:1px;" src="images/Twitter.png">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="home.html" class="utub" target="_blank">
+                                                                        <img style="padding:1px;" src="images/You_1.png">
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><span style="font-family:&quot;Calibri&quot;,sans-serif">&nbsp;<u></u><u></u></span></p>
+            <p class="MsoNormal"><span style="font-family:&quot;Calibri&quot;,sans-serif"><img border="0" src="https://ci5.googleusercontent.com/proxy/plqn8oLT3VM9QYES2qkY7IPSSHr1Ulc8LkgeC8iQ8DlkSi3yiTwyuSr9-7GtLdTlJVUjt3ATg-5oMHGDsI521jlVg1BjXr8NGOo1hxRHk4bXe-eW6VnXYhe7hZo9-9NpcTDHZuZsrlGgn1b2w49oR7uQXNuylBKAeDhkC6Xq69HKdonp=s0-d-e1-ft#http://app1.ftrans01.com/linktrack/lt.pl?id=11469=LRgIAQADBQ5cSAlSBQJSAwkAU00=UwoCUQEMGlICAQECW1IICQICAgtRDApR" class="CToWUd"><u></u><u></u></span></p>
+            <div class="yj6qo"></div>
+            <div class="adL"> </div>
+        </div>
+        <div class="adL"> </div>
+    </div>
+</body>
+</html>
+
+@*<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solar</title>
+</head>
+<body>
+    <div bgcolor="white" lang="EN-US" link="blue" vlink="purple">
+        <div>
+            <div>
+                <table border="0" cellspacing="0" cellpadding="0" style="max-width:620px;min-width:620px">
+                    <tbody>
+                        <tr>
+                            <td width="100%" style="width:100.0%;padding:0in 0in 0in 0in">
+                                <div align="center">
+                                    <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;background:#00ffff">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding:0in 0in 0in 0in">
+                                                    <div align="center">
+                                                        <table border="0" cellspacing="0" cellpadding="0" width="96%" height="50" style="width:96.0%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding:10px 0in 10px 0in;"><p><span style="font-size:1.0pt"><a href="#" target="_blank"><span style="text-decoration:none"><img border="0" src="images/logo_solar.png" alt="Solar"></span></a><u></u><u></u></span></p></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" valign="top" style="width:100.0%;padding:0in 0in 0in 0in">
+                                <div align="center">
+                                    <table border="1" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-top:none;border-left:solid #006a9f 1.0pt;border-bottom:none;border-right:solid #006a9f 1.0pt">
+                                        <tbody>
+                                            <tr>
+                                                <td style="border:none;padding:15.0pt 7.5pt 3.75pt 7.5pt">
+                                                    <div align="center">
+                                                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;background:white">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding:0in 0in 0in 0in">
+                                                                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td nowrap="" style="padding:0in 0in 0in 3.75pt"><p style="line-height:12.0pt"><span style="font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f"><span class="il">Mallikarjun</span> Ragi,<u></u><u></u></span></p></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div align="center">
+                                                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+                                                            <tbody>
+                                                                <tr style="height:.75pt">
+                                                                    <td style="background:#e1e8ed;padding:0in 0in 0in 0in;height:.75pt"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div align="center">
+                                                        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding:0in 0in 0in 0in">
+                                                                        <div align="center">
+                                                                            <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="padding:0in 0in 0in 0in">
+                                                                                            <p class="MsoNormal">
+                                                                                                <span style="color:#66757f">
+                                                                                                </span><span style="font-size:24.0pt;font-family:&quot;Arial&quot;,sans-serif;color:#66757f">Welcome...</span><span style="color:#66757f"> </span><u></u><u></u>
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="padding:0in 0in 0in 0in"><p style="line-height:17.25pt; padding:0; margin:5px 0;"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.<u></u><u></u></span></p></td>
+                                                                                    </tr>
+                                                                                    <tr style="height:9.0pt">
+                                                                                        <td style="padding:0in 0in 0in 0in;height:9.0pt"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="background:#ffffcc;padding:11.25pt 11.25pt 11.25pt 11.25pt"><p class="MsoNormal" style="line-height:17.25pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<u></u><u></u></span></p></td>
+                                                                                    </tr>
+                                                                                    <tr style="height:9.0pt">
+                                                                                        <td style="padding:0in 0in 0in 0in;height:9.0pt"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="padding:0in 0in 0in 0in">
+                                                                                            <p style="margin-bottom:7.5pt;background:#008888;border-radius:6px; padding:5px;"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:white">Details<u></u><u></u></span></p>
+                                                                                            <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse">
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <td width="274" style="width:205.5pt;border:solid #c8c8c8 1.0pt;background:#f4f4f4;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Name <u></u><u></u></span></p></td>
+                                                                                                        <td style="border:solid #c8c8c8 1.0pt;border-left:none;padding:3.75pt 3.75pt 2.25pt 11.25pt">@Model.Name</td>
+                                                                                                    </tr>
+                                                                                                    @*<tr>
+                                                                                                        <td style="border:solid #c8c8c8 1.0pt;border-top:none;background:#f4f4f4;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Field 2 <u></u><u></u></span></p></td>
+                                                                                                        <td style="border-top:none;border-left:none;border-bottom:solid #c8c8c8 1.0pt;border-right:solid #c8c8c8 1.0pt;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">@Model.Field2<u></u><u></u></span></p></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:solid #c8c8c8 1.0pt;border-top:none;background:#f4f4f4;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Field 3<u></u><u></u></span></p></td>
+                                                                                                        <td style="border-top:none;border-left:none;border-bottom:solid #c8c8c8 1.0pt;border-right:solid #c8c8c8 1.0pt;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">@Model.Field3<u></u><u></u></span></p></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:solid #c8c8c8 1.0pt;border-top:none;background:#f4f4f4;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Pincode<u></u><u></u></span></p></td>
+                                                                                                        <td style="border-top:none;border-left:none;border-bottom:solid #c8c8c8 1.0pt;border-right:solid #c8c8c8 1.0pt;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">@Model.Pincode<u></u><u></u></span></p></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:solid #c8c8c8 1.0pt;border-top:none;background:#f4f4f4;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Contact<u></u><u></u></span></p></td>
+                                                                                                        <td style="border-top:none;border-left:none;border-bottom:solid #c8c8c8 1.0pt;border-right:solid #c8c8c8 1.0pt;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">@Model.MobileNo<u></u><u></u></span></p></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="border:solid #c8c8c8 1.0pt;border-top:none;background:#f4f4f4;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">Address<u></u><u></u></span></p></td>
+                                                                                                        <td style="border-top:none;border-left:none;border-bottom:solid #c8c8c8 1.0pt;border-right:solid #c8c8c8 1.0pt;padding:7.5pt 3.75pt 7.5pt 11.25pt"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">@Model.PropertyAddress<u></u><u></u></span></p></td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr style="height:15.0pt">
+                                                                                        <td style="padding:0in 0in 0in 0in;height:15.0pt"></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="padding:0in 0in 0in 0in"><p class="MsoNormal" style="line-height:12.0pt"><span style="font-size:9.0pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop  <u></u><u></u></span></p></td>
+                                                                                    </tr>
+                                                                                    <tr style="height:33.0pt">
+                                                                                        <td style="padding:0in 0in 0in 0in;height:33.0pt">
+                                                                                            <div align="center">
+                                                                                                <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+                                                                                                    <tbody>
+                                                                                                        <tr>
+                                                                                                            <td>
+                                                                                                                <p style="margin:0;">
+                                                                                                                    <span style="font-size:10.5pt;font-family:&quot;Helvetica&quot;,sans-serif;color:#66757f">
+                                                                                                                        <br>
+                                                                                                                        Sincerely,<br>
+                                                                                                                        <br>
+                                                                                                                        Solar<u></u><u></u>
+                                                                                                                    </span>
+                                                                                                                </p>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                        <tr style="height:9.0pt">
+                                                                                                            <td style="padding:0in 0in 0in 0in;height:9.0pt"></td>
+                                                                                                        </tr>
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="padding:0in 0in 0in 0in"></td>
+                                                                                    </tr>
+                                                                                    <tr style="height:2.25pt">
+                                                                                        <td style="padding:0in 0in 0in 0in;height:2.25pt"></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <p class="MsoNormal" align="center" style="text-align:center"><u></u><u></u></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border:none;padding:0in 0in 0in 0in">
+                                                    <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="padding:0in 0in 0in 0in"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#00ffff;padding:9.0pt 0in 9.0pt 0in">
+                                <div align="center">
+                                    <table border="0" cellpadding="0">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding:3.75pt 7.5pt 3.75pt 7.5pt">
+                                                    <p class="MsoNormal" align="center" style="text-align:center">
+                                                        <a href="#" title="FACEBOOK" target="_blank">
+                                                            <span style="font-size:9.0pt;color:#000;text-decoration:none">
+                                                                <img border="0" src="https://ci4.googleusercontent.com/proxy/k1MVXkEpoBiBKLlI-C0IAfrpMGJ77GOnLkEYMh74InKjg5oHjcu_24i5FX_rPa-9_ftt4AYNkouodpBCtZiGcpXj3N-VrS8eIfiTANDIqHmJheUDmV11DWokSRDN7ulNrL6A2lM=s0-d-e1-ft#http://cdn1-bb-image.bankbazaar.com/mp/email/standard-emailer/icon-facebook.png" alt="FACEBOOK"><br>
+                                                                Facebook
+                                                            </span>
+                                                        </a> <u></u><u></u>
+                                                    </p>
+                                                </td>
+                                                <td style="padding:3.75pt 7.5pt 3.75pt 7.5pt">
+                                                    <p class="MsoNormal" align="center" style="text-align:center">
+                                                        <a href="#" title="GOOGLE PLUS" target="_blank">
+                                                            <span style="font-size:9.0pt;color:#000;text-decoration:none">
+                                                                <img border="0" src="https://ci3.googleusercontent.com/proxy/9YqUoOoY8tcY_OA2jpqYl62BwBd728VzPzaqaBQU2TkvbqkkAXlNZdviNGTxzFSezZfKDi6dYFjUm9H07OcyyczzGobeUpeJTV7sHP_aB-68XNwBeu9-max9t6e2UjCX9888lmnBeQ=s0-d-e1-ft#http://cdn1-bb-image.bankbazaar.com/mp/email/standard-emailer/icon-googleplus.png" alt="GOOGLE PLUS"><br>
+                                                                Google+
+                                                            </span>
+                                                        </a> <u></u><u></u>
+                                                    </p>
+                                                </td>
+                                                <td style="padding:3.75pt 7.5pt 3.75pt 7.5pt">
+                                                    <p class="MsoNormal" align="center" style="text-align:center">
+                                                        <a href="#" title="TWITTER" target="_blank">
+                                                            <span style="font-size:9.0pt;color:#000;text-decoration:none">
+                                                                <img border="0" src="https://ci5.googleusercontent.com/proxy/nJe-gFXRZQqAEnVukfdaexeh9pXuPjh9LV-2O7vdxzaFacCbLVJDEt8Y88n0WrP1LUNoSiqczIKAGRQr46aRrquf_RSLz16pfz30YNZUjkiacylbAqRUJY38tk_564WBms43RA=s0-d-e1-ft#http://cdn1-bb-image.bankbazaar.com/mp/email/standard-emailer/icon-twitter.png" alt="TWITTER"><br>
+                                                                Tweet!
+                                                            </span>
+                                                        </a> <u></u><u></u>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background:#333;padding:0in 0in 0in 0in">
+                                <div align="center">
+                                    <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;background:#333">
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding:0in 0in 0in 0in">
+                                                    <p align="center" style="margin-bottom:12.0pt;text-align:center">
+                                                        <span style="font-size:9.0pt;color:white">
+                                                            Solar Address Comes here<br>
+                                                            Bangalore 560068<u></u><u></u>
+                                                        </span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><span style="font-family:&quot;Calibri&quot;,sans-serif">&nbsp;<u></u><u></u></span></p>
+            <p class="MsoNormal"><span style="font-family:&quot;Calibri&quot;,sans-serif"><img border="0" src="https://ci5.googleusercontent.com/proxy/plqn8oLT3VM9QYES2qkY7IPSSHr1Ulc8LkgeC8iQ8DlkSi3yiTwyuSr9-7GtLdTlJVUjt3ATg-5oMHGDsI521jlVg1BjXr8NGOo1hxRHk4bXe-eW6VnXYhe7hZo9-9NpcTDHZuZsrlGgn1b2w49oR7uQXNuylBKAeDhkC6Xq69HKdonp=s0-d-e1-ft#http://app1.ftrans01.com/linktrack/lt.pl?id=11469=LRgIAQADBQ5cSAlSBQJSAwkAU00=UwoCUQEMGlICAQECW1IICQICAgtRDApR" class="CToWUd"><u></u><u></u></span></p>
+            <div class="yj6qo"></div>
+            <div class="adL"> </div>
+        </div>
+        <div class="adL"> </div>
+    </div>
+</body>
+</html>*@
+

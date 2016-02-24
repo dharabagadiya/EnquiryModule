@@ -22,7 +22,8 @@ hydro.AddHydroServicesDetail = function () {
             var status = data;
             if (status) {
                 //window.location.href = "Enquiry/ThankYou";
-                alert("Success");
+                window.location.href = "/Bio/ThankYou";
+                //alert("Success");
             } else { }
         }
     });
@@ -40,44 +41,174 @@ hydro.AddHydroServiceValidation = function () {
         var hydro_email_val = $('#hydro_renew_email').val();
         var hydro_mobile_val = $('#hydro_renew_mobile').val();
 
-        debugger
         if (current_slide == 1) {
-            if ((hydro_address_val == '') || (hydro_pincode_val == '') || (hydro_location_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!pin_format.test(hydro_pincode_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Pin code should be 6 digits');
-            } else {
-                $('.error_tooltip').hide();
+            if (hydro_address_val == "" && hydro_location_val == "" && hydro_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (hydro_location_val == "" && hydro_pincode_val == "") {
+                $("#add123").hide();
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (hydro_address_val == "" && hydro_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (hydro_address_val == "" && hydro_location_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").hide();
+            }
+            else if (hydro_address_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").hide();
+            }
+            else if (hydro_location_val == "") {
+                $("#loc123").show().text("Please Enter location");
+                $("#add123").hide();
+                $("#pin123").hide();
+            }
+            else if (hydro_pincode_val == "") {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (!pin_format.test(hydro_pincode_val)) {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $('#pin123').show().text('Pin code should be 6 digits');
+            }
+            else {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").hide();
                 next_slide();
                 $('.prev_slide.disabled').removeClass('disabled');
             }
         }
         if (current_slide == 2) {
             if ($('#ServiceLookingType .option_box.selected').length > 0) {
-                $('.error_tooltip').hide();
+                $('#serviceLooking').hide();
                 next_slide();
             } else {
-                $('.error_tooltip').show().find('.error_msg').text('Select one Hydro Service');
+                $('#serviceLooking').show().text('Please select an option to proceed');
             }
         }
         if (current_slide == 3) {
-            if ((hydro_renew_service_val == '') || (hydro_renew_msg_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else {
-                $('.error_tooltip').hide();
+            if (hydro_renew_service_val == "" && hydro_renew_msg_val == "") {
+                $('#serviceType').show().text('Please Enter Service you are Looking');
+                $('#serviceMsg').show().text('Please provide information');
+            }
+            else if (hydro_renew_service_val == "") {
+                $('#serviceType').show().text('Please Enter Service you are Looking');
+                $('#serviceMsg').hide();
+            }
+            else if (hydro_renew_msg_val == "") {
+                $('#serviceMsg').show().text('Please provide information');
+                $('#serviceType').hide();
+            }
+            else {
+                $('#serviceMsg').hide();
+                $('#serviceType').hide();
                 next_slide();
                 $('.next_slide').addClass('disabled');
             }
         }
         if (current_slide == 4) {
-            if ((hydro_company_name_val == '') || (hydro_contact_person_val == '') || (hydro_email_val == '') || (hydro_mobile_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!email_format.test(hydro_email_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Email Id is invalid');
-            } else if (!mobile_num_format.test(hydro_mobile_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Mobile number is invalid');
-            } else {
-                $('.error_tooltip').hide();
+            if ((hydro_company_name_val == '') && (hydro_contact_person_val == '') && (hydro_email_val == '') && (hydro_mobile_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((hydro_contact_person_val == '') && (hydro_email_val == '') && (hydro_mobile_val == '')) {
+                $('#companyName').hide();
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((hydro_company_name_val == '') && (hydro_contact_person_val == '') && (hydro_email_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if ((hydro_company_name_val == '') && (hydro_mobile_val == '') && (hydro_email_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((hydro_company_name_val == '') && (hydro_mobile_val == '') && (hydro_contact_person_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((hydro_email_val == '') && (hydro_mobile_val == '')) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((hydro_company_name_val == '') && (hydro_contact_person_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if ((hydro_company_name_val == '') && (hydro_mobile_val == '')) {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (hydro_company_name_val == '') {
+                $('#companyName').show().text('Enter Company Name');
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if (hydro_contact_person_val == '') {
+                $('#companyName').hide();
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if (hydro_email_val == '') {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if (!email_format.test(hydro_email_val)) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').show().text('Email Id is invalid');
+                $('#mobile').hide();
+            }
+            else if (hydro_mobile_val == '') {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (!mobile_num_format.test(hydro_mobile_val)) {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Mobile number is invalid');
+            }
+            else {
+                $('#companyName').hide();
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').hide();
+                $('.divLoader').removeClass('DN');
                 hydro.AddHydroServicesDetail();
             }
         }

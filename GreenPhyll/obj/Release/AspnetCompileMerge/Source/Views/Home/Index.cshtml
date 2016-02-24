@@ -1,14 +1,37 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<div class="content_area">
+    <div class="container">
+        <div class="container">
+            <div class="home_middle_sec">
+                <div class="top_head">
+                    <div class="form-item form-type-textfield form-item-search left">
+                        <div class="form-element" role="application">
+                            <input aria-autocomplete="list" autocomplete="OFF" placeholder="What are you looking for?" id="edit-search" name="search"
+                                   value="" size="60" maxlength="128" class="form-text form-autocomplete" type="text" style="font-size:16px !important;" />
+                        </div>
+                    </div>
+                    <div class="dropdown1 left">
+                        <select id="ddlCategory">
+                            <option value="0">Any Category</option>
+                            <option value="1">Solar Service</option>
+                            <option value="2">Wind Service</option>
+                            <option value="3">Bio Service</option>
+                            <option value="4">Hydro Service</option>
+                        </select>
+                    </div>
 
-<div class="container">
-    <div class="home_middle_sec">
-        <div class="home_image"> <span class="head">#</span><span class="head_renew">Renew</span><span class="head_india">India</span></div>
-        <p class="home_text">
-            Loreum Ipsum Dummy Text Comes Here<br>
-            <span>Lorem ipsum  - dolor sit -  consectetur - adipiscing - Mpibus</span>
-        </p>
+                    <div class="button left">
+                        <div id="btnSearch" class="btn btn_height" style="margin-top:0 !important;padding-left: 2px;">Search</div>
+                    </div>
+                </div>
+                <p class="home_text">
+                    New & Renewable Energy Market Place<br>
+                    <span>Solar - Wind - Hydro - Bio – New Technologies – Place Search Request</span>
+                </p>
+            </div>
+        </div>
     </div>
 </div>
 <div class="container_1">
@@ -45,7 +68,7 @@
             <div class="evntdvone left">
                 <div class="light_green_icon rotate"><div class="home_img home_icon_size services_bg"></div></div>
                 <span class="selectable"></span>
-                <h4> Services </h4>
+                <h4> Place Search Request </h4>
             </div>
         </a>
     </div>

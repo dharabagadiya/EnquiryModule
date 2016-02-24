@@ -115,10 +115,13 @@ solar.AddSolarServiceValidation = function () {
                 $('#serviceMsg').hide();
                 $('#serviceType').hide();
                 next_slide();
-                $('.next_slide').addClass('disabled');
             }
         }
         if (current_slide == 4) {
+            next_slide();
+            $('.next_slide').addClass('disabled');
+        }
+        if (current_slide == 5) {
             if ((solar_company_name_val == '') && (solar_contact_person_val == '') && (solar_email_val == '') && (solar_mobile_val == '')) {
                 $('#companyName').show().text('Enter Company Name');
                 $('#contactName').show().text('Enter Contact Person Name');

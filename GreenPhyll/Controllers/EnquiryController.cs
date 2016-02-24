@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using DataModel;
 using System.IO;
 
-namespace GreenPhyll.Controllers
+namespace RenewIn.Controllers
 {
     public class EnquiryController : BaseController
     {

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAuthentication", "Cus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{F409E6EF-E952-4A7E-B962-8E42A18922C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenPhyll", "GreenPhyll\GreenPhyll.csproj", "{B8CFBC21-81E8-4A01-9C6D-8B5B52CD5C94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenewIn", "GreenPhyll\RenewIn.csproj", "{B8CFBC21-81E8-4A01-9C6D-8B5B52CD5C94}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{0FE427ED-EBBE-4892-996F-1B48C3127A10}"
 EndProject

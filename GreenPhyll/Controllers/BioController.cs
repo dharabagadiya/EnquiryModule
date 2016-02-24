@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace GreenPhyll.Controllers
+namespace RenewIn.Controllers
 {
     public class BioController : BaseController
     {

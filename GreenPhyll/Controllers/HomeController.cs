@@ -2,7 +2,7 @@
 using CustomAuthentication.Security;
 using System.Web.Mvc;
 
-namespace GreenPhyll.Controllers
+namespace RenewIn.Controllers
 {
     public class HomeController : BaseController
     {

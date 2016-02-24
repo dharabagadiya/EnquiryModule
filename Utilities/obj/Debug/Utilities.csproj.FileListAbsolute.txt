@@ -1,4 +1,4 @@
-D:\Project\EnquiryModule_Git\Utilities\bin\Debug\Utilities.dll
-D:\Project\EnquiryModule_Git\Utilities\bin\Debug\Utilities.pdb
-D:\Project\EnquiryModule_Git\Utilities\obj\Debug\Utilities.dll
-D:\Project\EnquiryModule_Git\Utilities\obj\Debug\Utilities.pdb
+D:\Project\EnquiryModule Project\EnqiryModule1\Utilities\bin\Debug\Utilities.dll
+D:\Project\EnquiryModule Project\EnqiryModule1\Utilities\bin\Debug\Utilities.pdb
+D:\Project\EnquiryModule Project\EnqiryModule1\Utilities\obj\Debug\Utilities.dll
+D:\Project\EnquiryModule Project\EnqiryModule1\Utilities\obj\Debug\Utilities.pdb

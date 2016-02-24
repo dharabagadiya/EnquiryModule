@@ -26,7 +26,9 @@ wind.AddWindDetail = function () {
             var status = data;
             if (status) {
                 //window.location.href = "Enquiry/ThankYou";
-                alert("Success");
+                $('.divLoader').addClass('DN');
+                window.location.href = "/Offer/Index/Wind";
+                //alert("Success");
             } else { }
         }
     });
@@ -51,57 +53,249 @@ wind.AddWindValidation = function () {
 
         if (current_slide == 1) {
             if ($('#wind_services .option_box.selected').length > 0) {
-                $('.error_tooltip').hide();
+                $('#stateWhether').hide();
                 next_slide();
                 $('.prev_slide.disabled').removeClass('disabled');
             } else {
-                $('.error_tooltip').show().find('.error_msg').text('Select one Wind Service');
+                $('#stateWhether').show().text('Please select an option to proceed');
             }
         }
         if (current_slide == 2) {
-            if ((wind_applicant_name_val == '') || (wind_pan == '') || (wind_cin == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else {
-                $('.error_tooltip').hide();
+            if ((wind_applicant_name_val == '') && (wind_pan == '') && (wind_cin == '')) {
+                $('#nameOfApplicant').show().text('Enter Name of Applicant');
+                $('#PAN').show().text('Enter PAN');
+                $('#CIN').show().text('Enter CIN');
+            }
+            else if (wind_pan == '' && wind_cin == '') {
+                $('#nameOfApplicant').hide();
+                $('#PAN').show().text('Enter PAN');
+                $('#CIN').show().text('Enter CIN');
+            }
+            else if (wind_applicant_name_val == '' && wind_cin == '') {
+                $('#nameOfApplicant').show().text('Enter Name of Applicant');
+                $('#PAN').hide();
+                $('#CIN').show().text('Enter CIN');
+            }
+            else if (wind_applicant_name_val == '' && wind_pan == '') {
+                $('#nameOfApplicant').show().text('Enter Name of Applicant');
+                $('#PAN').show().text('Enter PAN');
+                $('#CIN').hide();
+            }
+            else if (wind_applicant_name_val == '') {
+                $('#nameOfApplicant').show().text('Enter Name of Applicant');
+                $('#PAN').hide();
+                $('#CIN').hide();
+            }
+            else if (wind_pan == '') {
+                $('#nameOfApplicant').hide();
+                $('#PAN').show().text('Enter PAN');
+                $('#CIN').hide();
+            }
+            else if (!pan_format.test(wind_pan)) {
+                $('#nameOfApplicant').hide();
+                $('#PAN').show().text('Please enter your correct PAN Number');
+                $('#CIN').hide();
+            }
+            else if (wind_cin == '') {
+                $('#nameOfApplicant').hide();
+                $('#PAN').hide();
+                $('#CIN').show().text('Enter CIN');
+            }
+            else {
+                $('#nameOfApplicant').hide();
+                $('#PAN').hide();
+                $('#CIN').hide();
                 next_slide();
             }
         }
         if (current_slide == 3) {
-            if ((wind_address_val == '') || (wind_pincode_val == '') || (wind_location_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!pin_format.test(wind_pincode_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Pin code should be 6 digits');
-            } else {
-                $('.error_tooltip').hide();
+            if (wind_address_val == "" && wind_location_val == "" && wind_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (wind_location_val == "" && wind_pincode_val == "") {
+                $("#add123").hide();
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (wind_address_val == "" && wind_pincode_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (wind_address_val == "" && wind_location_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").show().text("Please Enter location");
+                $("#pin123").hide();
+            }
+            else if (wind_address_val == "") {
+                $("#add123").show().text("Please Enter Address");
+                $("#loc123").hide();
+                $("#pin123").hide();
+            }
+            else if (wind_location_val == "") {
+                $("#loc123").show().text("Please Enter location");
+                $("#add123").hide();
+                $("#pin123").hide();
+            }
+            else if (wind_pincode_val == "") {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").show().text("Please Enter pin number");
+            }
+            else if (!pin_format.test(wind_pincode_val)) {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $('#pin123').show().text('Pin code should be 6 digits');
+            }
+            else {
+                $("#loc123").hide();
+                $("#add123").hide();
+                $("#pin123").hide();
                 next_slide();
+                $('.prev_slide.disabled').removeClass('disabled');
             }
         }
         if (current_slide == 4) {
-            if ((wind_proposed_capacity_val == '') || (wind_estimated_project_cost_val == '') || (wind_turn_over_val == '' || (wind_TotalWEGPlanned_val == ''))) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (number_only.test(wind_turn_over_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Average turnover should be digits');
-            } else if (number_only.test(wind_estimated_project_cost_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Estimated cost should be digits');
-            } else if (number_only.test(wind_proposed_capacity_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Capacity of wind plant should be digits');
-            } else if (number_only.test(wind_TotalWEGPlanned_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('No. of wind electric generators should be digits');
-            } else {
-                $('.error_tooltip').hide();
+            if (wind_TotalWEGPlanned_val == '' && wind_proposed_capacity_val == '' && wind_estimated_project_cost_val == '' && wind_turn_over_val == '') {
+                $('#turbines').show().text('Enter No. of wind electric generators (WEG)');
+                $('#capacity').show().text('Enter Capacity of the wind project');
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (wind_proposed_capacity_val == '' && wind_estimated_project_cost_val == '' && wind_turn_over_val == '') {
+                $('#turbines').hide();
+                $('#capacity').show().text('Enter Capacity of the wind project');
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (wind_TotalWEGPlanned_val == '' && wind_proposed_capacity_val == '' && wind_estimated_project_cost_val == '') {
+                $('#turbines').show().text('Enter No. of wind electric generators (WEG)');
+                $('#capacity').show().text('Enter Capacity of the wind project');
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').hide();
+            }
+            else if (wind_TotalWEGPlanned_val == '' && wind_estimated_project_cost_val == '' && wind_turn_over_val == '') {
+                $('#turbines').show().text('Enter No. of wind electric generators (WEG)');
+                $('#capacity').hide();
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (wind_TotalWEGPlanned_val == '' && wind_proposed_capacity_val == '' && wind_turn_over_val == '') {
+                $('#turbines').show().text('Enter No. of wind electric generators (WEG)');
+                $('#capacity').show().text('Enter Capacity of the wind project');
+                $('#cost').hide();
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (wind_estimated_project_cost_val == '' && wind_turn_over_val == '') {
+                $('#turbines').hide();
+                $('#capacity').hide();
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (wind_proposed_capacity_val == '' && wind_turn_over_val == '') {
+                $('#turbines').hide();
+                $('#capacity').show().text('Enter Capacity of the wind project');
+                $('#cost').hide();
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else if (wind_proposed_capacity_val == '' && wind_estimated_project_cost_val == '') {
+                $('#turbines').hide();
+                $('#capacity').show().text('Enter Capacity of the wind project');
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').hide();
+            }
+            else if (wind_TotalWEGPlanned_val == '' && wind_proposed_capacity_val == '') {
+                $('#turbines').show().text('Enter No. of wind electric generators (WEG)');
+                $('#capacity').show().text('Enter Capacity of the wind project');
+                $('#cost').hide();
+                $('#turnover').hide();
+            }
+            else if (wind_TotalWEGPlanned_val == '') {
+                $('#turbines').show().text('Enter No. of wind electric generators (WEG)');
+                $('#capacity').hide();
+                $('#cost').hide();
+                $('#turnover').hide();
+            }
+            else if (wind_proposed_capacity_val == '') {
+                $('#turbines').hide();
+                $('#capacity').show().text('Enter Capacity of the wind project');
+                $('#cost').hide();
+                $('#turnover').hide();
+            }
+            else if (wind_estimated_project_cost_val == '') {
+                $('#turbines').hide();
+                $('#capacity').hide();
+                $('#cost').show().text('Enter Estimated cost of the project');
+                $('#turnover').hide();
+            }
+            else if (wind_turn_over_val == '') {
+                $('#turbines').hide();
+                $('#capacity').hide();
+                $('#cost').hide();
+                $('#turnover').show().text('Enter Average turnover in last 3 years');
+            }
+            else {
+                $('#turbines').hide();
+                $('#capacity').hide();
+                $('#cost').hide();
+                $('#turnover').hide();
                 next_slide();
                 $('.next_slide').addClass('disabled');
             }
         }
         if (current_slide == 5) {
-            if ((wind_contact_person_val == '') || (wind_email_val == '') || (wind_mobile_val == '')) {
-                $('.error_tooltip').show().find('.error_msg').text('Enter Required Fields');
-            } else if (!email_format.test(wind_email_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Email Id is invalid');
-            } else if (!mobile_num_format.test(wind_mobile_val)) {
-                $('.error_tooltip').show().find('.error_msg').text('Mobile number is invalid');
-            } else {
-                $('.error_tooltip').hide();
+            if (wind_contact_person_val == '' && wind_email_val == '' && wind_mobile_val == '') {
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((wind_contact_person_val == '') && (wind_email_val == '')) {
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if ((wind_mobile_val == '') && (wind_email_val == '')) {
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if ((wind_mobile_val == '') && (wind_contact_person_val == '')) {
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (wind_contact_person_val == '') {
+                $('#contactName').show().text('Enter Contact Person Name');
+                $('#email').hide();
+                $('#mobile').hide();
+            }
+            else if (wind_email_val == '') {
+                $('#contactName').hide();
+                $('#email').show().text('Enter Email Id');
+                $('#mobile').hide();
+            }
+            else if (wind_mobile_val == '') {
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Enter Mobile Number');
+            }
+            else if (!email_format.test(wind_email_val)) {
+                $('#contactName').hide();
+                $('#email').show().text('Email Id is invalid');
+                $('#mobile').hide();
+            }
+            else if (!mobile_num_format.test(wind_mobile_val)) {
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').show().text('Mobile number is invalid');
+            }
+            else {
+                $('#contactName').hide();
+                $('#email').hide();
+                $('#mobile').hide();
+                $('.divLoader').removeClass('DN');
                 wind.AddWindDetail();
             }
         }

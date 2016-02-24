@@ -7,7 +7,7 @@ using DataModel;
 using PagedList;
 using PagedList.Mvc;
 
-namespace GreenPhyll.Controllers
+namespace RenewIn.Controllers
 {
     public class ServicesController : BaseController
     {

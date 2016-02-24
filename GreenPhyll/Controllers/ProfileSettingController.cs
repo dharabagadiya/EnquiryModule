@@ -10,7 +10,7 @@ using System.Web.Mvc;
 using Utilities;
 #endregion
 
-namespace GreenPhyll.Controllers
+namespace RenewIn.Controllers
 {
     public class ProfileSettingController : BaseController
     {

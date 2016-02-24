@@ -2,7 +2,6 @@
 
 body { font-family: "Open Sans",sans-serif; background-color: #fff; }
 .wrapper { width: 100%; }
-.container { width: 80%; }
 .header { background: #0a3873; height: 50px; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 a { text-decoration: none; }
@@ -20,7 +19,7 @@ h3 { font-size: 20px; font-weight: 400; color: #000; text-align: center; padding
 .tab_section { padding: 10px; }
 #tabs li a.current { background: #0095D9; color: #fff; }
 #tabs li a span { display: block; font-size: 30px; padding-bottom: 10px; }
-.icon_img { background: url("images/travel1.png")no-repeat; }
+/*.icon_img { background: url("images/travel1.png")no-repeat; }*/
 .content { border: 1px solid #E3E3E3; width: 100%; /*padding-top:20px;
 	padding-bottom:80px;*/ background-color: #fff; }
 .form_content { width: 50%; margin: 0 auto; height: 400px; }

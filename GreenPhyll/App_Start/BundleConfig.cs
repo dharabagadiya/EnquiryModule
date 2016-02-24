@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Optimization;
 
-namespace GreenPhyll
+namespace RenewIn
 {
     public class BundleConfig
     {
