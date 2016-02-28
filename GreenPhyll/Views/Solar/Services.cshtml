@@ -122,7 +122,7 @@
                         <div class="input_element_holder multiple_fields">
                             <div class="MB15">
                                 <div class="icon_input">
-                                    <span class="icon"><img src="../images/location_icon_white.png" /></span>
+                                    <span class="icon"><img src="@Url.Content("~/images/location_icon_white.png")" /></span>
                                     <input id="solar_renew_service" class="no_label grey_text" type="text" placeholder="Type Service you are Looking for" />
                                 </div>
                                 <span id="serviceType" class="left_arrow" style="margin-left:-75px;"></span>
@@ -144,32 +144,15 @@
 
                 <div id="hydro_renew_form_slide_4" class="slides">
                     <div class="ppfPhotoContainer" style="margin-left:25px;">
-                        <div class="firstUpload mt25">
-                            <div class="m10">
-                                <b>Please upload photos for getting 2 times better response.</b> Please also choose the
-                                <b> 'cover photo'</b> which will appear on the main search page.Other photos will appear in the gallery view.
-                            </div>
-                            <div class="margin_sec">
-                                If you don't have a property photo, you may still continue to post your Ad.
-                                Email us the images to: <a href="mailto:photos@99acres.com">photos@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="examplePhotoPack right">
-                            <div class="mt15 f14 right" style="padding:0 14px 5px 0;">Example: <b class="f13">Land Photo </b></div>
-                            <div class="clr"></div>
-                            <div class="imgB right">
-                                <img class="aPhBox_img" src="~/images/Hydrangeas.jpg" />
-                            </div>
-                        </div>
-                        <div class="clr"></div>
                         <div class="imgAC715">
                             <div id="uploadedImgs" class="left"></div>
                             <div id="addNewImgBtn" style="margin-top:50px;">
                                 <div class="imagePreview btn_img">
-                                    <input class="browseBtn" type="file" name="Photo" id="uploadFile" />
+                                    <input class="browseBtn" type="file" name="file" id="uploadFile" onchange="ValidateSingleInput(this);" />
                                     <input type="button" class="btn blue" value="Add Photo" />
                                 </div>
                             </div>
+
                             <div id="newImgTemplate" class="hidden">
                                 <div class="payOption add_photos left">
                                     <input name="new_img" type="radio" /><label for="Cover"> Cover Photo</label>
@@ -177,11 +160,29 @@
                                     <div><a class="remove_photo">Remove</a></div>
                                 </div>
                             </div>
+
+                            <div class="firstUpload mt25">
+                                <div class="m10">
+                                    <b>Please upload photos for getting 2 times better response.</b> Please also choose the
+                                    <b>'cover photo'</b> which will appear on the main search page.Other photos will appear in the gallery view.
+                                </div>
+                                <div class="margin_sec">
+                                    If you don't have a property photo, you may still continue to post your Ad.
+                                    Email us the images to: <a href="mailto:photos@99acres.com">photos@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="examplePhotoPack left">
+                            <div class="f14 left" style="padding-bottom:5px;">Example: <b class="f13">Land Photo </b></div>
+                            <div class="clr"></div>
+                            <div class="imgB left">
+                                <img class="aPhBox_img" src="~/images/Hydrangeas.jpg" />
+                            </div>
                         </div>
                         <div class="clr"></div>
-                        <div class="text">(<b>Supported photo formats:</b> jpeg, bmp, gif, png; <b>Max file size:</b> 3MB; <b>Min file size:</b>10KB)</div>
+
+                        <div class="text">(<b>Supported photo formats:</b> jpeg, jpg; <b>Max Photo size:</b> 2MB; <b>Min Photo size:</b>10KB)</div>
                         <div class="text">* Cover photo is the photo which will appear on the main search page. Other photos will appear in the gallery view.</div>
-                        <div class="clr"></div>
                         <div class="clr"></div>
                         <div class="btn_area" style="padding:0px !important;">
                             <button class="btn_normal_2 continue_btn">Continue</button>

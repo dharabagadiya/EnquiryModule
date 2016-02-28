@@ -22,9 +22,18 @@ wind.AddWindServicesDetail = function () {
         success: function (data) {
             var status = data;
             if (status) {
+                var formdata = new FormData(); //FormData object
+                var fileInput = uploadFile;
+                //Iterating through each files selected in fileInput
+                for (i = 0; i < fileInput.length; i++) {
+                    //Appending each file to FormData object
+                    formdata.append(fileInput[i].image.name, fileInput[i].image, "" + fileInput[i].id + ".jpg");
+                }
+                //Creating an XMLHttpRequest and sending
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/Wind/ImageUpload', false);
+                xhr.send(formdata);
                 window.location.href = "/Bio/ThankYou";
-                //window.location.href = "/Offer/Index/Wind";
-                //alert("Success");
             } else { }
         }
     });
@@ -120,6 +129,14 @@ wind.AddWindServiceValidation = function () {
                 $('#serviceMsg').show().text('Please provide information');
                 $('#serviceType').hide();
             }
+            else if (wind_renew_service_val.length < 30 || wind_renew_service_val.length > 124) {
+                $('#serviceType').show().text('Please enter title of Min 30 Characters to Maximum 124 Characters.');
+                $('#serviceMsg').hide();
+            }
+            else if (wind_renew_msg_val.length < 100 || wind_renew_msg_val.length > 5000) {
+                $('#serviceMsg').show().text('We strongly recommend you to write a description of Min 100 characters. This would help in getting you a better response. Max 5000 characters allowed.');
+                $('#serviceType').hide();
+            }
             else {
                 $('#serviceMsg').hide();
                 $('#serviceType').hide();
@@ -128,6 +145,18 @@ wind.AddWindServiceValidation = function () {
             }
         }
         if (current_slide == 5) {
+            next_slide();
+            var indexValueOfArray = $('input:radio[name=new_img]:checked').parents('.add_photos').index();
+            for (var i = 0; i < uploadFile.length; i++) {
+                if (indexValueOfArray == i) {
+                    uploadFile[i].id = 1
+                }
+                else
+                    uploadFile[i].id = 0
+            }
+            $('.next_slide').addClass('disabled');
+        }
+        if (current_slide == 6) {
             if ((wind_company_name_val == '') && (wind_contact_person_val == '') && (wind_email_val == '') && (wind_mobile_val == '')) {
                 $('#companyName').show().text('Enter Company Name');
                 $('#contactName').show().text('Enter Contact Person Name');

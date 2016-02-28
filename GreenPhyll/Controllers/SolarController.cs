@@ -1,9 +1,11 @@
 ﻿using DataModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Utilities;
 
 namespace RenewIn.Controllers
 {
@@ -98,11 +100,44 @@ namespace RenewIn.Controllers
         }
         public JsonResult AddServices(string Address, string Pincode, string ServiceLookingType, string ServiceRequestType, string ServiceRequestMsg, string CompanyName, string ContactPersonName, string Email, string MobileNo, string location)
         {
+            HttpPostedFileBase myFile = null;
+            if (Request.Files.Count > 0) myFile = Request.Files[0];
             var userId = UserDetail == null ? 0 : UserDetail.UserId;
             var SolarManager = new SolarManager();
             var status = SolarManager.AddServices(Address, Pincode, ServiceLookingType, ServiceRequestType, ServiceRequestMsg, CompanyName, ContactPersonName, Email, MobileNo, userId, location);
             Session["Enquery_ID"] = status;
             return Json(status != 0);
+        }
+        [HttpPost]
+        public JsonResult ImageUpload()
+        {
+            var status = false;
+            for (int i = 0; i < Request.Files.Count; i++)
+            {
+                HttpPostedFileBase myFile = Request.Files[i];
+                if (myFile != null && myFile.ContentLength != 0)
+                {
+                    var userID = UserDetail == null ? 0 : UserDetail.UserId;
+                    string pathForSaving = Server.MapPath("~/ServiceImagesUpload");
+                    if (SharedFunction.CreateFolderIfNeeded(pathForSaving))
+                    {
+                        try
+                        {
+                            int defaultImage = Convert.ToInt32(Path.GetFileNameWithoutExtension(myFile.FileName));
+                            string fileName = SharedFunction.getUnixTimeStamp() + Path.GetExtension(myFile.FileName);
+                            myFile.SaveAs(Path.Combine(pathForSaving, fileName));
+                            string path = "~/ServiceImagesUpload/" + fileName;
+                            var solarManager = new SolarManager();
+                            status = solarManager.AddAttachment(Convert.ToInt32(Session["Enquery_ID"]), path, userID, defaultImage);
+                        }
+                        catch (Exception ex)
+                        {
+                            return Json(ex.InnerException);
+                        }
+                    }
+                }
+            }
+            return Json(status);
         }
     }
 }

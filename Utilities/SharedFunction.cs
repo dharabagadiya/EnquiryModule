@@ -26,5 +26,10 @@ namespace Utilities
             }
             return result;
         }
+        public static string getUnixTimeStamp()
+        {
+            var unixTimestamp = ((DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).Ticks).ToString();
+            return unixTimestamp;
+        }
     }
 }

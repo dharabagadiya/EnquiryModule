@@ -76,7 +76,38 @@ namespace DataModel
                 return 0;
             }
         }
+        public bool AddAttachment(int HydroServiceID, string path, int userId, int defaultImage)
+        {
+            try
+            {
+                var hydro = Context.HydroServices.Where(modal => modal.HydroServiceID == HydroServiceID).FirstOrDefault();
+                if (hydro == null) return false;
+                var imageResource = new Modal.ImageFileResource
+                {
+                    path = path,
+                    ServiceID = HydroServiceID,
+                    ServiceType = "Hydro",
+                    UserId = userId,
+                    DefaultImage = defaultImage,
+                    IsDeleted = false,
+                    CreateDate = DateTime.Now,
+                    UpdateDate = DateTime.Now
+                };
+                Context.ImageFileResources.Add(imageResource);
+                var status = Context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public List<HydroService> GetHydroService()
         { return Context.HydroServices.ToList(); }
+        public string GetImagePath(int hyrdoServiceId)
+        {
+            var filePath = Context.ImageFileResources.Where(model => model.ServiceID == hyrdoServiceId && model.DefaultImage == 1 && model.ServiceType == "Hydro").Select(model => model.path).FirstOrDefault();
+            return filePath == null ? "~/images/DefaultImage.png" : filePath;
+        }
     }
 }

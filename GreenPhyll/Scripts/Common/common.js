@@ -9,6 +9,7 @@ var TYPE = 'token';
 var _url = OAUTHURL + 'scope=' + SCOPE + '&client_id=' + CLIENTID + '&redirect_uri=' + REDIRECT + '&response_type=' + TYPE;
 var acToken, tokenType, expiresIn, user;
 var loggedIn = false;
+var _validFileExtensions = [".jpg", ".jpeg"];
 $(document).ready(function () {
     $('.no_label').each(function () {
         var value = $(this).attr('title');
@@ -529,40 +530,74 @@ function FacebookCreateAccount(id) {
     });
 }
 //Facebook Login end
-var uploadFile = [];
 //upload photo in service pages
+var uploadFile = [];
 function BindUploadPhoto() {
+    jQuery(document).ready(function () {
+        $("input:radio[name=new_img]").attr('checked', true);
+    });
     $("#uploadFile").on("change", function () {
-        var totalImgs = $('#uploadedImgs .imagePreview').length;
-        if (totalImgs <= 5) {
-            var files = !!this.files ? this.files : [];
-            if (!files.length || !window.FileReader) return;
+        var file = this.files[0];
+        if (file.size > 2097152) {
+            alert("Too large Image. Only image less than 2MB can be uploaded.");
+            return false;
+        } else {
+            var totalImgs = $('#uploadedImgs .imagePreview').length;
+            if (totalImgs <= 5) {
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return;
 
-            if (/^image/.test(files[0].type)) {
-                debugger
-                var reader = new FileReader();
-                reader.readAsDataURL(files[0]);
-                uploadFile.push(files[0]);
-                reader.onloadend = function () {
-                    var newImgDiv = $('#newImgTemplate');
-                    newImgDiv.find('.imagePreview').css("background-image", "url(" + this.result + ")");
-                    $('#uploadedImgs').append(newImgDiv.html());
+                if (/^image/.test(files[0].type)) {
+                    var reader = new FileReader();
+                    reader.readAsDataURL(files[0]);
+                    var obj = {};
+                    obj['id'] = 0;
+                    obj['image'] = file;
+                    uploadFile.push(obj);
+                    reader.onloadend = function () {
+                        var newImgDiv = $('#newImgTemplate');
+                        newImgDiv.find('.imagePreview').css("background-image", "url(" + this.result + ")");
+                        $('#uploadedImgs').append(newImgDiv.html());
+                    }
+                }
+                $(".firstUpload, .vBarDivider, .examplePhotoPack").hide();
+                $(".imgAC715").css('width', '100%');
+                if (totalImgs == 4) {
+                    $('#addNewImgBtn').hide();
                 }
             }
-            //$(".firstUpload, .vBarDivider, .examplePhotoPack").hide();
-            $(".imgAC715").css('width', '100%');
-            if (totalImgs == 4) {
-                $('#addNewImgBtn').hide();
+            else {
+                alert("Only five images can be uploaded");
             }
         }
-        else {
-            alert("Only five images can be uploaded");
-        }
     });
+
     $(document).on('click', '.add_photos .remove_photo', function () {
+        var indexValueOfArray = $(this).parents('.add_photos').index();
+        uploadFile.splice(indexValueOfArray, 1);
         $(this).parents('.add_photos').remove();
         $('#addNewImgBtn').show();
     });
 };
-
+function ValidateSingleInput(oInput) {
+    if (oInput.type == "file") {
+        var sFileName = oInput.value;
+        if (sFileName.length > 0) {
+            var blnValid = false;
+            for (var j = 0; j < _validFileExtensions.length; j++) {
+                var sCurExtension = _validFileExtensions[j];
+                if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                    blnValid = true;
+                    break;
+                }
+            }
+            if (!blnValid) {
+                alert(" Please Select .jpg, .jpeg format Files for Uploading");
+                oInput.value = "";
+                return false;
+            }
+        }
+    }
+    return true;
+}
 

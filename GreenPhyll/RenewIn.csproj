@@ -156,7 +156,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\PagedList.css" />
     <Content Include="Content\Plugins\fonts\font_awesome\fontawesome-webfont.svg" />
     <Content Include="Content\Plugins\fonts\helvetica_condenced\helvetica-condensed.svg" />
     <Content Include="Content\Plugins\fonts\helvetica_light\helvetica-light.svg" />
@@ -194,6 +193,7 @@
     <Content Include="Content\Plugins\images\Turbine_Sprite.png" />
     <Content Include="Content\Plugins\images\YouAre_sprite.png" />
     <Content Include="Content\Plugins\main.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\Plugins\popup.css" />
     <Content Include="Content\Plugins\responsive.css" />
     <Content Include="Content\Plugins\solar_main.css" />
@@ -218,6 +218,7 @@
     <Content Include="images\check_box.png" />
     <Content Include="images\Corporate.png" />
     <Content Include="images\corporate_icon.png" />
+    <Content Include="images\DefaultImage.png" />
     <Content Include="images\Desert.jpg" />
     <Content Include="images\ecologico.png" />
     <Content Include="images\edit.png" />

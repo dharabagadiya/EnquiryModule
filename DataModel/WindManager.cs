@@ -77,7 +77,38 @@ namespace DataModel
                 return 0;
             }
         }
+        public bool AddAttachment(int WindServiceID, string path, int userId, int defaultImage)
+        {
+            try
+            {
+                var wind = Context.WindServices.Where(modal => modal.WindServiceID == WindServiceID).FirstOrDefault();
+                if (wind == null) return false;
+                var imageResource = new Modal.ImageFileResource
+                {
+                    path = path,
+                    ServiceID = WindServiceID,
+                    ServiceType = "Wind",
+                    UserId = userId,
+                    DefaultImage = defaultImage,
+                    IsDeleted = false,
+                    CreateDate = DateTime.Now,
+                    UpdateDate = DateTime.Now
+                };
+                Context.ImageFileResources.Add(imageResource);
+                var status = Context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public List<WindService> GetWindService()
         { return Context.WindServices.ToList(); }
+        public string GetImagePath(int windServiceId)
+        {
+            var filePath = Context.ImageFileResources.Where(model => model.ServiceID == windServiceId && model.DefaultImage == 1 && model.ServiceType == "Wind").Select(model => model.path).FirstOrDefault();
+            return filePath == null ? "~/images/DefaultImage.png" : filePath;
+        }
     }
 }

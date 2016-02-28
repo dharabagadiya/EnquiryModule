@@ -15,7 +15,7 @@ namespace CustomAuthentication.Migrations
 
         protected override void Seed(CustomAuthentication.DataContext context)
         {
-            //// Default Roles --- No Changes In Role List
+            ////Default Roles ---No Changes In Role List
             //var userRoles = new List<Role>();
             //userRoles.Add(new Role { RoleName = "Admin" });
             //userRoles.Add(new Role { RoleName = "Anonymous" });

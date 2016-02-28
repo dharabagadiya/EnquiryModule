@@ -45,5 +45,6 @@ namespace DataModel
         public DbSet<UploadDocument> UploadDocuments { get; set; }
         public DbSet<UserService> UserServices { get; set; }
         public DbSet<UserOffer> UserOffers { get; set; }
+        public DbSet<ImageFileResource> ImageFileResources { get; set; }
     }
 }

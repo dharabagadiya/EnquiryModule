@@ -79,5 +79,36 @@ namespace DataModel
         }
         public List<BioService> GetBioService()
         { return Context.BioServices.ToList(); }
+        public bool AddAttachment(int BioServiceID, string path, int userId, int defaultImage)
+        {
+            try
+            {
+                var bio = Context.BioServices.Where(modal => modal.BioServiceID == BioServiceID).FirstOrDefault();
+                if (bio == null) return false;
+                var imageResource = new Modal.ImageFileResource
+                {
+                    path = path,
+                    ServiceID = BioServiceID,
+                    ServiceType = "Bio",
+                    UserId = userId,
+                    DefaultImage = defaultImage,
+                    IsDeleted = false,
+                    CreateDate = DateTime.Now,
+                    UpdateDate = DateTime.Now
+                };
+                Context.ImageFileResources.Add(imageResource);
+                var status = Context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public string GetImagePath(int bioServiceId)
+        {
+            var filePath = Context.ImageFileResources.Where(model => model.ServiceID == bioServiceId && model.DefaultImage == 1 && model.ServiceType == "Bio").Select(model => model.path).FirstOrDefault();
+            return filePath == null ? "~/images/DefaultImage.png" : filePath;
+        }
     }
 }

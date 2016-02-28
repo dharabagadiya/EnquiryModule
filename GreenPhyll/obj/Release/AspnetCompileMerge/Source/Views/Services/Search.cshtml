@@ -7,7 +7,7 @@
 <style>
     .footer_new { position: relative !important; }
 </style>
-<div class="breadcrumb left">
+<div class="breadcrumb left" style="width:50%;">
     <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
     <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
     <span class=""><a href="@Url.Action("Search", "Services")"> Search Results </a></span>
@@ -53,7 +53,7 @@ else
     {
         <div class="results_container">
             <div class="grid_card">
-                <img class="list_thumbnail left" src="~/images/latestatapollo-.png" />
+                <img class="list_thumbnail left" src="@Url.Content(service.Path)" />
                 <div class="grid_details left">
                     <h1> @service.Title </h1>
                     <p class="details"><span class="fa fa-map-marker location_icon"></span> @service.Location </p>

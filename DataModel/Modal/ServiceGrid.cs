@@ -11,6 +11,7 @@ namespace DataModel.Modal
         public string Location { get; set; }
         public string Service { get; set; }
         public int ServiceId { get; set; }
+        public string Path { get; set; }
         public DateTime CreateDate { get; set; }
     }
 }

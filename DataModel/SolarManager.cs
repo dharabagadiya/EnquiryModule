@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataModel.Modal;
+using System.Data.Entity;
 
 namespace DataModel
 {
@@ -236,7 +237,38 @@ namespace DataModel
                 return 0;
             }
         }
+        public bool AddAttachment(int SolarServiceID, string path, int userId, int defaultImage)
+        {
+            try
+            {
+                var solar = Context.SolarServices.Where(modal => modal.SolarServiceID == SolarServiceID).FirstOrDefault();
+                if (solar == null) return false;
+                var imageResource = new Modal.ImageFileResource
+                {
+                    path = path,
+                    ServiceID = SolarServiceID,
+                    ServiceType = "Solar",
+                    UserId = userId,
+                    DefaultImage = defaultImage,
+                    IsDeleted = false,
+                    CreateDate = DateTime.Now,
+                    UpdateDate = DateTime.Now
+                };
+                Context.ImageFileResources.Add(imageResource);
+                var status = Context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public List<SolarService> GetSolarService()
         { return Context.SolarServices.ToList(); }
+        public string GetImagePath(int solarServiceId)
+        {
+            var filePath = Context.ImageFileResources.Where(model => model.ServiceID == solarServiceId && model.DefaultImage == 1 && model.ServiceType == "Solar").Select(model => model.path).FirstOrDefault();
+            return filePath == null ? "~/images/DefaultImage.png" : filePath;
+        }
     }
 }

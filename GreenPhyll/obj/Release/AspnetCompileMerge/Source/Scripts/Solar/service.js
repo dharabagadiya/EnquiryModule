@@ -21,9 +21,18 @@ solar.AddSolarServicesDetail = function () {
         success: function (data) {
             var status = data;
             if (status) {
-                //window.location.href = "Enquiry/ThankYou";
+                var formdata = new FormData(); //FormData object
+                var fileInput = uploadFile;
+                //Iterating through each files selected in fileInput
+                for (i = 0; i < fileInput.length; i++) {
+                    //Appending each file to FormData object
+                    formdata.append(fileInput[i].image.name, fileInput[i].image, "" + fileInput[i].id + ".jpg");
+                }
+                //Creating an XMLHttpRequest and sending
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/Solar/ImageUpload', false);
+                xhr.send(formdata);
                 window.location.href = "/Bio/ThankYou";
-                //alert("Success");
             } else { }
         }
     });
@@ -111,14 +120,33 @@ solar.AddSolarServiceValidation = function () {
                 $('#serviceMsg').show().text('Please provide information');
                 $('#serviceType').hide();
             }
+            else if (solar_renew_service_val.length < 30 || solar_renew_service_val.length > 124) {
+                $('#serviceType').show().text('Please enter title of Min 30 Characters to Maximum 124 Characters.');
+                $('#serviceMsg').hide();
+            }
+            else if (solar_renew_msg_val.length < 100 || solar_renew_msg_val.length > 5000) {
+                $('#serviceMsg').show().text('We strongly recommend you to write a description of Min 100 characters. This would help in getting you a better response. Max 5000 characters allowed.');
+                $('#serviceType').hide();
+            }
             else {
                 $('#serviceMsg').hide();
                 $('#serviceType').hide();
                 next_slide();
-                $('.next_slide').addClass('disabled');
             }
         }
         if (current_slide == 4) {
+            next_slide();
+            var indexValueOfArray = $('input:radio[name=new_img]:checked').parents('.add_photos').index();
+            for (var i = 0; i < uploadFile.length; i++) {
+                if (indexValueOfArray == i) {
+                    uploadFile[i].id = 1
+                }
+                else
+                    uploadFile[i].id = 0
+            }
+            $('.next_slide').addClass('disabled');
+        }
+        if (current_slide == 5) {
             if ((solar_company_name_val == '') && (solar_contact_person_val == '') && (solar_email_val == '') && (solar_mobile_val == '')) {
                 $('#companyName').show().text('Enter Company Name');
                 $('#contactName').show().text('Enter Contact Person Name');

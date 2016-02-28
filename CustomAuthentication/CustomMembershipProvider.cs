@@ -45,6 +45,8 @@ namespace CustomAuthentication
                     Email = username,
                     UserName = username,
                     Password = password,
+                    OldPassword = password,
+                    ConfirmPassword = password,
                     Roles = roles,
                     CreateDate = DateTime.UtcNow,
                 });
@@ -68,6 +70,8 @@ namespace CustomAuthentication
                     UserName = username,
                     Roles = roles,
                     Password = "GoogleLogin",
+                    OldPassword = "GoogleLogin",
+                    ConfirmPassword = "GoogleLogin",
                     CreateDate = DateTime.UtcNow,
                 });
                 Context.SaveChanges();
@@ -90,6 +94,8 @@ namespace CustomAuthentication
                     UserName = id,
                     Roles = roles,
                     Password = "FacebookLogin",
+                    OldPassword = "FacebookLogin",
+                    ConfirmPassword = "FacebookLogin",
                     CreateDate = DateTime.UtcNow,
                 });
                 Context.SaveChanges();

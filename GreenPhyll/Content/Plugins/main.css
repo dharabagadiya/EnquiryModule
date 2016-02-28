@@ -289,7 +289,7 @@ textarea, .form-item div.autocomplete-deluxe-container div.autocomplete-deluxe-m
 .partner_section { height: 500px; }
 .partner_sec { width: 24%; height: 100px; margin: 20px 0 20px 10px; }
 /* css for view offers */
-.breadcrumb { padding: 22px 22px 20px 33px; width: 50%; }
+.breadcrumb { padding: 22px 22px 20px 33px; width: 100%; }
 .breadcrumb span a { text-decoration: none; color: #999999; font-size: 16px; }
 .marg_arrow { margin: 0 5px 0 5px; }
 .left { float: left; }

@@ -1,15 +1,23 @@
-﻿@model List<DataModel.Modal.Offer>
+﻿@{ var userDetail = (CustomAuthentication.User)ViewData["UserDetail"]; }
+@model List<DataModel.Modal.Offer>
 @{
     ViewBag.Title = "MyApplication";
 }
-
+<div class="breadcrumb left" style="width:50%;">
+    <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    <span class=""><a href="#"> My Applications </a></span>
+</div>
 <div class="container">
     <ul id="tabs">
         <li><a href="#ChangedPassword" class="current">My Applications</a></li>
         <li class="border_tabs"><a href="~/ProfileSetting/ProfileDetail">Profile Detail</a></li>
         <li class="border_tabs"><a href="~/ProfileSetting/UploadDocuments">Upload Documents</a> </li>
         <li class="border_tabs"><a href="~/ProfileSetting/Feedback">Feedback</a> </li>
-        <li class="border_tabs"><a href="~/ProfileSetting/ChangedPassword">Changed Password</a> </li>
+        @if (userDetail.Password != "GoogleLogin" && userDetail.Password != "FacebookLogin")
+        {
+            <li class="border_tabs"><a href="~/ProfileSetting/ChangedPassword">Changed Password</a></li>
+        }
     </ul>
     <div class="content">
         <div id="grid" class="tab_section">
@@ -41,7 +49,7 @@
 
                                 </div>
                                 <div class="list_right">
-                                    <button class="feedback_btn btn_mar"> Select Offer </button>
+                                    <button class="feedback_btn btn_mar">Check My Status</button>
                                 </div>
                             </div>
                         </div>
