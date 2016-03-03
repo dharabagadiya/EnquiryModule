@@ -7,8 +7,7 @@ D:\Project\EnquiryModule Project\RenewIn\Utilities\bin\Debug\Utilities.pdb
 D:\Project\EnquiryModule Project\RenewIn\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
 D:\Project\EnquiryModule Project\RenewIn\Utilities\obj\Debug\Utilities.dll
 D:\Project\EnquiryModule Project\RenewIn\Utilities\obj\Debug\Utilities.pdb
-D:\Project\EnquiryModule Project\RenewIn1\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
-D:\Project\EnquiryModule Project\RenewIn1\Utilities\obj\Debug\Utilities.dll
-D:\Project\EnquiryModule Project\RenewIn1\Utilities\obj\Debug\Utilities.pdb
 D:\Project\EnquiryModule Project\RenewIn1\Utilities\bin\Debug\Utilities.dll
 D:\Project\EnquiryModule Project\RenewIn1\Utilities\bin\Debug\Utilities.pdb
+D:\Project\EnquiryModule Project\RenewIn1\Utilities\obj\Debug\Utilities.dll
+D:\Project\EnquiryModule Project\RenewIn1\Utilities\obj\Debug\Utilities.pdb

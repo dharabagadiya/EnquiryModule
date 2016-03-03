@@ -1,0 +1,47 @@
+﻿@{ var userDetail = (CustomAuthentication.User)ViewData["UserDetail"]; }
+@model DataModel.Modal.FeedBack
+@{
+    ViewBag.Title = "Feedback";
+}
+<div class="breadcrumb left">
+    <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    <span class=""><a href="#"> Feedback </a></span>
+</div>
+<div class="container">
+    <div class="section" style="width:98% !important;">
+        <div class="title"><h1>Welcome to your RenewIn Feedback page </h1></div>
+    </div>
+    <ul id="tabs">
+        <li class="border_tabs"><a href="~/ProfileSetting/MyApplication">My Applications</a></li>
+        <li class="border_tabs"><a href="~/ProfileSetting/ProfileDetail">Profile Detail</a></li>
+        <li class="border_tabs"><a href="~/ProfileSetting/UploadDocuments">Upload Documents</a> </li>
+        <li><a href="#Feedback" class="current">Feedback</a> </li>
+        @if (userDetail.Password != "GoogleLogin" && userDetail.Password != "FacebookLogin")
+        {
+            <li class="border_tabs"><a href="~/ProfileSetting/ChangedPassword">Changed Password</a></li>
+        }
+    </ul>
+    <div class="content">
+        <h3> Feedback </h3>
+        <div class="form_content">
+            @using (Html.BeginForm("Feedback", "ProfileSetting"))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div>
+                    @Html.TextBoxFor(Model => Model.Feedback_Question, new { @class = "form_input top_15", @placeholder = "Feedback / Query / Support Question", @id = "feedback_question", @type = "text" })
+                    @Html.ValidationMessageFor(Model => Model.Feedback_Question, "", new { @class = "text-danger" })
+                </div>
+                <div>
+                    @Html.TextAreaFor(Model => Model.Feedback_Msg, new { @class = "form_input textarea_input top_15", @placeholder = "Please let us know your feedback or Suggestion or Type here to ask any support questions.", @id = "feedback_msg", @type = "text" })
+                    @Html.ValidationMessageFor(Model => Model.Feedback_Msg, "", new { @class = "text-danger" })
+                </div>
+                <div class="button_wid top_55">
+                    <button type="submit" class="btn_form">Submit</button>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>

@@ -1,0 +1,65 @@
+﻿@{ var userDetail = (CustomAuthentication.User)ViewData["UserDetail"]; }
+@model List<DataModel.Modal.Offer>
+@{
+    ViewBag.Title = "MyApplication";
+}
+<div class="breadcrumb left" >
+    <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    <span class=""><a href="#"> My Applications </a></span>
+</div>
+<div class="container">
+    <div class="section" style="width:98% !important;">
+        <div class="title"><h1>Welcome to your RenewIn My Applications page </h1></div>
+    </div>
+    <ul id="tabs">
+        <li><a href="#ChangedPassword" class="current">My Applications</a></li>
+        <li class="border_tabs"><a href="~/ProfileSetting/ProfileDetail">Profile Detail</a></li>
+        <li class="border_tabs"><a href="~/ProfileSetting/UploadDocuments">Upload Documents</a> </li>
+        <li class="border_tabs"><a href="~/ProfileSetting/Feedback">Feedback</a> </li>
+        @if (userDetail.Password != "GoogleLogin" && userDetail.Password != "FacebookLogin")
+        {
+            <li class="border_tabs"><a href="~/ProfileSetting/ChangedPassword">Changed Password</a></li>
+        }
+    </ul>
+    <div class="content">
+        <div id="grid" class="tab_section">
+            @if (Model.Count == 0)
+            {
+                <div class="MA" style="width:137px;">No applications found</div>
+            }
+            else
+            {
+                foreach (var offer in Model)
+                {
+                    <div class="results_container">
+                        <div class="grid_card">
+                            <img class="list_thumbnail left" src="@offer.ImagePath" />
+                            <div class="grid_details left">
+                                <h1> @offer.CompanyName </h1>
+                                <p class="details">@offer.ImplementationCost </p>
+                                <p class="details">@offer.Capacity </p>
+                                <p class="details">@offer.ProductName </p>
+                                <div class="content_sec">
+                                    <p>
+                                        @offer.ProductDescription
+                                    </p>
+                                </div>
+                                <div class="clr"></div>
+                            </div>
+                            <div class="right_nav left">
+                                <div class="padd_left">
+
+                                </div>
+                                <div class="list_right">
+                                    <button class="feedback_btn btn_mar">Check My Status</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div class="clr"></div>
+    </div>
+</div>
