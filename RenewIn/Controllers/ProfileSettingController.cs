@@ -21,6 +21,7 @@ namespace RenewIn.Controllers
 
         public ActionResult MyApplication()
         {
+            BundleConfig.AddScript("~/Scripts/ProfileSetting", "profileSetting.js", ControllerName);
             var userId = UserDetail == null ? 0 : UserDetail.UserId;
             var offerManager = new OfferManager();
             var getoffers = offerManager.GetOffersOnUserId(userId);
@@ -72,6 +73,7 @@ namespace RenewIn.Controllers
         }
         public ActionResult Feedback()
         {
+            BundleConfig.AddScript("~/Scripts/ProfileSetting", "profileSetting.js", ControllerName);
             if (UserDetail == null)
             {
                 return RedirectToAction("", "");
@@ -91,6 +93,8 @@ namespace RenewIn.Controllers
             var feedback_msg = formCollection["feedback_msg"].ToString();
             var status = new DataModel.ProfileSettingManager().Add_FeedBack(userID, feedback_question, feedback_msg);
             ViewData["Status"] = status;
+            if (status) ViewBag.SuccessMessage = "true";
+            else ViewBag.SuccessMessage = null;
             return View();
         }
         public ActionResult ChangedPassword()

@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "SolarServices";
+    ViewBag.Title = "Solar Services";
 }
 <style>
     .footer_new { position: relative !important; }
@@ -123,14 +123,16 @@
                             <div class="MB15">
                                 <div class="icon_input">
                                     <span class="icon"><img src="@Url.Content("~/images/location_icon_white.png")" /></span>
-                                    <input id="solar_renew_service" class="no_label grey_text" type="text" placeholder="Type Service you are Looking for" />
+                                    <input id="solar_renew_service" class="no_label grey_text" type="text" placeholder="Type Service you are Looking for"
+                                           style="width:700px !important;" maxlength="124"/>
                                 </div>
                                 <span id="serviceType" class="left_arrow" style="margin-left:-75px;"></span>
                             </div>
                             <div class="MB15">
                                 <div class="icon_input textarea">
                                     <span class="icon"><span class="sprite_img icon_size item_img"></span></span>
-                                    <textarea id="solar_renew_msg" class="no_label grey_text" placeholder="Please provide information on your requested item(s)"></textarea>
+                                    <textarea id="solar_renew_msg" class="no_label grey_text" placeholder="Please provide information on your requested item(s)"
+                                              style="width:700px !important; height:190px !important" maxlength="550"></textarea>
                                 </div>
                                 <span id="serviceMsg" class="left_arrow" style="margin-left:-130px;"></span>
                             </div>
@@ -173,10 +175,10 @@
                             </div>
                         </div>
                         <div class="examplePhotoPack left">
-                            <div class="f14 left" style="padding-bottom:5px;">Example: <b class="f13">Land Photo </b></div>
+                            <div class="f14 left" style="padding-bottom:5px;">Example: <b class="f13"> Windmill Photo </b></div>
                             <div class="clr"></div>
                             <div class="imgB left">
-                                <img class="aPhBox_img" src="~/images/Hydrangeas.jpg" />
+                                <img class="aPhBox_img" src="~/images/windmill.png" />
                             </div>
                         </div>
                         <div class="clr"></div>

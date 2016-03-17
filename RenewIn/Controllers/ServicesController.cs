@@ -20,7 +20,7 @@ namespace RenewIn.Controllers
             allServices.AddRange(new HydroManager().GetHydroService().Select(model => new DataModel.Modal.ServiceGrid { ServiceType = 4, Re_Type = model.ServiceLookingType, Title = model.ServiceRequestType, Description = model.ServiceRequestMsg, Location = model.Location, CreateDate = model.CreateDate, Service = "Solar", ServiceId = model.HydroServiceID, Path = new HydroManager().GetImagePath(model.HydroServiceID) }).ToList());
             allServices = allServices.OrderByDescending(model => model.CreateDate).Where(model => model.ServiceType == serviceType || serviceType == 0).ToList();
             allServices = allServices.Where(model => model.Title.ToLower().Contains(searchText.ToLower()) || model.Description.ToLower().Contains(searchText.ToLower())).ToList();
-            return View(allServices.ToPagedList(page ?? 1, 3));
+            return View(allServices.ToPagedList(page ?? 1, 10));
         }
         public JsonResult MapServices(string ServiceType, int ServiceId)
         {

@@ -17,7 +17,11 @@
     <span class="left"><p> Can not find what you are looking for?  </p></span>
     <a class="btn_request" href="@Url.Action("", "RenewServices")"> Place search request </a>
 </div>
+<div class="section" style="width:98% !important;">
+    <div class="title"><h1>Search Results</h1></div>
+</div>
 <div class="block_content">
+    
     <form id="sim-search-frontpage-form" accept-charset="UTF-8" method="post" action="/">
         <div class="top_head" style="margin:5px auto !important;height:45px !important;">
             <div class="form-item form-type-textfield form-item-search left">
@@ -45,7 +49,20 @@
 </div>
 @if (Model.Count == 0)
 {
-    <div class="MA" style="width:105px;">No results found</div>
+    <div class="divNoResult MA">
+        <div class="title" style="margin-bottom:5px"><h1> NO RESULTS FOUND </h1></div>
+        <div class="field_text">
+            <p>
+                <strong>
+                    * Check if your spelling is correct, or try removing filters.<br /><br />
+                    * Try somthing like - using more general terms.<br /><br />
+                    LETS OTHERS FIND YOUR DESIRED ITEM<br /><br />
+                    * Place a search request and let other people know that your looking for<br />
+                    Click here to <a href="@Url.Action("", "RenewServices")" style="color:blue;"> PLACE LOOKING FOR REQUEST</a> page
+                </strong>
+            </p>
+        </div>
+    </div>
 }
 else
 {

@@ -1,4 +1,5 @@
-﻿@{ var userDetail = (CustomAuthentication.User)ViewData["UserDetail"]; }
+﻿@using Utilities;
+@{ var userDetail = (CustomAuthentication.User)ViewData["UserDetail"]; }
 <!DOCTYPE html>
 <html>
 <head>
@@ -137,6 +138,7 @@
         </div>
     </form>
     @Scripts.Render(BundleConfig.GetScriptsBundlePath(ViewData["Controller_Name"].ToString()).ToArray())
+    <script src="~/Scripts/Common/common.js?ver=@SharedFunction.getUnixTimeStamp()"></script>
     <script type="text/javascript">
         @Html.Raw(ViewData["View_Script"].ToString())
         $(document).ready(function () {

@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Join Installer Network";
 }
 <style>
     .footer_new { position: relative !important; }
@@ -14,79 +14,108 @@
     <div class="content_img left">
         <img style="width:450px;height:550px;" src="~/images/ecologico.png" />
     </div>
-    <div class="form_section left" style="height:550px !important;">
-        <div class="form" style="margin-bottom:5px"><h1> Join our Network as partner or Installer or Service Provider </h1></div>
-        <div class="form_group payOption">
-            <label for="banksDropdown" class="label_wid left control_label" style="color:#333; font-size:13px !important;"> Business Area </label>
-            <div class="input_group ">
-                <input value="Solar Energy" type="radio"><label style="margin-left: -33px;">Solar Energy</label>
-                <input value="Wind Power" type="radio"><label>Wind Power </label>
-                <input value="Hydro Power" type="radio"><label>Hydro Power </label>
-                <input value="Bio Energy" type="radio"><label> Bio Energy </label>
-                <input value="Service Provider" type="radio"><label> Service Provider </label>
-            </div>
-        </div>
-        <div class="form_group payOption1">
-            <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Who you are </label>
-            <div class="input_group" style="padding-top:5px;">
-                <input value="Individual" type="checkbox" /><span class="padd_label" style="margin-left: -33px;">Individual</span>
-                <input value="Installer" type="checkbox" /><span class="padd_label">Installer </span>
-                <input value="Service Provider" type="checkbox" /><span class="padd_label">Service Provider </span>
-                <input value="Partner" type="checkbox" /><span class="padd_label"> Partner </span>
-            </div>
-        </div>
-        <div class="form_group">
-            <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Company </label>
-            <div class="textbox_wid">
-                <div class="input_group_addon padd_icon left"><img class="icon_img" src="~/images/Briefcase.png" /></div>
-                <input class="form_control border_textbox no_label" id="txtCompanyName" name="qpemail" placeholder="Company"
-                       autocomplete="off" type="text" />
-            </div>
-            <span id="company" class="left_arrow" style="margin-left:185px;"></span>
-        </div>
-        <div class="form_group">
-            <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Name </label>
-            <div class="textbox_wid">
-                <div class="input_group_addon padd_icon left"><img class="icon_img" src="~/images/user_1.png" /></div>
-                <input class="form_control border_textbox no_label" id="txtName" name="qpemail" placeholder="Name"
-                       autocomplete="off" type="text" />
-            </div>
-            <span id="name" class="left_arrow" style="margin-left:185px;"></span>
-        </div>
-        <div class="form_group">
-            <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Email </label>
-            <div class="textbox_wid">
-                <div class="input_group_addon padd_icon left"><img class="icon_img" src="~/images/email.png" /></div>
-                <input class="form_control border_textbox no_label" id="txtEmailJIN" name="qpemail" placeholder="Email"
-                       autocomplete="off" type="text" />
-            </div>
-            <span id="email" class="left_arrow" style="margin-left:185px;"></span>
-        </div>
-        <div class="form_group">
-            <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Mobile No </label>
-            <div class="button_wid">
-                <div class="input_group_addon left">+91</div>
-                <input class="form_control border_textbox no_label" id="txtMobileNumber" name="qpemail" placeholder="Mobile No" onkeypress="return isNumberKey(event)" maxlength="10"
-                       autocomplete="off" type="text" />
-            </div>
-            <span id="mobile" class="left_arrow" style="margin-left:185px;"></span>
-        </div>
-        <div class="form_group">
-            <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Your Message </label>
-            <div class="textbox_wid">
-                <textarea class="form_control textarea_wid no_label" name="qpemail" type="text" id="txtAdditionalNotes"></textarea>
-            </div>
-            <span id="msg" class="left_arrow" style="margin-left:185px;"></span>
-        </div>
-        <div id="buttonSection" class="panel clearfix">
-            <div class="panel_footer">
-                <div class="button_wid"></div>
-                <div class="btn_wid">
-                    <button type="button" id="btnSendRequest" class="btn btn_primary">Join Us</button>
+    <form action="" method="post" id="validate-form" novalidate="novalidate">
+        <div class="form_section left" style="height:550px !important;">
+            <div class="form" style="margin-bottom:5px"><h1> Join our Network as partner or Installer or Service Provider </h1></div>
+            <div class="form_group payOption1">
+                <label for="banksDropdown" class="label_wid left control_label" style="color:#333; font-size:13px !important;"> Business Area </label>
+                <div class="input_group" id="BusinessArea">
+                    <ul>
+                        <li>
+                            <input name="checkboxes[]" value="Solar Energy" type="checkbox">
+                            <span class="padd_label" style="margin-left: -33px;">Solar Energy</span>
+                        </li>
+                        <li>
+                            <input name="checkboxes[]" value="Wind Power" type="checkbox">
+                            <span class="padd_label">Wind Power </span>
+                        </li>
+                        <li>
+                            <input name="checkboxes[]" value="Hydro Power" type="checkbox">
+                            <span class="padd_label">Hydro Power </span>
+                        </li>
+                        <li>
+                            <input name="checkboxes[]" value="Bio Energy" type="checkbox">
+                            <span class="padd_label"> Bio Energy </span>
+                        </li>
+                        <li>
+                            <input name="checkboxes[]" value="Service Provider" type="checkbox">
+                            <span class="padd_label"> Service Provider </span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="clr"></div>
+                @*<div id="BusinessArea"></div>*@
             </div>
+            <div class="form_group payOption1">
+                <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Who you are </label>
+                <div class="input_group" id="WhoYouAre">
+                    <ul>
+                        <li>
+                            <input name="checkboxesWYA[]" value="Individual" type="checkbox" />
+                            <span class="padd_label" style="margin-left: -33px;">Individual</span>
+                        </li>
+                        <li>
+                            <input name="checkboxesWYA[]" value="Installer" type="checkbox" />
+                            <span class="padd_label">Installer </span>
+                        </li>
+                        <li>
+                            <input name="checkboxesWYA[]" value="Service Provider" type="checkbox" />
+                            <span class="padd_label">Service Provider </span>
+                        </li>
+                        <li>
+                            <input name="checkboxesWYA[]" value="Partner" type="checkbox" />
+                            <span class="padd_label"> Partner </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form_group">
+                <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Company </label>
+                <div class="textbox_wid">
+                    <div class="input_group_addon padd_icon left"><img class="icon_img" src="~/images/Briefcase.png" /></div>
+                    <input class="form_control border_textbox no_label" id="txtCompanyName" name="Company" placeholder="Company"
+                           autocomplete="off" type="text" />
+                </div>
+            </div>
+            <div class="form_group">
+                <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Name </label>
+                <div class="textbox_wid">
+                    <div class="input_group_addon padd_icon left"><img class="icon_img" src="~/images/user_1.png" /></div>
+                    <input class="form_control border_textbox no_label" id="txtName" name="Name" placeholder="Name"
+                           autocomplete="off" type="text" />
+                </div>
+            </div>
+            <div class="form_group">
+                <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Email </label>
+                <div class="textbox_wid">
+                    <div class="input_group_addon padd_icon left"><img class="icon_img" src="~/images/email.png" /></div>
+                    <input class="form_control border_textbox no_label" id="txtEmailJIN" name="email" placeholder="Email"
+                           autocomplete="off" type="text" />
+                </div>
+            </div>
+            <div class="form_group">
+                <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Mobile No </label>
+                <div class="textbox_wid">
+                    <div class="input_group_addon left">+91</div>
+                    <input class="form_control border_textbox no_label" id="txtMobileNumber" name="MobileNumber" placeholder="Mobile No" onkeypress="return isNumberKey(event)" maxlength="10"
+                           autocomplete="off" type="text" />
+                </div>
+            </div>
+            <div class="form_group">
+                <label for="qpemail" class="label_wid left control_label" style="padding-top:10px;"> Your Message </label>
+                <div class="textbox_wid">
+                    <textarea class="form_control textarea_wid no_label" name="AdditionalNotes" type="text" id="txtAdditionalNotes"></textarea>
+                </div>
+            </div>
+            <div id="buttonSection" class="panel clearfix">
+                <div class="panel_footer">
+                    <div class="button_wid"></div>
+                    <div class="btn_wid">
+                        <button type="submit" id="btnSendRequest" class="btn">Join Us</button>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+            <div class="clr"></div>
         </div>
-        <div class="clr"></div>
-    </div>
+    </form>
 </div>

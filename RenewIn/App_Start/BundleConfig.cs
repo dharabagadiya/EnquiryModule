@@ -31,7 +31,7 @@ namespace RenewIn
 
             #region Public Plugins
             BUNDLE_COLLECTION.Add(new ScriptBundle("~/Scripts/Plugins/BASE_CONTROLLER_bundle").IncludeDirectory("~/Scripts/Plugins", "*.js", true));
-            BUNDLE_COLLECTION.Add(new ScriptBundle("~/Scripts/Common/BASE_CONTROLLER_bundle").IncludeDirectory("~/Scripts/Common", "*.js", true));
+            //BUNDLE_COLLECTION.Add(new ScriptBundle("~/Scripts/Common/BASE_CONTROLLER_bundle").IncludeDirectory("~/Scripts/Common", "*.js", true));
 
             BUNDLE_COLLECTION.Add(new StyleBundle("~/Content/Plugins/BASE_CONTROLLER_bundle").IncludeDirectory("~/Content/Plugins", "*.css"));
             #endregion

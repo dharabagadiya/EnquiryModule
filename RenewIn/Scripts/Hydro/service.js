@@ -121,11 +121,11 @@ hydro.AddHydroServiceValidation = function () {
                 $('#serviceType').hide();
             }
             else if (hydro_renew_service_val.length < 30 || hydro_renew_service_val.length > 124) {
-                $('#serviceType').show().text('Please enter title of Min 30 Characters to Maximum 124 Characters.');
+                $('#serviceType').show().text('Please enter title of  minimum 30 to maximum 124 Characters');
                 $('#serviceMsg').hide();
             }
-            else if (hydro_renew_msg_val.length < 100 || hydro_renew_msg_val.length > 5000) {
-                $('#serviceMsg').show().text('We strongly recommend you to write a description of Min 100 characters. This would help in getting you a better response. Max 5000 characters allowed.');
+            else if (hydro_renew_msg_val.length < 100 || hydro_renew_msg_val.length > 550) {
+                $('#serviceMsg').show().text('Please enter description of minimum 100 to maximum 550 Characters');
                 $('#serviceType').hide();
             }
             else {

@@ -31,6 +31,12 @@ $(document).ready(function () {
         }
     });
     $('#signin_popup').popup({
+        onopen: function () {
+            //alert('Popup just opened!');
+            ClearLoginTextBox();
+            $("#lblCreateAccount").empty();
+            $("#lblSignIn").empty();
+        },
         opacity: 0.6,
         transition: 'all 0.3s'
     });
@@ -54,12 +60,19 @@ $(document).ready(function () {
     $('#btnCreateAccount').off("click").on("click", function () { CreateAccount(); });
     $('#btn_signout').off("click").on("click", function () { Logout(); });
     $('#btnEnquiry').off("click").on("click", function () { AddEnquiry(); });
-    $('#btnSendRequest').off("click").on("click", function () { AddjoinInstallerNetwork(); });
+    //$('#btnSendRequest').off("click").on("click", function () { AddjoinInstallerNetwork(); });
     $('#btnForgotPassword').click(function () { ForgotPassword(); });
     BindEnquiryDetialLinkEvents();
     FacebookLoginLoad();
     BindUploadPhoto();
+    validationJoinInstallerNetwork();
 });
+function ClearLoginTextBox() {
+    $('#txtEmail').val("");
+    $('#txtPassword').val("");
+    $('#txtCreateAccountEmail').val("");
+    $('#txtCreateAccountPassword').val("");
+}
 function GetEnquiryDetail(id) {
     $.ajax({
         dataType: "html",
@@ -110,7 +123,7 @@ function Login() {
             } else {
                 $('.divLoader').addClass('DN');
                 $("#lblSignIn").show();
-                $("#lblSignIn").empty().html("Invalid User<br/>");
+                $("#lblSignIn").empty().html("Invalid user or password<br/>");
             }
         }
     });
@@ -152,7 +165,8 @@ function CreateAccount() {
             if (status) {
                 $('.divLoader').addClass('DN');
                 $("#lblCreateAccount").show();
-                $("#lblCreateAccount").empty().html('Successfully created').css('color', 'green');
+                $("#lblCreateAccount").empty().html('User successfully created').css('color', 'green');
+                ClearLoginTextBox();
             } else {
                 $('.divLoader').addClass('DN');
                 $("#lblCreateAccount").show();
@@ -236,135 +250,84 @@ function AddEnquiry() {
         }
     });
 }
+function validationJoinInstallerNetwork() {
+    $("#validate-form").validate({
+        rules: {
+            Company: "required",
+            Name: "required",
+            MobileNumber: {
+                required: true,
+                minlength: 10
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            "checkboxes[]": {
+                required: true,
+                maxlength: 5
+            },
+            "checkboxesWYA[]": {
+                required: true,
+                maxlength: 5
+            }
+        },
+        messages: {
+            Company: "Please enter your company name",
+            Name: "Please enter your name",
+            MobileNumber: "Please enter mobile no",
+            email: "Please enter a valid email address",
+            'checkboxes[]': {
+                required: "You must check at least 1 box",
+                maxlength: "Check no more than {0} boxes"
+            },
+            'checkboxesWYA[]': {
+                required: "You must check at least 1 box",
+                maxlength: "Check no more than {0} boxes"
+            }
+        },
+        errorPlacement: function (error, element) {
+            if ($("#BusinessArea").has(element).size() > 0) {
+                error.insertAfter($("#BusinessArea"));
+            }
+            else if ($("#WhoYouAre").has(element).size() > 0) {
+                error.insertAfter($("#WhoYouAre"));
+            } else {
+                error.insertAfter(element);
+            }
+        },
+        submitHandler: function (form) {
+            AddjoinInstallerNetwork();
+        }
+    });
+}
 function AddjoinInstallerNetwork() {
-    var checkBoxField = [];
-    $("input[type='checkbox']:checked").each(function () { checkBoxField.push($(this).val()) });
-    var checkboxField = checkBoxField.join(',');
-    var radioField = $("input[type='radio']:checked").val();
+    var BusinessArea = [], WhoYouAre = [];
+    $('#BusinessArea').find("input[type='checkbox']:checked").each(function () { BusinessArea.push($(this).val()) });
+    $('#WhoYouAre').find("input[type='checkbox']:checked").each(function () { WhoYouAre.push($(this).val()) });
+    var checkboxField = BusinessArea.join(',');
+    var radioField = WhoYouAre.join(',');
     var name = $("#txtName").val();
     var email = $("#txtEmailJIN").val();
     var companyName = $("#txtCompanyName").val();
     var mobileNumber = $("#txtMobileNumber").val();
     var additionalNotes = $("#txtAdditionalNotes").val();
-
-    if (name == '' && email == '' && companyName == '' && mobileNumber == '') {
-        $('#name').show().text("Please Enter Name");
-        $('#email').show().text("Please Enter Email");
-        $('#company').show().text("Please Enter Company Name");
-        $('#mobile').show().text("Please Enter Mobile No");
-    }
-    else if (email == '' && companyName == '' && mobileNumber == '') {
-        $('#name').hide();
-        $('#email').show().text("Please Enter Email");
-        $('#company').show().text("Please Enter Company Name");
-        $('#mobile').show().text("Please Enter Mobile No");
-    }
-    else if (name == '' && email == '' && mobileNumber == '') {
-        $('#name').show().text("Please Enter Name");
-        $('#email').show().text("Please Enter Email");
-        $('#company').hide();
-        $('#mobile').show().text("Please Enter Mobile No");
-    }
-    else if (companyName == '' && mobileNumber == '') {
-        $('#name').hide();
-        $('#email').hide();
-        $('#company').show().text("Please Enter Company Name");
-        $('#mobile').show().text("Please Enter Mobile No");
-    }
-    else if (name == '' && email == '' && companyName == '') {
-        $('#name').show().text("Please Enter Name");
-        $('#email').show().text("Please Enter Email");
-        $('#company').show().text("Please Enter Company Name");
-        $('#mobile').hide();
-    }
-    else if (name == '' && email == '') {
-        $('#name').show().text("Please Enter Name");
-        $('#email').show().text("Please Enter Email");
-        $('#company').hide();
-        $('#mobile').hide();
-    }
-    else if (name == '' && mobileNumber == '') {
-        $('#name').show().text("Please Enter Name");
-        $('#email').hide();
-        $('#company').hide();
-        $('#mobile').show().text("Please Enter Mobile No");
-    }
-    else if (email == '' && companyName == '') {
-        $('#name').hide();
-        $('#email').show().text("Please Enter Email");
-        $('#company').show().text("Please Enter Company Name");
-        $('#mobile').hide();
-    }
-    else if (email == '' && mobileNumber == '') {
-        $('#name').hide();
-        $('#email').show().text("Please Enter Email");
-        $('#company').hide();
-        $('#mobile').show().text("Please Enter Mobile No");
-    }
-    else if (name == '' && companyName == '') {
-        $('#name').show().text("Please Enter Name");
-        $('#email').hide();
-        $('#company').show().text("Please Enter Company Name");
-        $('#mobile').hide();
-    }
-    else if (name == '') {
-        $('#name').show().text("Please Enter Name");
-        $('#email').hide();
-        $('#company').hide();
-        $('#mobile').hide();
-    }
-    else if (email == '') {
-        $('#name').hide();
-        $('#email').show().text("Please Enter Email");
-        $('#company').hide();
-        $('#mobile').hide();
-    }
-    else if (!email_format.test(email)) {
-        $('#name').hide();
-        $('#email').show().text('Email Id is invalid');
-        $('#company').hide();
-        $('#mobile').hide();
-    }
-    else if (companyName == '') {
-        $('#name').hide();
-        $('#email').hide();
-        $('#company').show().text("Please Enter Company Name");
-        $('#mobile').hide();
-    }
-    else if (mobileNumber == '') {
-        $('#name').hide();
-        $('#email').hide();
-        $('#company').hide();
-        $('#mobile').show().text("Please Enter Mobile No");
-    }
-    else if (!mobile_num_format.test(mobileNumber)) {
-        $('#name').hide();
-        $('#email').hide();
-        $('#company').hide();
-        $('#mobile').show().text('Mobile number is invalid');
-    }
-    else {
-        $('#name').hide();
-        $('#email').hide();
-        $('#company').hide();
-        $('#mobile').hide();
-        $.ajax({
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            type: "POST",
-            url: "/JoinInstallerNetwork/Add",
-            async: false,
-            data: JSON.stringify({ "name": name, "email": email, "mobileNumber": mobileNumber, "companyName": companyName, "additionalNotes": additionalNotes, "radioField": radioField, "checkboxField": checkboxField }),
-            success: function (data) {
-                var status = data;
-                if (status) {
-                    alert("success");
-                    window.location.reload();
-                }
-                else { }
+    $.ajax({
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        type: "POST",
+        url: "/JoinInstallerNetwork/Add",
+        async: false,
+        data: JSON.stringify({ "name": name, "email": email, "mobileNumber": mobileNumber, "companyName": companyName, "additionalNotes": additionalNotes, "radioField": radioField, "checkboxField": checkboxField }),
+        success: function (data) {
+            var status = data;
+            if (status) {
+                alert("success");
+                window.location.reload();
             }
-        });
-    }
+            else { }
+        }
+    });
 }
 //Google Login
 function Googlelogin() {
@@ -467,7 +430,7 @@ function FacebookLoginLoad() {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) { return; }
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
+        js.src = "../../../Scripts/Facebook/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
     // Init the SDK upon load

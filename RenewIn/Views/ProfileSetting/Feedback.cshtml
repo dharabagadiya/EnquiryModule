@@ -19,7 +19,7 @@
         <li><a href="#Feedback" class="current">Feedback</a> </li>
         @if (userDetail.Password != "GoogleLogin" && userDetail.Password != "FacebookLogin")
         {
-            <li class="border_tabs"><a href="~/ProfileSetting/ChangedPassword">Changed Password</a></li>
+            <li class="border_tabs"><a href="~/ProfileSetting/ChangedPassword">Change Password</a></li>
         }
     </ul>
     <div class="content">
@@ -40,6 +40,15 @@
                 <div class="button_wid top_55">
                     <button type="submit" class="btn_form">Submit</button>
                 </div>
+            }
+            @if (ViewBag.SuccessMessage != null)
+            {
+                <text>
+                    <script>
+                        //alert(@ViewBag.SuccessMessage);
+                        alert('Thank You, Your Feedback has been Submitted. We appreciate your input, and will follow up with you regarding your questions, concerns or comments as soon as we are able.');
+                    </script>
+                </text>
             }
         </div>
     </div>

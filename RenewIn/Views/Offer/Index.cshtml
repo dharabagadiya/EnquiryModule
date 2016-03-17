@@ -1,6 +1,6 @@
 ﻿@model List<DataModel.Modal.Offer>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Offers";
 }
 <div class="breadcrumb left">
     <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
@@ -16,26 +16,32 @@
         <div class="results_container">
             <div class="grid_card">
                 <img class="list_thumbnail left" src="@offer.ImagePath" />
-                <div class="grid_details left">
+                <div class="grid_details left" style="width:85% !important;">
                     <h1> @offer.CompanyName </h1>
-                    <p class="details">@offer.ImplementationCost </p>
+                    @*<p class="details">@offer.ImplementationCost </p>*@
                     <p class="details">@offer.Capacity </p>
                     <p class="details">@offer.ProductName </p>
                     <div class="content_sec">
                         <p>
-                            @offer.ProductDescription
+                            @*@offer.ProductDescription*@
+                            Thank you for your interest in the Renewable Energy.
+                            If you have not logged-in or registered yet, please
+                            <a href="#" class="selectOffer" style="color:blue;" data-offer-id="@offer.OfferID">register or  login</a> to serve you better.
+                            We appreciate your input, and will follow up with you regarding your application status as soon as we are able.
+                            Please feel free to send any of your queries to
+                            <a href="#" style="color:blue;">support@renewin.com</a>
+                            All Renewin services are Free and will be Free Always!!!
                         </p>
                     </div>
                     <div class="clr"></div>
                 </div>
-                <div class="right_nav left">
-                    <div class="padd_left">
-
-                    </div>
-                    <div class="list_right">
-                        <button class="feedback_btn btn_mar selectOffer" data-offer-id="@offer.OfferID"> Select Offer </button>
-                    </div>
-                </div>
+                @*<div class="right_nav left">
+                        <div class="padd_left">
+                        </div>
+                        <div class="list_right">
+                            <button class="feedback_btn btn_mar selectOffer" data-offer-id="@offer.OfferID"> Select Offer </button>
+                        </div>
+                    </div>*@
             </div>
         </div>
     }

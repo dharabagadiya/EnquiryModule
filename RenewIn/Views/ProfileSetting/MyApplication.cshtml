@@ -3,6 +3,9 @@
 @{
     ViewBag.Title = "MyApplication";
 }
+<style>
+    .footer_new { position: relative !important; }
+</style>
 <div class="breadcrumb left" >
     <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
     <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
@@ -19,7 +22,7 @@
         <li class="border_tabs"><a href="~/ProfileSetting/Feedback">Feedback</a> </li>
         @if (userDetail.Password != "GoogleLogin" && userDetail.Password != "FacebookLogin")
         {
-            <li class="border_tabs"><a href="~/ProfileSetting/ChangedPassword">Changed Password</a></li>
+            <li class="border_tabs"><a href="~/ProfileSetting/ChangedPassword">Change Password</a></li>
         }
     </ul>
     <div class="content">
@@ -52,7 +55,7 @@
 
                                 </div>
                                 <div class="list_right">
-                                    <button class="feedback_btn btn_mar">Check My Status</button>
+                                    <button class="feedback_btn btn_mar CheckMyStatus" data-offer-id="@offer.OfferID"  data-offer-type="@offer.ReType">Check My Status</button>
                                 </div>
                             </div>
                         </div>
