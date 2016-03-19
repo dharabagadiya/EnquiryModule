@@ -9,7 +9,7 @@ namespace DataModel
     public class ServiceManager
     {
         private DataContext Context = new DataContext();
-        public int MapService(string ServiceType, int ServiceId, int userId)
+        public int MapService(string ServiceType, int ServiceId, int userId, string Message)
         {
             try
             {
@@ -19,6 +19,7 @@ namespace DataModel
                     ServiceType = ServiceType,
                     UserId = userId,
                     IsDeleted = false,
+                    Message = Message,
                     CreateDate = DateTime.Now,
                     UpdateDate = DateTime.Now
                 };

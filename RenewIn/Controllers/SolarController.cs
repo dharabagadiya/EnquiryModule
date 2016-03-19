@@ -31,6 +31,7 @@ namespace RenewIn.Controllers
             var SolarManager = new SolarManager();
             var status = SolarManager.AddSolarRoofTop(ApplicantType, pincode, address, MonthlyElectricityBill, ProposedCapacityKW, ShadowFreeArea, CompanyName, name, mobileNumber, email, userId, location);
             Session["Enquery_ID"] = status;
+            AppMail();
             return Json(status != 0);
         }
         public ActionResult SolarPark()
@@ -44,6 +45,7 @@ namespace RenewIn.Controllers
             var SolarManager = new SolarManager();
             var status = SolarManager.AddSolarPark(ApplicantType, pincode, address, EstimatedCost, ProposedCapacityKW, ShadowFreeArea, CompanyName, name, mobileNumber, email, userId, location);
             Session["Enquery_ID"] = status;
+            AppMail();
             return Json(status != 0);
         }
         public ActionResult SolarPumps()
@@ -57,6 +59,7 @@ namespace RenewIn.Controllers
             var SolarManager = new SolarManager();
             var status = SolarManager.AddSolarPumps(ApplicantType, pincode, address, MonthlyElectricityBill, ProposedCapacityKW, ShadowFreeArea, CompanyName, name, mobileNumber, email, userId, location);
             Session["Enquery_ID"] = status;
+            AppMail();
             return Json(status != 0);
         }
         public ActionResult SolarWaterHeaters()
@@ -70,6 +73,7 @@ namespace RenewIn.Controllers
             var SolarManager = new SolarManager();
             var status = SolarManager.AddSolarWaterHeaters(ApplicantType, pincode, address, MonthlyElectricityBill, ProposedCapacity, ShadowFreeArea, CompanyName, name, mobileNumber, email, userId, location);
             Session["Enquery_ID"] = status;
+            AppMail();
             return Json(status != 0);
         }
         public ActionResult SolarEquipments()
@@ -83,6 +87,7 @@ namespace RenewIn.Controllers
             var SolarManager = new SolarManager();
             var status = SolarManager.AddSolarEquipments(SolarServiceType, ApplicantType, pincode, address, Budget, EquipmentNumber, Message, CompanyName, name, mobileNumber, email, userId, location);
             Session["Enquery_ID"] = status;
+            AppMail();
             return Json(status != 0);
         }
         public JsonResult Add(string SolarServiceType, string ApplicantType, string pincode, string address, float MonthlyElectricityBill, float ProposedCapacityKW, float ShadowFreeArea, string IntallationReqForm, string CompanyName, string name, string mobileNumber, string email, string location)

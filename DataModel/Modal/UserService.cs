@@ -7,5 +7,6 @@ namespace DataModel.Modal
         public int UserServiceID { get; set; }
         public String ServiceType { get; set; }
         public int ServiceId { get; set; }
+        public String Message { get; set; }
     }
 }

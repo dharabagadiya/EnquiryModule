@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Filters;
 using CustomAuthentication.Security;
+using System.IO;
+using DataModel;
 #endregion
 
 namespace RenewIn.Controllers
@@ -53,5 +55,29 @@ namespace RenewIn.Controllers
 
         }
         #endregion
+        public void AppMail()
+        {
+            if (UserDetail != null && Session["Enquery_ID"] != null)
+            {
+                try
+                {
+                    var enquiryID = (int)Session["Enquery_ID"];
+                    var enquiryManager = new EnquiryManager();
+                    var userDetail = new DataModel.UserDetailManager().Get(UserDetail.UserId);
+                    using (var sw = new StringWriter())
+                    {
+                        ViewData.Model = userDetail;
+                        ViewEngineResult viewResult = ViewEngines.Engines.FindPartialView(ControllerContext, "AppEmail");
+                        ViewContext viewContext = new ViewContext(ControllerContext, viewResult.View, ViewData, TempData, sw);
+                        viewResult.View.Render(viewContext, sw);
+                        string subject = "Your Renewable Energy Request ID " + Session["Enquery_ID"] + " Created Successfully at RenewIn";
+                        Utilities.Email.SendMail(UserDetail.Email, sw.GetStringBuilder().ToString(), subject);
+                    }
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+        }
     }
 }

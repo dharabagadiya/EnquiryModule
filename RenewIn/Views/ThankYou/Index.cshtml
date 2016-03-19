@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Thank You";
+}
+
+<div class="content_form">
+    <div class="content_img left">
+        <img style="width:450px;height:550px;" src="~/images/ecologico.png" />
+    </div>
+    <div class="form_section left">
+        <div class="content_area">
+            <div class="container">
+                <div class="title" style="margin-bottom:5px"><h1> Thank you!! </h1></div>
+                <div class="field_text">
+                    <p>
+                        <strong>
+                            Your message has been submitted successfully. We will follow up with you as soon as we are able.
+                            <br />
+                            <br />
+                            <br />
+                            Find your other desired items in<a href="@Url.Action("Search", "Services")" style="color:blue;"> Search Results Page.</a>
+                            <br />
+                            <br />
+                            If you can not find what you are looking for<a href="@Url.Action("", "RenewServices")" style="color:blue;"> Place Search Request.</a>
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

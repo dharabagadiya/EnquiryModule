@@ -22,6 +22,7 @@ namespace RenewIn.Controllers
             var windManager = new WindManager();
             var status = windManager.Add(ApplicantType, pincode, address, ApplicantName, pan, cin, TotalWEGPlanned, ProposedCapacity, EstimatedProjectCost, AvgLast3yrTurnOver, name, mobileNumber, email, userId, location);
             Session["Enquery_ID"] = status;
+            AppMail();
             return Json(status != 0);
         }
         public ActionResult Services()

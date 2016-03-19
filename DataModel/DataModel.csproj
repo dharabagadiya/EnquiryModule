@@ -54,6 +54,7 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="DataContextInitilizer.cs" />
     <Compile Include="Modal\CommonEntities.cs" />
+    <Compile Include="Modal\Message.cs" />
     <Compile Include="Modal\SolarEquipment.cs" />
     <Compile Include="Modal\ImageFileResource.cs" />
     <Compile Include="Modal\SolarPump.cs" />

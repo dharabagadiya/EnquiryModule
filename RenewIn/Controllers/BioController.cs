@@ -22,6 +22,7 @@ namespace RenewIn.Controllers
             var enquiry4Manager = new BioManager();
             var status = enquiry4Manager.Add(BioServiceType, ApplicantType, ApplicantName, pan, cin, pincode, address, ProposedCapacity, EstimatedProjectCost, AvgLast3yrTurnOver, CompanyName, name, mobileNumber, email, userId, location);
             Session["Enquery_ID"] = status;
+            AppMail();
             return Json(status != 0);
         }
         public ActionResult Services()
@@ -43,7 +44,6 @@ namespace RenewIn.Controllers
             {
                 var enquiryID = (int)Session["Enquery_ID"];
                 var enquiryManager = new EnquiryManager();
-                //var enquiryDetail = enquiryManager.GetEnquiryDetail(enquiryID);
                 var userDetail = new DataModel.UserDetailManager().Get(UserDetail.UserId);
                 using (var sw = new StringWriter())
                 {
@@ -53,7 +53,8 @@ namespace RenewIn.Controllers
                     viewResult.View.Render(viewContext, sw);
                     try
                     {
-                        Utilities.Email.SendMail(UserDetail.Email, sw.GetStringBuilder().ToString());
+                        string subject = "Your Renewable Energy Search Request ID " + Session["Enquery_ID"] + " Created Successfully at RenewIn";
+                        Utilities.Email.SendMail(UserDetail.Email, sw.GetStringBuilder().ToString(), subject);
                     }
                     catch
                     {
@@ -93,5 +94,7 @@ namespace RenewIn.Controllers
             }
             return Json(status);
         }
+
+        
     }
 }

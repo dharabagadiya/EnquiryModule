@@ -93,7 +93,7 @@ namespace RenewIn.Controllers
                     viewResult.View.Render(viewContext, sw);
                     try
                     {
-                        Utilities.Email.SendMail(emailId, sw.GetStringBuilder().ToString());
+                        Utilities.Email.SendMail(emailId, sw.GetStringBuilder().ToString(),"Forgot Password");
                     }
                     catch (Exception ex)
                     {

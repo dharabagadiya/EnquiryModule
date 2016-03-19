@@ -43,7 +43,7 @@ namespace RenewIn.Controllers
                     viewResult.View.Render(viewContext, sw);
                     try
                     {
-                        Utilities.Email.SendMail(enquiryDetail.Email, sw.GetStringBuilder().ToString());
+                        Utilities.Email.SendMail(enquiryDetail.Email, sw.GetStringBuilder().ToString(),"");
                     }
                     catch
                     {

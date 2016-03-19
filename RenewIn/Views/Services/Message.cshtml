@@ -1,0 +1,36 @@
+﻿@model DataModel.Modal.Message
+@{
+    ViewBag.Title = "Message";
+}
+
+<div class="breadcrumb left">
+    <span class=""><a href="@Url.Action("","Home")"> Home </a></span>
+    <span class="marg_arrow"><img src="~/images/arrow.png" /></span>
+    <span class=""><a href="#"> Contact </a></span>
+</div>
+<div class="container">
+    <div class="section" style="width:98% !important;">
+        <div class="title"><h1>Contact </h1></div>
+    </div>
+    <ul id="tabs">
+        <li style="width:100%;"><a href="#" class="current">Message</a> </li>
+    </ul>
+    <div class="content">
+        <div class="form_content">
+            @using (Html.BeginForm("Message", "Services"))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div>
+                    @Html.TextAreaFor(Model => Model.UserMessage, new { @class = "form_input textarea_input top_15", @placeholder = "Please enter your message here.", @id = "UserMessage", @type = "text" })
+                    @Html.ValidationMessageFor(Model => Model.UserMessage, "", new { @class = "text-danger" })
+                </div>
+                <div class="button_wid top_55">
+                    <button type="submit" class="btn_form">Submit</button>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>
+

@@ -14,6 +14,7 @@
 .blue { background-color: #134F98; }
 .orange { background-color: #F46722; }
 .light_green { background-color: #669913; }
+.green { color: #669913; }
 .evntdvone { width: 19%; height: 275px; margin-right: 1%; }
 .green_icon { width: 160px; height: 160px; background-color: #088C46; border-radius: 50%; margin: 10% 8% 0%; position: relative; }
 .light_blue_icon { width: 160px; height: 160px; background-color: #0E6CB8; border-radius: 50%; margin: 10% 8% 0%; position: relative; }
@@ -372,5 +373,5 @@ em.rArow { background: transparent url("images/ui_sprite_home-v16.png") no-repea
 .btn_sub:hover { background: #1B70A9; }
 /*upload photo css end*/
 
-.divNoResult { width:37%;}
+.divNoResult { width: 37%; }
 #validate-form .form_group label.error { color: #FB3A3A; display: inline-block; margin: 4px 0 5px 180px; padding: 0; text-align: left; width: 220px; }
